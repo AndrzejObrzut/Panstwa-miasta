@@ -4,15 +4,17 @@
 #include "stdafx.h"
 #include <iostream>
 #include "Game.h"
+#include "Player.h"
+#include "Round.h"
 
 int main()
 {
+	int numberOfPlayers = 0;
+	int numberOfActualPlayers;
+	int numberOfRounds = 0;
 
-	Game *firstGame = new Game("Panstwa-miasta", "Gra polega na wypisywaniu wyrazów zaczynaj¹cych siê na podan¹ literê");
+	Game *game = new Game(numberOfRounds, numberOfPlayers);
 
-	string fullInformations = firstGame->DisplayValues();
-	
-	cout << fullInformations << endl;
 	system("pause");
     return 0;
 }
