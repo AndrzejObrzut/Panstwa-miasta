@@ -5,11 +5,17 @@ using namespace std;
 class Game
 {
 private:
-	string _name;
-	string _description;
+	int _numberOfPlayers;
+	int _numberOfActualRound;
+	int _numberOfRounds;
+//	Round *round = new Round();
+//	Player _player[];
 
 public:
-	Game(string name, string description);
-	string DisplayValues();
+	Game(int numberOfRounds, int numberOfPlayers);
+	void endGame();
+	void setNumberOfRounds(int number);
+	int getNumberOfRounds();
+	~Game();
 
 };

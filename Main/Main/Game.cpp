@@ -1,15 +1,27 @@
 #include "stdafx.h"
 #include "Game.h"
 
-Game::Game(string name, string description)
-{
-	_name = name;
-	_description = description;
 
+
+Game::Game(int numberOfRounds, int numberOfPlayers)
+{
+	_numberOfRounds = numberOfRounds;
+	_numberOfPlayers = numberOfPlayers;
 }
 
-
-string Game::DisplayValues()
+void Game::endGame()
 {
-	return "Name: " + _name + ", description: " + _description;
+}
+
+void Game::setNumberOfRounds(int number)
+{
+}
+
+int Game::getNumberOfRounds()
+{
+	return 0;
+}
+
+Game::~Game()
+{
 }
