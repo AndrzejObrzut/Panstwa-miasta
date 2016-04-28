@@ -28,7 +28,7 @@ string Player::getPlayerName()
 
 void Player::addPoints(int amountOfPoints)
 {
-	_amountOfPoints = amountOfPoints;
+	_amountOfPoints += amountOfPoints;
 }
 
 int Player::checkAmountOfPoints()

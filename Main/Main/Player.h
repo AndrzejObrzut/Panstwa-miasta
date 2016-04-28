@@ -7,7 +7,7 @@ class Player
 private:
 	int _playerNumber;
 	string _playerName;
-	int _amountOfPoints;
+	int _amountOfPoints = 0;
 public:
 	Player();
 	void setPlayerNumber(int number);
