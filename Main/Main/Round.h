@@ -4,7 +4,7 @@ class Round
 public:
 	char _character;
 	int _duration;
-	int _points[];
+	int *_points;
 	
 	Round();
 	char selectTheRandomLetter();
