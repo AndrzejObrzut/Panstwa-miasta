@@ -1,3 +1,2 @@
 ﻿  Round.cpp
-f:\github\panstwa-miasta\main\main\round.cpp(11): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   Main.vcxproj -> F:\GitHub\Panstwa-miasta\Main\Debug\Main.exe

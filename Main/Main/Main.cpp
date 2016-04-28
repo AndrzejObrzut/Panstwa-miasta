@@ -9,10 +9,10 @@
 
 int main()
 {
+	srand(time(NULL));
 	int numberOfPlayers = 0;
 	int numberOfActualPlayers = 0;
 	int numberOfRounds = 0;
-
 
 	cout << "Ile graczy bierze udzial w rozgrywce?" << endl;
 	cin >> numberOfPlayers;

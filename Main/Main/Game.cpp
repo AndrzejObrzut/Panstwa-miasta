@@ -63,7 +63,7 @@ int Game::getNumberOfRounds()
 void Game::newRound()
 {
 	cout << "Nowa runda" << endl;
-	_round = new Round;
+	_round = new Round();
 	_round->selectTheRandomLetter();
 }
 
