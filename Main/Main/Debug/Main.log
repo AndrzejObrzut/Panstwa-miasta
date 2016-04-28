@@ -1,7 +1,7 @@
-﻿  Main.cpp
-f:\github\panstwa-miasta\main\main\round.h(7): warning C4200: nonstandard extension used: zero-sized array in struct/union
-  f:\github\panstwa-miasta\main\main\round.h(7): note: Cannot generate copy-ctor or copy-assignment operator when UDT contains a zero-sized array
-f:\github\panstwa-miasta\main\main\main.cpp(13): warning C4101: 'numberOfActualPlayers': unreferenced local variable
-  Game.cpp
+﻿  Game.cpp
+  Generating Code...
+  Compiling...
+  Round.cpp
+  Main.cpp
   Generating Code...
   Main.vcxproj -> F:\GitHub\Panstwa-miasta\Main\Debug\Main.exe
