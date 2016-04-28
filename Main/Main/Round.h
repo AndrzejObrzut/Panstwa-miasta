@@ -4,12 +4,13 @@
 #include <ctime>
 class Round
 {
-public:
+private:
 	char _character;
 	int _duration;
 	int *_points;
 	int _whichPlayer;
-	
+
+public:
 	Round();
 	char selectTheRandomLetter();
 	void endTheRound();
