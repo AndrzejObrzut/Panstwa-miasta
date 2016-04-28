@@ -2,10 +2,10 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+
 class Round
 {
 private:
-	char _character;
 	int _duration;
 	int *_points;
 	int _whichPlayer;

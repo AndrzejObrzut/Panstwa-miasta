@@ -1,2 +1,9 @@
-﻿  Round.cpp
+﻿  Game.cpp
+f:\github\panstwa-miasta\main\main\game.cpp(74): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  Compiling...
+  Round.cpp
+  Main.cpp
+f:\github\panstwa-miasta\main\main\main.cpp(12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
   Main.vcxproj -> F:\GitHub\Panstwa-miasta\Main\Debug\Main.exe

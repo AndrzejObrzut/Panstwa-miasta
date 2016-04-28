@@ -11,12 +11,11 @@ char Round::selectTheRandomLetter()
 	int liczba;
 	do
 	{
-		liczba = (std::rand() % 25) + 65;
+		liczba = (std::rand() % 26) + 65;
 	} 
 	while (liczba == 81 || liczba == 86 || liczba == 88 || liczba == 89);
-	_character = (char)liczba;
-	std::cout << "Wylosowana litera to: " << _character << std::endl;
-	return 0;
+	//std::cout << "Wylosowana litera to: " << (char)liczba << std::endl;
+	return (char)liczba;;
 }
 
 void Round::endTheRound()
