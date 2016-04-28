@@ -12,30 +12,18 @@ int main()
 	int numberOfPlayers = 0;
 	int numberOfActualPlayers = 0;
 	int numberOfRounds = 0;
-	Player *players;
 
 
 	cout << "Ile graczy bierze udzial w rozgrywce?" << endl;
 	cin >> numberOfPlayers;
-	players = new Player[numberOfPlayers];
-	for (int i = 0; i < numberOfPlayers; i++)
-	{
-		cout << "Podaj imie " << i + 1 << ". gracza" << endl;
-		string name;
-		cin >> name;
-		players[i].setPlayerName(name);
-	}
+	
+	Game game;
+	game.createPlayers(numberOfPlayers);
+	game.setPlayersNames();
+	game.getPlayersNames();
 
-	for (int i = 0; i < numberOfPlayers; i++)
-	{
-		string name = players[i].getPlayerName();
-		cout << "Imie " << i + 1 << ". gracza: " << name << endl;
-	}
-
-	Game game(numberOfPlayers);
 	game.playGame();
 
-	delete[] players;
 
 
 
