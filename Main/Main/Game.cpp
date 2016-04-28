@@ -41,6 +41,11 @@ void Game::playGame()
 	newRound();
 }
 
+void Game::addPoints(int numberOfPlayer, int amountOfPoints)
+{
+	players[numberOfPlayer - 1].addPoints(amountOfPoints);
+}
+
 void Game::endGame()
 {
 }
@@ -58,8 +63,11 @@ int Game::getNumberOfRounds()
 void Game::newRound()
 {
 	cout << "Nowa runda" << endl;
+	_round = new Round;
+	_round->selectTheRandomLetter();
 }
 
 Game::~Game()
 {
+	delete[] players;
 }

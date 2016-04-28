@@ -11,7 +11,7 @@ private:
 	int _numberOfActualRound;
 	int _numberOfRounds;
 	Player *players;
-//	Round _round;
+	Round *_round;
 
 public:
 	Game();
@@ -20,6 +20,7 @@ public:
 	void setPlayersNames();
 	void getPlayersNames();
 	void playGame();
+	void addPoints(int numberOfPlayer, int amountOfPoints);
 	void endGame();
 	void setNumberOfRounds(int number);
 	int getNumberOfRounds();
