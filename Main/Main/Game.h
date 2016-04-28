@@ -10,12 +10,15 @@ private:
 	int _numberOfPlayers;
 	int _numberOfActualRound;
 	int _numberOfRounds;
-//	Player _player[];
-	Round _round;
+	Player *players;
+//	Round _round;
 
 public:
-	Game(int numberOfPlayers);
+	Game();
 	Game(int numberOfRounds, int numberOfPlayers);
+	void createPlayers(int numberOfPlayers);
+	void setPlayersNames();
+	void getPlayersNames();
 	void playGame();
 	void endGame();
 	void setNumberOfRounds(int number);
