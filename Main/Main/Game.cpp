@@ -13,7 +13,7 @@ Game::Game(int numberOfRounds, int numberOfPlayers) : _numberOfRounds(numberOfRo
 void Game::createPlayers(int numberOfPlayers)
 {
 	_numberOfPlayers = numberOfPlayers;
-	players = new Player[_numberOfPlayers];
+	_players = new Player[_numberOfPlayers];
 }
 
 void Game::setPlayersNames()
@@ -23,7 +23,7 @@ void Game::setPlayersNames()
 		cout << "Podaj imie " << i + 1 << ". gracza" << endl;
 		string name;
 		cin >> name;
-		players[i].setPlayerName(name);
+		_players[i].setPlayerName(name);
 	}
 }
 
@@ -31,7 +31,7 @@ void Game::getPlayersNames()
 {
 	for (int i = 0; i < _numberOfPlayers; i++)
 	{
-		string name = players[i].getPlayerName();
+		string name = _players[i].getPlayerName();
 		cout << "Imie " << i + 1 << ". gracza: " << name << endl;
 	}
 }
@@ -43,7 +43,7 @@ void Game::playGame()
 
 void Game::addPoints(int numberOfPlayer, int amountOfPoints)
 {
-	players[numberOfPlayer - 1].addPoints(amountOfPoints);
+	_players[numberOfPlayer - 1].addPoints(amountOfPoints);
 }
 
 void Game::endGame()
@@ -62,12 +62,38 @@ int Game::getNumberOfRounds()
 
 void Game::newRound()
 {
-	cout << "Nowa runda" << endl;
-	_round = new Round();
-	_round->selectTheRandomLetter();
+		bool continueWhile = true;
+		bool exitFromFor = false;
+		cout << "Nowa runda" << endl;
+		_round = new Round();
+		do
+		{
+			_character = _round->selectTheRandomLetter();
+			exitFromFor = true;
+
+			for (int i = 0; i < _characters.size(); i++)
+			{
+				if (_character == _characters[i])
+				{
+					exitFromFor = false;
+				}
+			}
+
+			if (exitFromFor == false)
+			{
+				continueWhile = true;
+			}
+			else
+			{
+				_characters.push_back(_character);
+				continueWhile = false;
+			}
+		} 
+		while (continueWhile);
+		std::cout << "Wylosowana litera to: " << _character << std::endl;
 }
 
 Game::~Game()
 {
-	delete[] players;
+	delete[] _players;
 }
