@@ -2,11 +2,17 @@
 #include "Game.h"
 
 
-
-Game::Game(int numberOfRounds, int numberOfPlayers)
+Game::Game(int numberOfPlayers) : _numberOfPlayers(numberOfPlayers)
 {
-	_numberOfRounds = numberOfRounds;
-	_numberOfPlayers = numberOfPlayers;
+}
+
+Game::Game(int numberOfRounds, int numberOfPlayers) : _numberOfRounds(numberOfRounds), _numberOfPlayers(numberOfPlayers)
+{
+}
+
+void Game::playGame()
+{
+	newRound();
 }
 
 void Game::endGame()
@@ -15,11 +21,17 @@ void Game::endGame()
 
 void Game::setNumberOfRounds(int number)
 {
+	_numberOfRounds = number;
 }
 
 int Game::getNumberOfRounds()
 {
-	return 0;
+	return _numberOfRounds;
+}
+
+void Game::newRound()
+{
+	cout << "Nowa runda" << endl;
 }
 
 Game::~Game()
