@@ -8,29 +8,32 @@ Player::Player()
 
 void Player::setPlayerNumber(int number)
 {
+	_playerNumber = number;
 }
 
 int Player::getPlayerNumber()
 {
-	return 0;
+	return _playerNumber;
 }
 
 void Player::setPlayerName(string name)
 {
+	_playerName = name;
 }
 
 string Player::getPlayerName()
 {
-	return string();
+	return _playerName;
 }
 
 void Player::addPoints(int amountOfPoints)
 {
+	_amountOfPoints = amountOfPoints;
 }
 
 int Player::checkAmountOfPoints()
 {
-	return 0;
+	return _amountOfPoints;
 }
 
 
