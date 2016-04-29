@@ -1,11 +1,12 @@
 // Main.cpp : Defines the entry point for the console application.
 //
-
 #include "stdafx.h"
-#include <iostream>
 #include "Game.h"
 #include "Player.h"
 #include "Round.h"
+#include <iostream>
+
+using namespace std;
 
 int main()
 {
@@ -16,6 +17,7 @@ int main()
 
 	cout << "Ile graczy bierze udzial w rozgrywce?" << endl;
 	cin >> numberOfPlayers;
+
 	
 	Game game;
 	game.createPlayers(numberOfPlayers);
