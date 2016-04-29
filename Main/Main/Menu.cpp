@@ -16,7 +16,7 @@ Menu::~Menu()
 {
 }
 
-void Menu::runMenu() {
+bool Menu::runMenu() {
 
 
 	string gameOption;
@@ -40,11 +40,41 @@ void Menu::runMenu() {
 		cout << "Zla opcja" << endl;
 	}
 
-	
+	return choseMenuOption(menuOption);	
 }
 
-void Menu::choseMenuOption(MenuOptions::Option option) {
+bool Menu::choseMenuOption(MenuOptions::Option option) {
+	
+	bool returnOption;
+	switch (option) {
+	case MenuOptions::LocalGame:
+		returnOption = true;
+		runLocalGame();
+		break;
+	case MenuOptions::OnlineGame:
+		returnOption = true;
+		runOnlineGame();
+		break;
+	case MenuOptions::Exit:
+		returnOption = false;
+		break;
+	case MenuOptions::BadRequest:
+		returnOption = true;
+		runMenuAgain();
+		break;
+	default:
+		returnOption = true;
+		runMenuAgain();
+		break;
+	}
 
+	return returnOption;
+}
+
+void Menu::runMenuAgain() {
+	system("cls");
+	cout << "Wybrana zla opcje" << endl;
+	runMenu();
 }
 
 void Menu::runLocalGame() {
@@ -64,5 +94,7 @@ void Menu::runLocalGame() {
 }
 
 void Menu::runOnlineGame() {
-
+	system("cls");
+	cout << "Wersja multiplayer w budowie" << endl;
+	runMenu(); // to change when online version will be done
 }

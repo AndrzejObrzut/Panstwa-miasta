@@ -81,7 +81,7 @@ void Game::playGame()
 		Po wyjœciu z gry trzeba bedzie wyswietlic zwyciezce i punkty wszystkich graczy.
 		*/
 		system("cls");
-		cout << "Kontynuowac gre? <y/n>";
+		cout << "Kontynuowac gre? <y/n>" << endl;
 		char choose;
 		do
 		{
