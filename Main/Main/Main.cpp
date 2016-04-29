@@ -5,12 +5,21 @@
 #include "Player.h"
 #include "Round.h"
 #include <iostream>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 using namespace std;
 
 int main()
 {
 	srand(time(NULL));
+
+
+
+
+	/*
 	int numberOfPlayers = 0;
 	int numberOfActualPlayers = 0;
 	int numberOfRounds = 0;
@@ -27,7 +36,7 @@ int main()
 	game.playGame();
 
 
-
+	*/
 
 	system("pause");
     return 0;
