@@ -8,15 +8,52 @@ Round::Round()
 
 char Round::selectTheRandomLetter()
 {
-	int liczba;
+	bool continueWhile = true;
+	bool exitFromFor = false;
+	int randomNumber;
+
 	do
 	{
-		liczba = (std::rand() % 26) + 65;
-	} 
-	while (liczba == 81 || liczba == 86 || liczba == 88 || liczba == 89);
-	//std::cout << "Wylosowana litera to: " << (char)liczba << std::endl;
-	return (char)liczba;;
+		do
+		{
+			randomNumber = (std::rand() % 26) + 65;
+		} 
+		while (randomNumber == 81 || randomNumber == 86 || randomNumber == 88 || randomNumber == 89);
+		_character = (char)randomNumber;
+
+		exitFromFor = true;
+
+		for (int unsigned i = 0; i < _characters.size(); i++)
+		{
+			if (_character == _characters[i])
+			{
+				exitFromFor = false;
+			}
+		}
+
+		if (exitFromFor == false)
+		{
+			continueWhile = true;
+		}
+		else
+		{
+			_characters.push_back(_character);
+			continueWhile = false;
+		}
+	} while (continueWhile);
+
+	std::cout << "Wylosowana litera to: " << _character << std::endl;
+	return _character;
 }
+
+void Round::waitingForPlayer(int number, string name)
+{
+	system("cls");
+	cout << "Runda gracza nr " << number + 1 << " (" << name << ")" << endl;
+	cout << "Nacisnij dowolny przycisk aby rozpoczac runde!" << endl;
+	_getch();
+}
+
 
 void Round::endTheRound()
 {
