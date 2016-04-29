@@ -1,2 +1,3 @@
-﻿  Game.cpp
-  Main.vcxproj -> F:\GitHub\Panstwa-miasta\Main\Debug\Main.exe
+﻿  Main.cpp
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Main.vcxproj -> C:\Users\PiotrWin\Documents\GitHub\Panstwa-miasta\Main\Debug\Main.exe
