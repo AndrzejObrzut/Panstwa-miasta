@@ -1,8 +1,9 @@
 #pragma once
-#include <iostream>
 #include "Round.h"
 #include "Player.h"
-#include <vector>
+#include <iostream>
+#include <string>
+#include <conio.h>
 
 using namespace std;
 
@@ -13,9 +14,8 @@ private:
 	int _numberOfActualRound;
 	int _numberOfRounds;
 	char _character;
-	vector <char> _characters;
 	Player *_players;
-	Round *_round;
+	Round _round;
 
 public:
 	Game();
@@ -28,7 +28,6 @@ public:
 	void endGame();
 	void setNumberOfRounds(int number);
 	int getNumberOfRounds();
-	void newRound();
 	~Game();
 
 };

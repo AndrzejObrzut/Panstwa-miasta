@@ -38,7 +38,66 @@ void Game::getPlayersNames()
 
 void Game::playGame()
 {
-	newRound();
+	cout << "Nowa runda" << endl;
+	bool continueGame = true;
+
+	do
+	{
+		/*
+		Klasa "Game" zawiera zmienna "_round".
+		Myœlê, ¿e wystarczy nam jeden obiekt i dzi³anie na nim, 
+		a nie wywo³ywanie za ka¿dym razem przy nowej rundzie "new Round".
+		Poza tym klasa "Game" posiada tablicê graczy, na których dzia³amy 
+		przez ca³¹ grê.
+		*/
+		/*
+		Zmienna _character przechowuje niepowtarzaln¹ wylosowan¹ literê.
+		T¹ samê literê mamy w obiekcie _round pod zmienn¹ character.
+		Nie wiem czy bêdzie potrzebana litera w game, jak nie to wystarczy
+		napisaæ samo _round.selectTheRandomLetter();
+		To czy bêdzie potrzebna zale¿y od sposobu implementacji wpisywania pañstwa, miasta...
+		Zale¿y czy bêdzie to nowa klasa, czy te¿ bêdziemy to wszystko robili w klasie Round
+		*/
+		_character = _round.selectTheRandomLetter();
+		/*
+		Myœlê, ¿e to bêdzie g³ówna pêtla programu.
+		Ta poni¿ej.
+		Najpierw wywo³ujemy gracza i czekamy a¿ naciœnie przysik.
+		Nastêpnie wyœwietlamy mu litere i wyrazy jakie ma wpisywaæ (pañstwa, miasta...)
+		Nastêpnie jak skoñczy to wczytuje siê nastêpny gracz.
+		*/
+		for (int i = 0; i < _numberOfPlayers; i++)
+		{
+			cout << "i= " << i << endl;
+			_round.waitingForPlayer(i, _players[i].getPlayerName());
+			/*
+			Tu bêd¹ nastêpne funkcjonalnoœci
+			*/
+		}
+
+		/*
+		Po zakoñczeniu rund wszystkich graczy pytamy czy kontynuowac gre.
+		Je¿eli naciœniemy 'y' zostaje wylosowana nowa litera i gracze zaczynaja nowa runde.
+		Po wyjœciu z gry trzeba bedzie wyswietlic zwyciezce i punkty wszystkich graczy.
+		*/
+		system("cls");
+		cout << "Kontynuowac gre? <y/n>";
+		char choose;
+		do
+		{
+			choose = _getch();
+		} 
+		while ((choose != 'y') && (choose != 'n'));
+
+		if (choose == 'y')
+		{
+			continueGame = true;
+		}
+		else
+		{
+			continueGame = false;
+		}
+	} while (continueGame);
 }
 
 void Game::addPoints(int numberOfPlayer, int amountOfPoints)
@@ -60,38 +119,6 @@ int Game::getNumberOfRounds()
 	return _numberOfRounds;
 }
 
-void Game::newRound()
-{
-		bool continueWhile = true;
-		bool exitFromFor = false;
-		cout << "Nowa runda" << endl;
-		_round = new Round();
-		do
-		{
-			_character = _round->selectTheRandomLetter();
-			exitFromFor = true;
-
-			for (int i = 0; i < _characters.size(); i++)
-			{
-				if (_character == _characters[i])
-				{
-					exitFromFor = false;
-				}
-			}
-
-			if (exitFromFor == false)
-			{
-				continueWhile = true;
-			}
-			else
-			{
-				_characters.push_back(_character);
-				continueWhile = false;
-			}
-		} 
-		while (continueWhile);
-		std::cout << "Wylosowana litera to: " << _character << std::endl;
-}
 
 Game::~Game()
 {
