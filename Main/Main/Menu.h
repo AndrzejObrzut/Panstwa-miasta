@@ -9,11 +9,12 @@ public:
 	Menu();
 	~Menu();
 
-	void runMenu();
+	bool runMenu();
 protected:
 
 private:
-	void choseMenuOption(MenuOptions::Option option);
+	bool choseMenuOption(MenuOptions::Option option);
+	void runMenuAgain();
 	void runLocalGame();
 	void runOnlineGame();
 	MenuOptions::Option menuOption;
