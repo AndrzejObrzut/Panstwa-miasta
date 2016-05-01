@@ -8,6 +8,7 @@ WordsOfPlayer::WordsOfPlayer()
 
 void WordsOfPlayer::setCountry(string country)
 {
+	transform(country.begin(), country.end(), country.begin(), ::toupper);
 	_country = country;
 }
 
@@ -18,6 +19,7 @@ string WordsOfPlayer::getCountry()
 
 void WordsOfPlayer::setCity(string city)
 {
+	transform(city.begin(), city.end(), city.begin(), ::toupper);
 	_city = city;
 }
 
@@ -28,6 +30,7 @@ string WordsOfPlayer::getCity()
 
 void WordsOfPlayer::setThing(string thing)
 {
+	transform(thing.begin(), thing.end(), thing.begin(), ::toupper);
 	_thing = thing;
 }
 
@@ -38,6 +41,7 @@ string WordsOfPlayer::getThing()
 
 void WordsOfPlayer::setPlant(string plant)
 {
+	transform(plant.begin(), plant.end(), plant.begin(), ::toupper);
 	_plant = plant;
 }
 
