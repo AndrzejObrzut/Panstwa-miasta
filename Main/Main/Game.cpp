@@ -70,8 +70,7 @@ void Game::playGame()
 		{
 			cout << "i= " << i << endl;
 			_round.waitingForPlayer(i, _players[i].getPlayerName());
-			cout << "litera to: " << _character;
-			_getch();
+			_players[i].playRound(_character);
 			/*
 			Tu bêd¹ nastêpne funkcjonalnoœci
 			*/
