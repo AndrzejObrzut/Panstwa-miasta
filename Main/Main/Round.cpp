@@ -63,9 +63,10 @@ void Round::checkWords()
 {
 }
 
-void Round::calculateAPoints()
+void Round::calculateAPoints(string * words, int numberOfPLayers)
 {
 }
+
 
 void Round::addPoints()
 {
