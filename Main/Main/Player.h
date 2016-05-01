@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <conio.h>
 #include "WordsOfPlayer.h"
 
 using namespace std;
@@ -11,8 +12,9 @@ private:
 	int _playerNumber;
 	string _playerName;
 	int _amountOfPoints = 0;
+	char _character;
 	WordsOfPlayer wordsOfPLayer;
-	void menuOfWords(int number);
+	void menuOfWords(char number);
 
 public:
 	Player();

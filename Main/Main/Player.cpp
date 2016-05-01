@@ -2,22 +2,47 @@
 #include "Player.h"
 
 
-void Player::menuOfWords(int number)
+void Player::menuOfWords(char number)
 {
+	string word = "";
 	switch (number)
 	{
-	case 1:
-
+	case '1':
+		system("cls");
+		cout << "Litera : " << _character << endl;
+		cout << "Wpisz panstwo" << endl;
+		cin >> word;
+		wordsOfPLayer.setCountry(word);
+		playRound(_character);
 		break;
-	case 2:
+	case '2':
+		system("cls");
+		cout << "Litera : " << _character << endl;
+		cout << "Wpisz miasto" << endl;
+		cin >> word;
+		wordsOfPLayer.setCity(word);
+		playRound(_character);
 		break;
-	case 3:
+	case '3':
+		system("cls");
+		cout << "Litera : " << _character << endl;
+		cout << "Wpisz rzecz" << endl;
+		cin >> word;
+		wordsOfPLayer.setThing(word);
+		playRound(_character);
 		break;
-	case 4:
+	case '4':
+		system("cls");
+		cout << "Litera : " << _character << endl;
+		cout << "Wpisz rosline" << endl;
+		cin >> word;
+		wordsOfPLayer.setPlant(word);
+		playRound(_character);
 		break;
-	case 5:
+	case '5':
 		break;
 	default:
+		playRound(_character);
 		break;
 	}
 }
@@ -48,11 +73,18 @@ string Player::getPlayerName()
 
 void Player::playRound(char character)
 {
-	cout << "Litera : " << character << endl;
-	cout << "1. Panstwo : " << wordsOfPLayer.getCountry << endl;
-	cout << "2. Miasto : " << wordsOfPLayer.getCity << endl;
-	cout << "1. Rzecz : " << wordsOfPLayer.getThing << endl;
-	cout << "1. Roslina : " << wordsOfPLayer.getPlant << endl;
+	_character = character;
+	system("cls");
+	cout << "Litera : " << _character << endl;
+	cout << "1. Panstwo : " << wordsOfPLayer.getCountry() << endl;
+	cout << "2. Miasto : " << wordsOfPLayer.getCity() << endl;
+	cout << "3. Rzecz : " << wordsOfPLayer.getThing() << endl;
+	cout << "4. Roslina : " << wordsOfPLayer.getPlant() << endl;
+	cout << "5. Zakoncz" << endl;
+	cout << "Wpisz numer opcji" << endl;
+	char option;
+	option = _getch();
+	menuOfWords(option);
 }
 
 void Player::addPoints(int amountOfPoints)
