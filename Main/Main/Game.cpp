@@ -52,11 +52,6 @@ void Game::playGame()
 		*/
 		/*
 		Zmienna _character przechowuje niepowtarzaln¹ wylosowan¹ literê.
-		T¹ samê literê mamy w obiekcie _round pod zmienn¹ character.
-		Nie wiem czy bêdzie potrzebana litera w game, jak nie to wystarczy
-		napisaæ samo _round.selectTheRandomLetter();
-		To czy bêdzie potrzebna zale¿y od sposobu implementacji wpisywania pañstwa, miasta...
-		Zale¿y czy bêdzie to nowa klasa, czy te¿ bêdziemy to wszystko robili w klasie Round
 		*/
 		_character = _round.selectTheRandomLetter();
 		/*
@@ -81,6 +76,13 @@ void Game::playGame()
 			Tu bêd¹ nastêpne funkcjonalnoœci
 			*/
 		}
+
+		for (int i = 0; i < _numberOfPlayers; i++)
+		{
+			_words[i] = *_players[i].getWords();
+		}
+
+		_round.calculateAPoints(_words, _numberOfPlayers);
 
 		/*
 		Po zakoñczeniu rund wszystkich graczy pytamy czy kontynuowac gre.
