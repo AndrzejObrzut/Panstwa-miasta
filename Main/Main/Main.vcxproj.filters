@@ -36,9 +36,12 @@
     <ClInclude Include="Menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="WordsOfPlayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+=======
+>>>>>>> 0a2df563bdea94bde4742228c4ecf67c19a67ce3
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -59,8 +62,11 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="WordsOfPlayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+=======
+>>>>>>> 0a2df563bdea94bde4742228c4ecf67c19a67ce3
   </ItemGroup>
 </Project>
