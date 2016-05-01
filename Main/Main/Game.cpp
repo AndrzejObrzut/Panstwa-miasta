@@ -71,6 +71,12 @@ void Game::playGame()
 			cout << "i= " << i << endl;
 			_round.waitingForPlayer(i, _players[i].getPlayerName());
 			_players[i].playRound(_character);
+			string * pointer = _players[i].getWords();
+			cout << "pointer1 " << pointer[0];
+			cout << "pointer2 " << pointer[1];
+			cout << "pointer3 " << pointer[2];
+			cout << "pointer4 " << pointer[3];
+			_getch();
 			/*
 			Tu bêd¹ nastêpne funkcjonalnoœci
 			*/

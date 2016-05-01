@@ -87,6 +87,16 @@ void Player::playRound(char character)
 	menuOfWords(option);
 }
 
+string * Player::getWords()
+{
+	_words[0] = wordsOfPLayer.getCountry();
+	_words[1] = wordsOfPLayer.getCity();
+	_words[2] = wordsOfPLayer.getThing();
+	_words[3] = wordsOfPLayer.getPlant();
+	return &_words[0];
+}
+
+
 void Player::addPoints(int amountOfPoints)
 {
 	_amountOfPoints += amountOfPoints;

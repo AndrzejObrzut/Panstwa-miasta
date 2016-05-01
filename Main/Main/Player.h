@@ -15,6 +15,7 @@ private:
 	char _character;
 	WordsOfPlayer wordsOfPLayer;
 	void menuOfWords(char number);
+	string _words[4];
 
 public:
 	Player();
@@ -23,6 +24,7 @@ public:
 	void setPlayerName(string name);
 	string getPlayerName();
 	void playRound(char character);
+	string * getWords();
 	void addPoints(int amountOfPoints);
 	int checkAmountOfPoints();
 	~Player();
