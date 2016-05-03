@@ -15,6 +15,7 @@ void Game::createPlayers(int numberOfPlayers)
 	_numberOfPlayers = numberOfPlayers;
 	_players = new Player[_numberOfPlayers];
 	_words = new string*[_numberOfPlayers];
+	_result = new int[_numberOfPlayers];
 }
 
 void Game::setPlayersNames()
@@ -84,7 +85,12 @@ void Game::playGame()
 			_words[i] = _players[i].getWords();
 		}
 
-		_round.calculatePoints(_words, _numberOfPlayers);
+		_result = _round.calculatePoints(_words, _numberOfPlayers);
+
+		for (int i = 0; i < _numberOfPlayers; i++)
+		{
+			addPoints(i, _result[i]);
+		}
 
 		/*
 		Po zakoñczeniu rund wszystkich graczy pytamy czy kontynuowac gre.
@@ -113,7 +119,7 @@ void Game::playGame()
 
 void Game::addPoints(int numberOfPlayer, int amountOfPoints)
 {
-	_players[numberOfPlayer - 1].addPoints(amountOfPoints);
+	_players[numberOfPlayer].addPoints(amountOfPoints);
 }
 
 void Game::endGame()

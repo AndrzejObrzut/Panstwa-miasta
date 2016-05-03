@@ -17,6 +17,7 @@ private:
 	Player *_players;
 	Round _round;
 	string **_words;
+	int * _result;
 
 public:
 	Game();
