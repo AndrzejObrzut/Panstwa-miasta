@@ -63,9 +63,17 @@ void Round::checkWords()
 {
 }
 
-void Round::calculateAPoints(string * words, int numberOfPLayers)
+void Round::calculatePoints(string ** words, int numberOfPlayers)
 {
+	_words = new string*[numberOfPlayers];
+	for (int i = 0; i < numberOfPlayers; i++)
+	{
+		_words[i] = words[i];
+	}
+	cout << "calculatePoints" << _words[0][0];
+	_getch();
 }
+
 
 
 void Round::addPoints()
