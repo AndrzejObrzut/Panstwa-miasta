@@ -5,6 +5,7 @@
 #include <ctime>
 #include <vector>
 #include <conio.h>
+#include "Game.h"
 
 using namespace std;
 
@@ -18,7 +19,7 @@ private:
 	vector <char> _characters;
 	string **_words;
 	int _numberOfPlayers;
-	
+	int * _result;
 
 public:
 	Round();
@@ -26,8 +27,8 @@ public:
 	void waitingForPlayer(int number, string name);
 	void endTheRound();
 	void checkWords();
-	void calculatePoints(string ** words, int numberOfPLayers);
-	void addPoints(int points);
+	int * calculatePoints(string ** words, int numberOfPLayers);
+	void addPoints(int points, int numberOfPlayer);
 	~Round();
 };
 

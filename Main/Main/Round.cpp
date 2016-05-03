@@ -72,7 +72,7 @@ void Round::checkWords()
 		{
 			if (_words[i][j] == "")
 			{
-				addPoints(0);
+				addPoints(0,j);
 			}
 			else
 			{
@@ -86,11 +86,11 @@ void Round::checkWords()
 				}
 				if (equal == true)
 				{
-					addPoints(10);
+					addPoints(10,j);
 				}
 				else
 				{
-					addPoints(5);
+					addPoints(5,j);
 				}
 			}
 		}
@@ -98,8 +98,10 @@ void Round::checkWords()
 	}
 }
 
-void Round::calculatePoints(string ** words, int numberOfPlayers)
+int * Round::calculatePoints(string ** words, int numberOfPlayers)
 {
+	_result = new int[_numberOfPlayers];
+	_result = 0;
 	_numberOfPlayers = numberOfPlayers;
 	_words = new string*[numberOfPlayers];
 	for (int i = 0; i < numberOfPlayers; i++)
@@ -108,12 +110,14 @@ void Round::calculatePoints(string ** words, int numberOfPlayers)
 	}
 	cout << "calculatePoints" << _words[0][0];
 	checkWords();
-	_getch();
+	
+	//_getch();
+	return _result;
 }
 
-void Round::addPoints(int points)
+void Round::addPoints(int points, int numberOfPlayer)
 {
-
+	_result[numberOfPlayer] += points;
 }
 
 
