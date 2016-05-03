@@ -61,24 +61,57 @@ void Round::endTheRound()
 
 void Round::checkWords()
 {
+	vector <string> _word;
+	for (int i = 0; i < 4; i++)
+	{
+		for (int j = 0; j < _numberOfPlayers; j++)
+		{
+			_word.push_back(_words[i][j]);
+		}
+		for (int j = 0; j < _numberOfPlayers; j++)
+		{
+			if (_words[i][j] == "")
+			{
+				addPoints(0);
+			}
+			else
+			{
+				bool equals = false;
+				for (int k = 0; k < _numberOfPlayers; k++)
+				{
+					if (_words[i][j] == _word[k])
+					{
+						addPoints(5);
+					}
+					else
+					{
+						addPoints(10);
+					}
+				}
+			}
+		}
+		_word.clear;
+	}
 }
 
 void Round::calculatePoints(string ** words, int numberOfPlayers)
 {
+	_numberOfPlayers = numberOfPlayers;
 	_words = new string*[numberOfPlayers];
 	for (int i = 0; i < numberOfPlayers; i++)
 	{
 		_words[i] = words[i];
 	}
 	cout << "calculatePoints" << _words[0][0];
+	checkWords();
 	_getch();
 }
 
-
-
-void Round::addPoints()
+void Round::addPoints(int points)
 {
 }
+
+
 
 
 Round::~Round()

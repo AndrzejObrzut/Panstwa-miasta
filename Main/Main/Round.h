@@ -15,9 +15,10 @@ private:
 	int *_points;
 	int _whichPlayer;
 	char _character;
-	std::vector <char> _characters;
+	vector <char> _characters;
 	string **_words;
 	int _numberOfPlayers;
+	
 
 public:
 	Round();
@@ -26,7 +27,7 @@ public:
 	void endTheRound();
 	void checkWords();
 	void calculatePoints(string ** words, int numberOfPLayers);
-	void addPoints();
+	void addPoints(int points);
 	~Round();
 };
 
