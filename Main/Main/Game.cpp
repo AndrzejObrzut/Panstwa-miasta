@@ -81,7 +81,6 @@ void Game::playGame()
 
 		for (int i = 0; i < _numberOfPlayers; i++)
 		{
-			cout << "in for " << i << endl;
 			_words[i] = _players[i].getWords();
 		}
 
@@ -91,6 +90,12 @@ void Game::playGame()
 		{
 			addPoints(i, _result[i]);
 		}
+
+		for (int i = 0; i < _numberOfPlayers; i++)
+		{
+			cout << "Gracz nr " << i + 1 << "posiada " << _players[i].checkAmountOfPoints() << "punktow" << endl;
+		}
+		_getch();
 
 		/*
 		Po zakoñczeniu rund wszystkich graczy pytamy czy kontynuowac gre.
