@@ -16,7 +16,7 @@ private:
 	char _character;
 	Player *_players;
 	Round _round;
-	string *_words;
+	string **_words;
 
 public:
 	Game();

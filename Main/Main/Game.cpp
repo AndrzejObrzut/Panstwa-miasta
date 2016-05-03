@@ -14,6 +14,7 @@ void Game::createPlayers(int numberOfPlayers)
 {
 	_numberOfPlayers = numberOfPlayers;
 	_players = new Player[_numberOfPlayers];
+	_words = new string*[_numberOfPlayers];
 }
 
 void Game::setPlayersNames()
@@ -66,12 +67,12 @@ void Game::playGame()
 			cout << "i= " << i << endl;
 			_round.waitingForPlayer(i, _players[i].getPlayerName());
 			_players[i].playRound(_character);
-			string * pointer = _players[i].getWords();
-			cout << "pointer1 " << pointer[0];
-			cout << "pointer2 " << pointer[1];
-			cout << "pointer3 " << pointer[2];
-			cout << "pointer4 " << pointer[3];
-			_getch();
+			//string * pointer = _players[i].getWords();
+			//cout << "pointer1 " << pointer[0];
+			//cout << "pointer2 " << pointer[1];
+			//cout << "pointer3 " << pointer[2];
+			//cout << "pointer4 " << pointer[3];
+			//_getch();
 			/*
 			Tu bêd¹ nastêpne funkcjonalnoœci
 			*/
@@ -79,10 +80,11 @@ void Game::playGame()
 
 		for (int i = 0; i < _numberOfPlayers; i++)
 		{
-			_words[i] = *_players[i].getWords();
+			cout << "in for " << i << endl;
+			_words[i] = _players[i].getWords();
 		}
 
-		_round.calculateAPoints(_words, _numberOfPlayers);
+		_round.calculatePoints(_words, _numberOfPlayers);
 
 		/*
 		Po zakoñczeniu rund wszystkich graczy pytamy czy kontynuowac gre.
