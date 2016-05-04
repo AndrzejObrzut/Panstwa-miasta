@@ -91,9 +91,22 @@ void Game::playGame()
 			addPoints(i, _result[i]);
 		}
 
+		system("cls");
+		cout << "\tPanstwo\t|\tMiasto\t|\tRzecz\t|\tRoslina" << endl;
+		
+		for (int j = 0; j < _numberOfPlayers; j++)
+		{
+			cout << "GRACZ " << j + 1 << ": ";
+			for (int i = 0; i < 4; i++)
+			{
+				cout << _words[j][i] << "   |   ";
+			}
+			cout << endl;
+		}
+		
 		for (int i = 0; i < _numberOfPlayers; i++)
 		{
-			cout << "Gracz nr " << i + 1 << "posiada " << _players[i].checkAmountOfPoints() << "punktow" << endl;
+			cout << "Gracz nr " << i + 1 << " posiada " << _players[i].checkAmountOfPoints() << " punktow" << endl;
 		}
 		_getch();
 
