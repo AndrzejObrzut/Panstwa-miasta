@@ -77,20 +77,25 @@ void Round::checkWords()
 			else
 			{
 				bool equal = false;
+				bool enter = false;
 				for (int k = 0; k < _numberOfPlayers; k++)
 				{
 					if (_words[j][i] == _word[k])
 					{
-						equal = true;
+						if (enter)
+						{
+							equal = true;
+						}
+						enter = true;
 					}
 				}
 				if (equal == true)
 				{
-					addPoints(10,j);
+					addPoints(5,j);
 				}
 				else
 				{
-					addPoints(5,j);
+					addPoints(10,j);
 				}
 			}
 		}
