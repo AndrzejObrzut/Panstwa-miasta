@@ -6,6 +6,14 @@ WordsOfPlayer::WordsOfPlayer()
 {
 }
 
+void WordsOfPlayer::initializeWords()
+{
+	_country = "";
+	_city = "";
+	_thing = "";
+	_plant = "";
+}
+
 void WordsOfPlayer::setCountry(string country)
 {
 	transform(country.begin(), country.end(), country.begin(), ::toupper);
