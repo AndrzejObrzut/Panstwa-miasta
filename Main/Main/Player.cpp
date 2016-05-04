@@ -12,37 +12,37 @@ void Player::menuOfWords(char number)
 		cout << "Litera : " << _character << endl;
 		cout << "Wpisz panstwo" << endl;
 		cin >> word;
-		wordsOfPLayer.setCountry(word);
-		playRound(_character);
+		_wordsOfPlayer.setCountry(word);
+		continuePlayingRound();
 		break;
 	case '2':
 		system("cls");
 		cout << "Litera : " << _character << endl;
 		cout << "Wpisz miasto" << endl;
 		cin >> word;
-		wordsOfPLayer.setCity(word);
-		playRound(_character);
+		_wordsOfPlayer.setCity(word);
+		continuePlayingRound();
 		break;
 	case '3':
 		system("cls");
 		cout << "Litera : " << _character << endl;
 		cout << "Wpisz rzecz" << endl;
 		cin >> word;
-		wordsOfPLayer.setThing(word);
-		playRound(_character);
+		_wordsOfPlayer.setThing(word);
+		continuePlayingRound();
 		break;
 	case '4':
 		system("cls");
 		cout << "Litera : " << _character << endl;
 		cout << "Wpisz rosline" << endl;
 		cin >> word;
-		wordsOfPLayer.setPlant(word);
-		playRound(_character);
+		_wordsOfPlayer.setPlant(word);
+		continuePlayingRound();
 		break;
 	case '5':
 		break;
 	default:
-		playRound(_character);
+		continuePlayingRound();
 		break;
 	}
 }
@@ -73,13 +73,29 @@ string Player::getPlayerName()
 
 void Player::playRound(char character)
 {
+	_wordsOfPlayer.initializeWords();
 	_character = character;
 	system("cls");
 	cout << "Litera : " << _character << endl;
-	cout << "1. Panstwo : " << wordsOfPLayer.getCountry() << endl;
-	cout << "2. Miasto : " << wordsOfPLayer.getCity() << endl;
-	cout << "3. Rzecz : " << wordsOfPLayer.getThing() << endl;
-	cout << "4. Roslina : " << wordsOfPLayer.getPlant() << endl;
+	cout << "1. Panstwo : " << _wordsOfPlayer.getCountry() << endl;
+	cout << "2. Miasto : " << _wordsOfPlayer.getCity() << endl;
+	cout << "3. Rzecz : " << _wordsOfPlayer.getThing() << endl;
+	cout << "4. Roslina : " << _wordsOfPlayer.getPlant() << endl;
+	cout << "5. Zakoncz" << endl;
+	cout << "Wpisz numer opcji" << endl;
+	char option;
+	option = _getch();
+	menuOfWords(option);
+}
+
+void Player::continuePlayingRound()
+{
+	system("cls");
+	cout << "Litera : " << _character << endl;
+	cout << "1. Panstwo : " << _wordsOfPlayer.getCountry() << endl;
+	cout << "2. Miasto : " << _wordsOfPlayer.getCity() << endl;
+	cout << "3. Rzecz : " << _wordsOfPlayer.getThing() << endl;
+	cout << "4. Roslina : " << _wordsOfPlayer.getPlant() << endl;
 	cout << "5. Zakoncz" << endl;
 	cout << "Wpisz numer opcji" << endl;
 	char option;
@@ -89,10 +105,10 @@ void Player::playRound(char character)
 
 string * Player::getWords()
 {
-	_words[0] = wordsOfPLayer.getCountry();
-	_words[1] = wordsOfPLayer.getCity();
-	_words[2] = wordsOfPLayer.getThing();
-	_words[3] = wordsOfPLayer.getPlant();
+	_words[0] = _wordsOfPlayer.getCountry();
+	_words[1] = _wordsOfPlayer.getCity();
+	_words[2] = _wordsOfPlayer.getThing();
+	_words[3] = _wordsOfPlayer.getPlant();
 	return &_words[0];
 }
 
