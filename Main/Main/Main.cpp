@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <SFML/Graphics.hpp>
+#include "WindowView.h"
 
 
 using namespace std;
@@ -26,9 +27,23 @@ int main()
 	//	menu.runMenu();
 	//}
 
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	//sf::RenderWindow window(sf::VideoMode(1024, 768), "Panstwa Miasta");
+
+	//window.clear(sf::Color(56, 134, 185, 255));
+
+	WindowView window(1024, 768, "Panstwa Miasta");
+	window.setColor(sf::Color(56, 134, 185, 255));
+
+	sf::Font font;
+	if (!font.loadFromFile("vgafix.fon")) {
+		cout << "Can not fund the font file" << endl;
+ 	}
+
+	sf::Text text;
+	sf::String sentence;
+	sf::Text text(sentence, font, 40);
+	text.setColor(sf::Color(255, 255, 255));
+	text.setStyle(sf::Text::Bold);
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -37,8 +52,7 @@ int main()
 				window.close();
 			}
 		}
-		window.clear();
-		window.draw(shape);
+
 		window.display();
 	}
 
