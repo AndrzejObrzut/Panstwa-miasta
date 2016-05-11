@@ -10,13 +10,13 @@ Piotr Pawluś
 * Postępować zgodnie z krokami tutoriala (Pominąć krok z ustawianiem linkowania statycznego): http://www.sfml-dev.org/tutorials/2.0/start-vc.php    lub   http://szymonsiarkiewicz.pl/poradniki/sfml-kurs-podstawowy/sfml-i-visual-studio/
 
 Dla Linker Debug: 
-sfml-system-d.lib
-sfml-graphics-d.lib
-sfml-window-d.lib
-sfml-main-d.lib
+* sfml-system-d.lib
+* sfml-graphics-d.lib
+* sfml-window-d.lib
+* sfml-main-d.lib
 
 Dla Linker Release: 
-sfml-system.lib
-sfml-graphics.lib
-sfml-window.lib
-sfml-main.lib
+* sfml-system.lib
+* sfml-graphics.lib
+* sfml-window.lib
+* sfml-main.lib
