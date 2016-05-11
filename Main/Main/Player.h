@@ -27,6 +27,7 @@ public:
 	void continuePlayingRound();
 	string * getWords();
 	void addPoints(int amountOfPoints);
+	void setPoints(int points);
 	int checkAmountOfPoints();
 	~Player();
 };

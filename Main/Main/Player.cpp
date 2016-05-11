@@ -118,6 +118,11 @@ void Player::addPoints(int amountOfPoints)
 	_amountOfPoints += amountOfPoints;
 }
 
+void Player::setPoints(int points)
+{
+	_amountOfPoints = points;
+}
+
 int Player::checkAmountOfPoints()
 {
 	return _amountOfPoints;
