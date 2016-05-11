@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 
-class WindowView: sf::RenderWindow
+class WindowView: public sf::RenderWindow
 {
 private:
 	sf::Color color;

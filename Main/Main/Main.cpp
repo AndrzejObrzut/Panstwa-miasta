@@ -39,7 +39,6 @@ int main()
 		cout << "Can not fund the font file" << endl;
  	}
 
-	sf::Text text;
 	sf::String sentence;
 	sf::Text text(sentence, font, 40);
 	text.setColor(sf::Color(255, 255, 255));

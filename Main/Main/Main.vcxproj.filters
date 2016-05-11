@@ -20,6 +20,12 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="MenuView.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowView.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -43,6 +49,12 @@
     <ClInclude Include="targetver.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="MenuView.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowView.h">
+      <Filter>Views</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -56,6 +68,12 @@
     </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{d86fceeb-288e-4101-9182-0deb8078475b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views">
+      <UniqueIdentifier>{17fbb947-97d5-4397-a178-d479755f0eb3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers">
+      <UniqueIdentifier>{88b28427-0936-43ad-aeed-3f836b570182}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
