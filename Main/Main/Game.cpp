@@ -167,32 +167,52 @@ void Game::playGame()
 
 	if (temporaryPlayers[0].getPoints() != temporaryPlayers[1].getPoints())
 	{
+		place++;
 		cout << "Wygaral gracz nr " << temporaryPlayers[0].getPlayerNumber() << ". (" << temporaryPlayers[0].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[0].getPoints() << ". Gratulacje :)" << endl;
 	}
 	else
 	{
 		cout << "Mamy remis!" << endl;
-		cout << "Wygarali gracze nr " << endl;
-		cout << temporaryPlayers[0].getPlayerNumber() << ". (" << temporaryPlayers[0].getPlayerName() << ")." << endl;
+		cout << "Wygarali:" << endl;
+		cout << "gracz nr " << temporaryPlayers[0].getPlayerNumber() << ". (" << temporaryPlayers[0].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[0].getPoints() << endl;
+		
 		bool inLoop = true;
 		int i = 1;
 		do 
 		{
+			place++;
 			inLoop = false;
 			if (temporaryPlayers[i].getPoints() == temporaryPlayers[i - 1].getPoints())
 			{
-				cout << temporaryPlayers[i].getPlayerNumber() << ". (" << temporaryPlayers[i].getPlayerName() << ")." << endl;
+				cout << "gracz nr " << temporaryPlayers[i].getPlayerNumber() << ". (" << temporaryPlayers[i].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[i].getPoints() << endl;
 				inLoop = true;
 			}
 			i++;
 		} while (inLoop);
-		cout << "Ilosc punktow " << temporaryPlayers[0].getPoints() << ". Gratulacje :)" << endl;
+		cout << "Gratulacje :)" << endl;
 	}
 
-	for (int i = 1; i < _numberOfPlayers; i++)
+	for (int i = place; i < _numberOfPlayers - 1; i++)
 	{
-		cout << i + 1 << ". miejsce zajal gracz nr " << temporaryPlayers[i].getPlayerNumber() << ". (" << temporaryPlayers[i].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[i].getPoints() << endl;
+		if (temporaryPlayers[i].getPoints() == temporaryPlayers[i + 1].getPoints())
+		{
+			cout << place + 1 << ". miejsce zajal ex aequo gracz nr " << temporaryPlayers[i].getPlayerNumber() << ". (" << temporaryPlayers[i].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[i].getPoints() << endl;
+		}
+		else
+		{
+			cout << i + 1 << ". miejsce zajal gracz nr " << temporaryPlayers[i].getPlayerNumber() << ". (" << temporaryPlayers[i].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[i].getPoints() << endl;
+			place = i + 1;
+		}
 	}	
+
+	if (temporaryPlayers[_numberOfPlayers - 1].getPoints() == temporaryPlayers[_numberOfPlayers - 2].getPoints())
+	{
+		cout << place + 1 << ". miejsce zajal ex aequo gracz nr " << temporaryPlayers[_numberOfPlayers - 1].getPlayerNumber() << ". (" << temporaryPlayers[_numberOfPlayers - 1].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[_numberOfPlayers - 1].getPoints() << endl;
+	}
+	else
+	{
+		cout << _numberOfPlayers << ". miejsce zajal gracz nr " << temporaryPlayers[_numberOfPlayers - 1].getPlayerNumber() << ". (" << temporaryPlayers[_numberOfPlayers - 1].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[_numberOfPlayers - 1].getPoints() << endl;
+	}
 
 	_getch();
 
