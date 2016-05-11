@@ -74,6 +74,10 @@ void Round::checkWords()
 			{
 				addPoints(0,j);
 			}
+			else if (_words[j][i][0] != _character)
+			{
+				addPoints(0, j);
+			}
 			else
 			{
 				bool equal = false;
