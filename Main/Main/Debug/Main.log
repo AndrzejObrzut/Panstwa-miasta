@@ -1,4 +1,5 @@
-﻿  Main.cpp
+﻿  WindowView.cpp
+  Main.cpp
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(18): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(44): error C2374: 'text': redefinition; multiple initialization
-  c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(42): note: see declaration of 'text'
+  Generating Code...
+  Main.vcxproj -> C:\Users\PiotrWin\Documents\GitHub\Panstwa-miasta\Main\Debug\Main.exe

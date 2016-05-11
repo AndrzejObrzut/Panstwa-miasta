@@ -27,22 +27,8 @@ int main()
 	//	menu.runMenu();
 	//}
 
-	//sf::RenderWindow window(sf::VideoMode(1024, 768), "Panstwa Miasta");
-
-	//window.clear(sf::Color(56, 134, 185, 255));
-
 	WindowView window(1024, 768, "Panstwa Miasta");
-	window.setColor(sf::Color(56, 134, 185, 255));
-
-	sf::Font font;
-	if (!font.loadFromFile("vgafix.fon")) {
-		cout << "Can not fund the font file" << endl;
- 	}
-
-	sf::String sentence;
-	sf::Text text(sentence, font, 40);
-	text.setColor(sf::Color(255, 255, 255));
-	text.setStyle(sf::Text::Bold);
+	window.clear(sf::Color(56, 134, 185, 255));
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -51,7 +37,6 @@ int main()
 				window.close();
 			}
 		}
-
 		window.display();
 	}
 

@@ -8,9 +8,9 @@ WindowView::WindowView()
 	//sf::RenderWindow(win)
 }
 
-WindowView::WindowView(int height, int width, sf::String title)
+WindowView::WindowView(int height, int width, sf::String title) : sf::RenderWindow(sf::VideoMode(height, width), title)
 {
-	sf::RenderWindow(sf::VideoMode(height, width), title);
+
 }
 
 WindowView::~WindowView()
