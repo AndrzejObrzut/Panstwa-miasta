@@ -26,6 +26,7 @@ void Game::setPlayersNames()
 		string name;
 		cin >> name;
 		_players[i].setPlayerName(name);
+		_players[i].setPlayerNumber(i + 1);
 	}
 }
 
@@ -108,14 +109,14 @@ void Game::playGame()
 		{
 			cout << "Gracz nr " << i + 1 << " posiada " << _players[i].checkAmountOfPoints() << " punktow" << endl;
 		}
-		_getch();
+		
 
 		/*
 		Po zakoñczeniu rund wszystkich graczy pytamy czy kontynuowac gre.
 		Je¿eli naciœniemy 'y' zostaje wylosowana nowa litera i gracze zaczynaja nowa runde.
 		Po wyjœciu z gry trzeba bedzie wyswietlic zwyciezce i punkty wszystkich graczy.
 		*/
-		system("cls");
+		
 		cout << "Kontynuowac gre? <y/n>" << endl;
 		char choose;
 		do
@@ -133,6 +134,48 @@ void Game::playGame()
 			continueGame = false;
 		}
 	} while (continueGame);
+
+
+	system("cls");
+	Player * temporary = new Player[_numberOfPlayers];
+
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		temporary[i].setPoints(-1);
+	}
+
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		bool inPlace = false;
+		for (int j = 0; j < _numberOfPlayers; j++)
+		{
+			if (_players[i].checkAmountOfPoints() > temporary[j].checkAmountOfPoints())
+			{
+				for (int k = j; k < _numberOfPlayers; k++)
+				{
+					temporary[j + 1] = temporary[j];
+				}
+				temporary[j] = _players[i];
+				inPlace = true;
+				break;
+			}
+		}
+
+		if (!inPlace)
+		{
+			temporary[_numberOfPlayers - 1] = _players[i];
+		}
+	}
+
+	cout << "Wygaral gracz nr " << temporary[0].getPlayerNumber() << ". (" << temporary[0].getPlayerName() << "). Ilosc punktow " << temporary[0].checkAmountOfPoints() << ". Gratulacje :)" << endl;
+
+	for (int i = 1; i < _numberOfPlayers; i++)
+	{
+		cout << i + 1 << ". miejsce zajal gracz nr " << temporary[i].getPlayerNumber() << ". (" << temporary[i].getPlayerName() << "). Ilosc punktow " << temporary[i].checkAmountOfPoints() << endl;
+	}	
+
+	_getch();
+
 }
 
 void Game::addPoints(int numberOfPlayer, int amountOfPoints)
