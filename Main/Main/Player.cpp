@@ -123,7 +123,7 @@ void Player::setPoints(int points)
 	_amountOfPoints = points;
 }
 
-int Player::checkAmountOfPoints()
+int Player::getPoints()
 {
 	return _amountOfPoints;
 }
