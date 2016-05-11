@@ -107,7 +107,7 @@ void Game::playGame()
 		
 		for (int i = 0; i < _numberOfPlayers; i++)
 		{
-			cout << "Gracz nr " << i + 1 << " posiada " << _players[i].checkAmountOfPoints() << " punktow" << endl;
+			cout << "Gracz nr " << i + 1 << " posiada " << _players[i].getPoints() << " punktow" << endl;
 		}
 		
 
@@ -137,41 +137,61 @@ void Game::playGame()
 
 
 	system("cls");
-	Player * temporary = new Player[_numberOfPlayers];
+	Player * temporaryPlayers = new Player[_numberOfPlayers];
+
 
 	for (int i = 0; i < _numberOfPlayers; i++)
 	{
-		temporary[i].setPoints(-1);
+		temporaryPlayers[i] = _players[i];
 	}
 
-	for (int i = 0; i < _numberOfPlayers; i++)
+	bool continueLoop = true;
+	do
 	{
-		bool inPlace = false;
-		for (int j = 0; j < _numberOfPlayers; j++)
+		continueLoop = false;
+		for (int i = 1; i < _numberOfPlayers; i++)
 		{
-			if (_players[i].checkAmountOfPoints() > temporary[j].checkAmountOfPoints())
+			if (temporaryPlayers[i - 1].getPoints() < temporaryPlayers[i].getPoints())
 			{
-				for (int k = j; k < _numberOfPlayers; k++)
-				{
-					temporary[j + 1] = temporary[j];
-				}
-				temporary[j] = _players[i];
-				inPlace = true;
-				break;
+				swap(temporaryPlayers[i - 1], temporaryPlayers[i]);
+				continueLoop = true;
 			}
 		}
+	} while (continueLoop);
 
-		if (!inPlace)
-		{
-			temporary[_numberOfPlayers - 1] = _players[i];
-		}
+
+
+
+
+	int place = 0;
+
+	if (temporaryPlayers[0].getPoints() != temporaryPlayers[1].getPoints())
+	{
+		cout << "Wygaral gracz nr " << temporaryPlayers[0].getPlayerNumber() << ". (" << temporaryPlayers[0].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[0].getPoints() << ". Gratulacje :)" << endl;
 	}
-
-	cout << "Wygaral gracz nr " << temporary[0].getPlayerNumber() << ". (" << temporary[0].getPlayerName() << "). Ilosc punktow " << temporary[0].checkAmountOfPoints() << ". Gratulacje :)" << endl;
+	else
+	{
+		cout << "Mamy remis!" << endl;
+		cout << "Wygarali gracze nr " << endl;
+		cout << temporaryPlayers[0].getPlayerNumber() << ". (" << temporaryPlayers[0].getPlayerName() << ")." << endl;
+		bool inLoop = true;
+		int i = 1;
+		do 
+		{
+			inLoop = false;
+			if (temporaryPlayers[i].getPoints() == temporaryPlayers[i - 1].getPoints())
+			{
+				cout << temporaryPlayers[i].getPlayerNumber() << ". (" << temporaryPlayers[i].getPlayerName() << ")." << endl;
+				inLoop = true;
+			}
+			i++;
+		} while (inLoop);
+		cout << "Ilosc punktow " << temporaryPlayers[0].getPoints() << ". Gratulacje :)" << endl;
+	}
 
 	for (int i = 1; i < _numberOfPlayers; i++)
 	{
-		cout << i + 1 << ". miejsce zajal gracz nr " << temporary[i].getPlayerNumber() << ". (" << temporary[i].getPlayerName() << "). Ilosc punktow " << temporary[i].checkAmountOfPoints() << endl;
+		cout << i + 1 << ". miejsce zajal gracz nr " << temporaryPlayers[i].getPlayerNumber() << ". (" << temporaryPlayers[i].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[i].getPoints() << endl;
 	}	
 
 	_getch();
