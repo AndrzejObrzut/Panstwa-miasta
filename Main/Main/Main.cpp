@@ -27,6 +27,8 @@ int main()
 	//	menu.runMenu();
 	//}
 
+	
+
 	WindowView window(1024, 768, "Panstwa Miasta");
 	window.clear(sf::Color(56, 134, 185, 255));
 
