@@ -21,8 +21,8 @@ private:
 
 public:
 	Game();
-	Game(int numberOfRounds, int numberOfPlayers);
-	void createPlayers(int numberOfPlayers);
+	Game(const int &numberOfRounds,const int &numberOfPlayers);
+	void createPlayers(const int &numberOfPlayers);
 	void setPlayersNames();
 	void getPlayersNames() const;
 	void playGame();

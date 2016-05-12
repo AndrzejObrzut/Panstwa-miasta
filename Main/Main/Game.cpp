@@ -6,17 +6,19 @@ Game::Game()
 {
 }
 
-Game::Game(int numberOfRounds, int numberOfPlayers) : _numberOfRounds(numberOfRounds), _numberOfPlayers(numberOfPlayers)
+Game::Game(const int & numberOfRounds, const int & numberOfPlayers) : _numberOfRounds(numberOfRounds), _numberOfPlayers(numberOfPlayers)
 {
 }
 
-void Game::createPlayers(int numberOfPlayers)
+
+void Game::createPlayers(const int & numberOfPlayers)
 {
 	_numberOfPlayers = numberOfPlayers;
 	_players = new Player[_numberOfPlayers];
 	_words = new string*[_numberOfPlayers];
 	_result = new int[_numberOfPlayers];
 }
+
 
 void Game::setPlayersNames()
 {
