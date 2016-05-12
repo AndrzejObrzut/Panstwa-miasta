@@ -18,13 +18,13 @@ public:
 	WordsOfPlayer();
 	void initializeWords();
 	void setCountry(string country);
-	string getCountry();
+	string getCountry() const;
 	void setCity(string city);
-	string getCity();
+	string getCity() const;
 	void setThing(string thing);
-	string getThing();
+	string getThing() const;
 	void setPlant(string plant);
-	string getPlant();
+	string getPlant() const;
 	~WordsOfPlayer();
 };
 

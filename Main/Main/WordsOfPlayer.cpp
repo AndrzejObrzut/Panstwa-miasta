@@ -20,7 +20,7 @@ void WordsOfPlayer::setCountry(string country)
 	_country = country;
 }
 
-string WordsOfPlayer::getCountry()
+string WordsOfPlayer::getCountry() const
 {
 	return _country;
 }
@@ -31,7 +31,7 @@ void WordsOfPlayer::setCity(string city)
 	_city = city;
 }
 
-string WordsOfPlayer::getCity()
+string WordsOfPlayer::getCity() const
 {
 	return _city;
 }
@@ -42,7 +42,7 @@ void WordsOfPlayer::setThing(string thing)
 	_thing = thing;
 }
 
-string WordsOfPlayer::getThing()
+string WordsOfPlayer::getThing() const
 {
 	return _thing;
 }
@@ -53,7 +53,7 @@ void WordsOfPlayer::setPlant(string plant)
 	_plant = plant;
 }
 
-string WordsOfPlayer::getPlant()
+string WordsOfPlayer::getPlant() const
 {
 	return _plant;
 }
