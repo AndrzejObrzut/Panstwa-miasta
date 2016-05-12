@@ -51,6 +51,40 @@ Player::Player()
 {
 }
 
+Player::Player(const Player & source)
+{
+	_playerNumber = source._playerNumber;
+	_playerName = source._playerName;
+	_amountOfPoints = source._amountOfPoints;
+	_character = source._character;
+	_wordsOfPlayer = source._wordsOfPlayer;
+	int i = 0;
+	for (auto s : _words)
+	{
+		_words[i] = source._words[i];
+		i++;
+	}
+}
+
+Player & Player::operator=(const Player & source)
+{
+	if (this != &source)
+	{
+		_playerNumber = source._playerNumber;
+		_playerName = source._playerName;
+		_amountOfPoints = source._amountOfPoints;
+		_character = source._character;
+		_wordsOfPlayer = source._wordsOfPlayer;
+		int i = 0;
+		for (auto s : _words)
+		{
+			_words[i] = source._words[i];
+			i++;
+		}
+	}
+	return *this;
+}
+
 void Player::setPlayerNumber(int number)
 {
 	_playerNumber = number;

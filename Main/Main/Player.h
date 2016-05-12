@@ -19,6 +19,8 @@ private:
 
 public:
 	Player();
+	Player(const Player &source);
+	Player& Player::operator=(const Player &source);
 	void setPlayerNumber(int number);
 	int getPlayerNumber();
 	void setPlayerName(string name);
