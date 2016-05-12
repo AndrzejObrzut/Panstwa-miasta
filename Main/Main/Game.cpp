@@ -30,7 +30,7 @@ void Game::setPlayersNames()
 	}
 }
 
-void Game::getPlayersNames()
+void Game::getPlayersNames() const
 {
 	for (int i = 0; i < _numberOfPlayers; i++)
 	{
@@ -235,7 +235,7 @@ void Game::setNumberOfRounds(int number)
 	_numberOfRounds = number;
 }
 
-int Game::getNumberOfRounds()
+int Game::getNumberOfRounds() const
 {
 	return _numberOfRounds;
 }

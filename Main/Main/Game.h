@@ -24,12 +24,12 @@ public:
 	Game(int numberOfRounds, int numberOfPlayers);
 	void createPlayers(int numberOfPlayers);
 	void setPlayersNames();
-	void getPlayersNames();
+	void getPlayersNames() const;
 	void playGame();
 	void addPoints(int numberOfPlayer, int amountOfPoints);
 	void endGame();
 	void setNumberOfRounds(int number);
-	int getNumberOfRounds();
+	int getNumberOfRounds() const;
 	~Game();
 
 };
