@@ -26,6 +26,9 @@
     <ClCompile Include="WindowView.cpp">
       <Filter>Views</Filter>
     </ClCompile>
+    <ClCompile Include="ButtonView.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -53,6 +56,9 @@
       <Filter>Views</Filter>
     </ClInclude>
     <ClInclude Include="WindowView.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonView.h">
       <Filter>Views</Filter>
     </ClInclude>
   </ItemGroup>

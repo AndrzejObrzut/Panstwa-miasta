@@ -10,11 +10,11 @@ private:
 	bool hiden;
 	bool state;
 
-	bool checkSpriteImage(sf::String path);
+	sf::Texture loadTexture(sf::String path);
 protected:
 public:
 	ButtonView();
-	ButtonView(sf::String normal, sf::String clicked, bool state, sf::Vector2f position);
+	ButtonView(sf::String normalImagePath, sf::String clickedImagePath, bool state, sf::Vector2f position);
 	~ButtonView();
 
 	void setState(bool state);

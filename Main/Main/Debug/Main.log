@@ -1,5 +1,2 @@
-﻿  WindowView.cpp
-  Main.cpp
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(18): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Generating Code...
+﻿  ButtonView.cpp
   Main.vcxproj -> C:\Users\PiotrWin\Documents\GitHub\Panstwa-miasta\Main\Debug\Main.exe
