@@ -12,7 +12,6 @@ class Round
 {
 private:
 	int _duration;
-	int *_points;
 	int _whichPlayer;
 	char _character;
 	vector <char> _characters;

@@ -138,4 +138,5 @@ void Round::addPoints(int points, int numberOfPlayer)
 
 Round::~Round()
 {
+	delete _words;
 }
