@@ -194,7 +194,7 @@ void Game::playGame()
 
 	for (int i = place; i < _numberOfPlayers - 1; i++)
 	{
-		if (temporaryPlayers[i].getPoints() == temporaryPlayers[i + 1].getPoints())
+		if (temporaryPlayers[i].getPoints() == temporaryPlayers[i + 1].getPoints() || temporaryPlayers[i].getPoints() == temporaryPlayers[i - 1].getPoints())
 		{
 			cout << place + 1 << ". miejsce zajal ex aequo gracz nr " << temporaryPlayers[i].getPlayerNumber() << ". (" << temporaryPlayers[i].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[i].getPoints() << endl;
 		}
@@ -205,13 +205,16 @@ void Game::playGame()
 		}
 	}	
 
-	if (temporaryPlayers[_numberOfPlayers - 1].getPoints() == temporaryPlayers[_numberOfPlayers - 2].getPoints())
+	if (temporaryPlayers[_numberOfPlayers - 1].getPoints() != temporaryPlayers[0].getPoints())
 	{
-		cout << place + 1 << ". miejsce zajal ex aequo gracz nr " << temporaryPlayers[_numberOfPlayers - 1].getPlayerNumber() << ". (" << temporaryPlayers[_numberOfPlayers - 1].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[_numberOfPlayers - 1].getPoints() << endl;
-	}
-	else
-	{
-		cout << _numberOfPlayers << ". miejsce zajal gracz nr " << temporaryPlayers[_numberOfPlayers - 1].getPlayerNumber() << ". (" << temporaryPlayers[_numberOfPlayers - 1].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[_numberOfPlayers - 1].getPoints() << endl;
+		if (temporaryPlayers[_numberOfPlayers - 1].getPoints() == temporaryPlayers[_numberOfPlayers - 2].getPoints())
+		{
+			cout << place + 1 << ". miejsce zajal ex aequo gracz nr " << temporaryPlayers[_numberOfPlayers - 1].getPlayerNumber() << ". (" << temporaryPlayers[_numberOfPlayers - 1].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[_numberOfPlayers - 1].getPoints() << endl;
+		}
+		else
+		{
+			cout << _numberOfPlayers << ". miejsce zajal gracz nr " << temporaryPlayers[_numberOfPlayers - 1].getPlayerNumber() << ". (" << temporaryPlayers[_numberOfPlayers - 1].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[_numberOfPlayers - 1].getPoints() << endl;
+		}
 	}
 
 	_getch();
@@ -241,4 +244,6 @@ int Game::getNumberOfRounds()
 Game::~Game()
 {
 	delete[] _players;
+	delete _result;
+	delete _words;
 }
