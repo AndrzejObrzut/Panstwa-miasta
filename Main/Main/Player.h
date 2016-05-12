@@ -21,9 +21,9 @@ public:
 	Player();
 	Player(const Player &source);
 	Player& Player::operator=(const Player &source);
-	void setPlayerNumber(int number);
+	void setPlayerNumber(const int &number);
 	int getPlayerNumber() const;
-	void setPlayerName(string name);
+	void setPlayerName(const string &name);
 	string getPlayerName() const;
 	void playRound(char character);
 	void continuePlayingRound();

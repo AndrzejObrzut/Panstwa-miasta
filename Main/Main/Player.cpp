@@ -85,17 +85,18 @@ Player & Player::operator=(const Player & source)
 	return *this;
 }
 
-void Player::setPlayerNumber(int number)
+void Player::setPlayerNumber(const int & number)
 {
 	_playerNumber = number;
 }
+
 
 int Player::getPlayerNumber() const
 {
 	return _playerNumber;
 }
 
-void Player::setPlayerName(string name)
+void Player::setPlayerName(const string & name)
 {
 	_playerName = name;
 }
