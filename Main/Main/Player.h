@@ -25,11 +25,11 @@ public:
 	int getPlayerNumber() const;
 	void setPlayerName(const string &name);
 	string getPlayerName() const;
-	void playRound(char character);
+	void playRound(const char &character);
 	void continuePlayingRound();
 	string * getWords();
-	void addPoints(int amountOfPoints);
-	void setPoints(int points);
+	void addPoints(const int &amountOfPoints);
+	void setPoints(const int &points);
 	int getPoints() const;
 	~Player();
 };

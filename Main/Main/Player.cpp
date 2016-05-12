@@ -106,7 +106,7 @@ string Player::getPlayerName() const
 	return _playerName;
 }
 
-void Player::playRound(char character)
+void Player::playRound(const char & character)
 {
 	_wordsOfPlayer.initializeWords();
 	_character = character;
@@ -122,6 +122,7 @@ void Player::playRound(char character)
 	option = _getch();
 	menuOfWords(option);
 }
+
 
 void Player::continuePlayingRound()
 {
@@ -147,13 +148,12 @@ string * Player::getWords()
 	return &_words[0];
 }
 
-
-void Player::addPoints(int amountOfPoints)
+void Player::addPoints(const int & amountOfPoints)
 {
 	_amountOfPoints += amountOfPoints;
 }
 
-void Player::setPoints(int points)
+void Player::setPoints(const int & points)
 {
 	_amountOfPoints = points;
 }
