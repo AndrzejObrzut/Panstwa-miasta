@@ -90,7 +90,7 @@ void Player::setPlayerNumber(int number)
 	_playerNumber = number;
 }
 
-int Player::getPlayerNumber()
+int Player::getPlayerNumber() const
 {
 	return _playerNumber;
 }
@@ -100,7 +100,7 @@ void Player::setPlayerName(string name)
 	_playerName = name;
 }
 
-string Player::getPlayerName()
+string Player::getPlayerName() const
 {
 	return _playerName;
 }
@@ -157,7 +157,7 @@ void Player::setPoints(int points)
 	_amountOfPoints = points;
 }
 
-int Player::getPoints()
+int Player::getPoints() const
 {
 	return _amountOfPoints;
 }

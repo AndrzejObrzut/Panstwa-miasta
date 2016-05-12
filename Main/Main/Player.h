@@ -22,15 +22,15 @@ public:
 	Player(const Player &source);
 	Player& Player::operator=(const Player &source);
 	void setPlayerNumber(int number);
-	int getPlayerNumber();
+	int getPlayerNumber() const;
 	void setPlayerName(string name);
-	string getPlayerName();
+	string getPlayerName() const;
 	void playRound(char character);
 	void continuePlayingRound();
 	string * getWords();
 	void addPoints(int amountOfPoints);
 	void setPoints(int points);
-	int getPoints();
+	int getPoints() const;
 	~Player();
 };
 
