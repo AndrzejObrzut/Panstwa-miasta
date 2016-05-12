@@ -46,7 +46,7 @@ char Round::selectTheRandomLetter()
 	return _character;
 }
 
-void Round::waitingForPlayer(int number, string name)
+void Round::waitingForPlayer(const int & number, const string & name) const
 {
 	system("cls");
 	cout << "Runda gracza nr " << number + 1 << " (" << name << ")" << endl;

@@ -22,7 +22,7 @@ private:
 public:
 	Round();
 	char selectTheRandomLetter();
-	void waitingForPlayer(int number, string name);
+	void waitingForPlayer(const int &number,const string &name) const;
 	void endTheRound();
 	void checkWords();
 	int * calculatePoints(string ** words, int numberOfPLayers);
