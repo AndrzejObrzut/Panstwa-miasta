@@ -9,7 +9,7 @@ ButtonView::ButtonView()
 
 }
 
-ButtonView::ButtonView(sf::String normalImagePath, sf::String clickedImagePath, bool state, sf::Vector2f position)
+ButtonView::ButtonView(sf::String& normalImagePath, sf::String& clickedImagePath, bool state, sf::Vector2f& position)
 {
 	normal = loadTexture(normalImagePath);
 	clicked = loadTexture(clickedImagePath);

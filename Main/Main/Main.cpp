@@ -28,24 +28,17 @@ int main()
 	//	menu.runMenu();
 	//}
 
-	
-
-	WindowView window(1024, 768, "Panstwa Miasta");
+	int width = 1024;
+	int height = 768;
+	sf::String title("Panstwa Miasta");
+	sf::VideoMode size(width, height);
+	sf::RenderWindow window(size, title);
 	window.clear(sf::Color(56, 134, 185, 255));
 
-	ButtonView button("image/SinglePlayer.png", "image/SinglePlayer.png", true, sf::Vector2f(500,500));
-
-	//sf::Texture texture;
-
-	//if (!texture.loadFromFile("image/SinglePlayer.png")) {
-	//	cout << "Error while loading image";
-	//}
-
-	//sf::Sprite sprite;
-	//sprite.setTexture(texture);
-	//sprite.setPosition(sf::Vector2f(10, 50));
-
-
+	sf::String singlePlayerPath("image/SinglePlayer.png");
+	sf::String singlePlayerClickedPath("image/SinglePlayer.png");
+	sf::Vector2f singlePlayerButtonPosition(width * 0.5, height * 0.25);
+	ButtonView singlePlayerButton(singlePlayerPath, singlePlayerClickedPath, true, singlePlayerButtonPosition);
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -54,7 +47,7 @@ int main()
 				window.close();
 			}
 		}
-		window.draw(button);
+		window.draw(singlePlayerButton);
 		window.display();
 	}
 
