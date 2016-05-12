@@ -26,9 +26,9 @@ public:
 	void setPlayersNames();
 	void getPlayersNames() const;
 	void playGame();
-	void addPoints(int numberOfPlayer, int amountOfPoints);
+	void addPoints(const int &numberOfPlayer,const int &amountOfPoints);
 	void endGame();
-	void setNumberOfRounds(int number);
+	void setNumberOfRounds(const int &number);
 	int getNumberOfRounds() const;
 	~Game();
 

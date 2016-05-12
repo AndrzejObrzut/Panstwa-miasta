@@ -223,16 +223,17 @@ void Game::playGame()
 
 }
 
-void Game::addPoints(int numberOfPlayer, int amountOfPoints)
+void Game::addPoints(const int & numberOfPlayer, const int & amountOfPoints)
 {
 	_players[numberOfPlayer].addPoints(amountOfPoints);
 }
+
 
 void Game::endGame()
 {
 }
 
-void Game::setNumberOfRounds(int number)
+void Game::setNumberOfRounds(const int & number)
 {
 	_numberOfRounds = number;
 }
