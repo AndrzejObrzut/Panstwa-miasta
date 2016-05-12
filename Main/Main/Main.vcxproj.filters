@@ -23,9 +23,6 @@
     <ClCompile Include="MenuView.cpp">
       <Filter>Views</Filter>
     </ClCompile>
-    <ClCompile Include="WindowView.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
     <ClCompile Include="ButtonView.cpp">
       <Filter>Views</Filter>
     </ClCompile>
@@ -53,9 +50,6 @@
       <Filter>Resource Files</Filter>
     </ClInclude>
     <ClInclude Include="MenuView.h">
-      <Filter>Views</Filter>
-    </ClInclude>
-    <ClInclude Include="WindowView.h">
       <Filter>Views</Filter>
     </ClInclude>
     <ClInclude Include="ButtonView.h">
