@@ -23,10 +23,9 @@ public:
 	Round();
 	char selectTheRandomLetter();
 	void waitingForPlayer(const int &number,const string &name) const;
-	void endTheRound();
-	void checkWords();
-	int * calculatePoints(string ** words, int numberOfPLayers);
-	void addPoints(int points, int numberOfPlayer);
+	void checkWords() const;
+	int * calculatePoints(string ** words, const int &numberOfPlayers);
+	void addPoints(const int &points,const int &numberOfPlayer) const;
 	~Round();
 };
 

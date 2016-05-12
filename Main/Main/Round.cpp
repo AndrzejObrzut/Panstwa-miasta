@@ -55,11 +55,7 @@ void Round::waitingForPlayer(const int & number, const string & name) const
 }
 
 
-void Round::endTheRound()
-{
-}
-
-void Round::checkWords()
+void Round::checkWords() const
 {
 	vector <string> _word;
 	for (int i = 0; i < 4; i++)
@@ -107,7 +103,7 @@ void Round::checkWords()
 	}
 }
 
-int * Round::calculatePoints(string ** words, int numberOfPlayers)
+int * Round::calculatePoints(string ** words, const int & numberOfPlayers)
 {
 	_numberOfPlayers = numberOfPlayers;
 	_words = new string*[numberOfPlayers];
@@ -117,21 +113,22 @@ int * Round::calculatePoints(string ** words, int numberOfPlayers)
 	{
 		_result[i] = 0;
 	}
-	
+
 	for (int i = 0; i < numberOfPlayers; i++)
 	{
 		_words[i] = words[i];
 	}
 
 	checkWords();
-	
+
 	return _result;
 }
 
-void Round::addPoints(int points, int numberOfPlayer)
+void Round::addPoints(const int & points, const int & numberOfPlayer) const
 {
 	_result[numberOfPlayer] += points;
 }
+
 
 
 
