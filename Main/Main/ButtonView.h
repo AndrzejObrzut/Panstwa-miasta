@@ -5,7 +5,7 @@ class ButtonView: public sf::Sprite
 {
 private:
 	sf::Texture normal;
-	sf::Texture clicked;
+	sf::Texture hover;
 	sf::Vector2f position;
 	bool hiden;
 	bool state;
@@ -14,8 +14,8 @@ private:
 protected:
 public:
 	ButtonView();
-	ButtonView(sf::String& normalImagePath, sf::String& clickedImagePath, bool state);
-	ButtonView(sf::String& normalImagePath, sf::String& clickedImagePath, bool state, sf::Vector2f& position);
+	ButtonView(sf::String& normalImagePath, sf::String& hoverImagePath, bool state);
+	ButtonView(sf::String& normalImagePath, sf::String& hoverImagePath, bool state, sf::Vector2f& position);
 	~ButtonView();
 
 	void setState(bool state);
@@ -23,5 +23,7 @@ public:
 
 	sf::Vector2f getPosition();
 	void setPositon(sf::Vector2f postion);
+
+	bool isButtonClicked();
 };
 

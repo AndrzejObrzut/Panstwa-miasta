@@ -9,30 +9,30 @@ ButtonView::ButtonView()
 
 }
 
-ButtonView::ButtonView(sf::String& normalImagePath, sf::String& clickedImagePath, bool state)
+ButtonView::ButtonView(sf::String& normalImagePath, sf::String& hoverImagePath, bool state)
 {
 	normal = loadTexture(normalImagePath);
-	clicked = loadTexture(clickedImagePath);
-	if (state) {
+	hover = loadTexture(hoverImagePath);
+	if (!state) {
 		setTexture(normal);
 	}
 	else {
-		setTexture(clicked);
+		setTexture(hover);
 	}
 
 	state = state;
 	setPosition(position);
 }
 
-ButtonView::ButtonView(sf::String& normalImagePath, sf::String& clickedImagePath, bool state, sf::Vector2f& position)
+ButtonView::ButtonView(sf::String& normalImagePath, sf::String& hoverImagePath, bool state, sf::Vector2f& position)
 {
 	normal = loadTexture(normalImagePath);
-	clicked = loadTexture(clickedImagePath);
+	hover = loadTexture(hoverImagePath);
 	if (state) {
 		setTexture(normal);
 	}
 	else {
-		setTexture(clicked);
+		setTexture(hover);
 	}
 
 	state = state;
@@ -78,4 +78,19 @@ void ButtonView::setPositon(sf::Vector2f postion)
 {
 	position = position;
 	setPosition(position);
+}
+
+bool ButtonView::isButtonClicked() {
+	sf::Mouse mouse;
+	sf::Vector2i mousePos = mouse.getPosition();
+
+	
+	sf::IntRect buttonRect(this->getPosition().x, this->getPosition().y, this->getGlobalBounds().width, this->getGlobalBounds().height);
+
+	if (buttonRect.contains(mousePos)) {
+		state = true;
+		this->setTexture(hover);
+		return true;
+	} 
+	return false;
 }

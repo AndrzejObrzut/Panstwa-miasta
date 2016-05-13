@@ -35,7 +35,7 @@ int main()
 	window.clear(sf::Color(56, 134, 185, 255));
 
 	sf::String singlePlayerButtonPath("image/SinglePlayer.png");
-	sf::String singlePlayerButtonClickedPath("image/SinglePlayer.png");
+	sf::String singlePlayerButtonClickedPath("image/SinglePlayerButtonShadow.png");
 
 
 	const float SINGLE_BUTTON_SCREEN_POS_X = 0.50;

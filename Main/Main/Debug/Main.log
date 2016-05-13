@@ -3,4 +3,8 @@ c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(18): warnin
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(42): warning C4305: 'initializing': truncation from 'double' to 'float'
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(46): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  ButtonView.cpp
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\buttonview.cpp(88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\buttonview.cpp(84): warning C4101: 'mouse': unreferenced local variable
+  Generating Code...
   Main.vcxproj -> C:\Users\PiotrWin\Documents\GitHub\Panstwa-miasta\Main\Debug\Main.exe
