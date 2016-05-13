@@ -8,7 +8,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include <SFML/Graphics.hpp>
-#include "WindowView.h"
 #include "ButtonView.h"
 
 
