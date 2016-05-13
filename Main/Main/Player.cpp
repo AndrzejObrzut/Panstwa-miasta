@@ -51,27 +51,62 @@ Player::Player()
 {
 }
 
-void Player::setPlayerNumber(int number)
+Player::Player(const Player & source)
+{
+	_playerNumber = source._playerNumber;
+	_playerName = source._playerName;
+	_amountOfPoints = source._amountOfPoints;
+	_character = source._character;
+	_wordsOfPlayer = source._wordsOfPlayer;
+	int i = 0;
+	for (auto s : _words)
+	{
+		_words[i] = source._words[i];
+		i++;
+	}
+}
+
+Player & Player::operator=(const Player & source)
+{
+	if (this != &source)
+	{
+		_playerNumber = source._playerNumber;
+		_playerName = source._playerName;
+		_amountOfPoints = source._amountOfPoints;
+		_character = source._character;
+		_wordsOfPlayer = source._wordsOfPlayer;
+		int i = 0;
+		for (auto s : _words)
+		{
+			_words[i] = source._words[i];
+			i++;
+		}
+	}
+	return *this;
+}
+
+void Player::setPlayerNumber(const int & number)
 {
 	_playerNumber = number;
 }
 
-int Player::getPlayerNumber()
+
+int Player::getPlayerNumber() const
 {
 	return _playerNumber;
 }
 
-void Player::setPlayerName(string name)
+void Player::setPlayerName(const string & name)
 {
 	_playerName = name;
 }
 
-string Player::getPlayerName()
+string Player::getPlayerName() const
 {
 	return _playerName;
 }
 
-void Player::playRound(char character)
+void Player::playRound(const char & character)
 {
 	_wordsOfPlayer.initializeWords();
 	_character = character;
@@ -87,6 +122,7 @@ void Player::playRound(char character)
 	option = _getch();
 	menuOfWords(option);
 }
+
 
 void Player::continuePlayingRound()
 {
@@ -112,13 +148,17 @@ string * Player::getWords()
 	return &_words[0];
 }
 
-
-void Player::addPoints(int amountOfPoints)
+void Player::addPoints(const int & amountOfPoints)
 {
 	_amountOfPoints += amountOfPoints;
 }
 
-int Player::checkAmountOfPoints()
+void Player::setPoints(const int & points)
+{
+	_amountOfPoints = points;
+}
+
+int Player::getPoints() const
 {
 	return _amountOfPoints;
 }

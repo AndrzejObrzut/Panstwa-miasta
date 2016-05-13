@@ -19,15 +19,18 @@ private:
 
 public:
 	Player();
-	void setPlayerNumber(int number);
-	int getPlayerNumber();
-	void setPlayerName(string name);
-	string getPlayerName();
-	void playRound(char character);
+	Player(const Player &source);
+	Player& Player::operator=(const Player &source);
+	void setPlayerNumber(const int &number);
+	int getPlayerNumber() const;
+	void setPlayerName(const string &name);
+	string getPlayerName() const;
+	void playRound(const char &character);
 	void continuePlayingRound();
 	string * getWords();
-	void addPoints(int amountOfPoints);
-	int checkAmountOfPoints();
+	void addPoints(const int &amountOfPoints);
+	void setPoints(const int &points);
+	int getPoints() const;
 	~Player();
 };
 

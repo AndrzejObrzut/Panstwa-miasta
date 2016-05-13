@@ -6,17 +6,19 @@ Game::Game()
 {
 }
 
-Game::Game(int numberOfRounds, int numberOfPlayers) : _numberOfRounds(numberOfRounds), _numberOfPlayers(numberOfPlayers)
+Game::Game(const int & numberOfRounds, const int & numberOfPlayers) : _numberOfRounds(numberOfRounds), _numberOfPlayers(numberOfPlayers)
 {
 }
 
-void Game::createPlayers(int numberOfPlayers)
+
+void Game::createPlayers(const int & numberOfPlayers)
 {
 	_numberOfPlayers = numberOfPlayers;
 	_players = new Player[_numberOfPlayers];
 	_words = new string*[_numberOfPlayers];
 	_result = new int[_numberOfPlayers];
 }
+
 
 void Game::setPlayersNames()
 {
@@ -26,10 +28,11 @@ void Game::setPlayersNames()
 		string name;
 		cin >> name;
 		_players[i].setPlayerName(name);
+		_players[i].setPlayerNumber(i + 1);
 	}
 }
 
-void Game::getPlayersNames()
+void Game::getPlayersNames() const
 {
 	for (int i = 0; i < _numberOfPlayers; i++)
 	{
@@ -106,16 +109,16 @@ void Game::playGame()
 		
 		for (int i = 0; i < _numberOfPlayers; i++)
 		{
-			cout << "Gracz nr " << i + 1 << " posiada " << _players[i].checkAmountOfPoints() << " punktow" << endl;
+			cout << "Gracz nr " << i + 1 << " posiada " << _players[i].getPoints() << " punktow" << endl;
 		}
-		_getch();
+		
 
 		/*
 		Po zakoñczeniu rund wszystkich graczy pytamy czy kontynuowac gre.
 		Je¿eli naciœniemy 'y' zostaje wylosowana nowa litera i gracze zaczynaja nowa runde.
 		Po wyjœciu z gry trzeba bedzie wyswietlic zwyciezce i punkty wszystkich graczy.
 		*/
-		system("cls");
+		
 		cout << "Kontynuowac gre? <y/n>" << endl;
 		char choose;
 		do
@@ -133,23 +136,109 @@ void Game::playGame()
 			continueGame = false;
 		}
 	} while (continueGame);
+
+
+	system("cls");
+	Player * temporaryPlayers = new Player[_numberOfPlayers];
+
+
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		temporaryPlayers[i] = _players[i];
+	}
+
+	bool continueLoop = true;
+	do
+	{
+		continueLoop = false;
+		for (int i = 1; i < _numberOfPlayers; i++)
+		{
+			if (temporaryPlayers[i - 1].getPoints() < temporaryPlayers[i].getPoints())
+			{
+				swap(temporaryPlayers[i - 1], temporaryPlayers[i]);
+				continueLoop = true;
+			}
+		}
+	} while (continueLoop);
+
+
+
+
+
+	int place = 0;
+
+	if (temporaryPlayers[0].getPoints() != temporaryPlayers[1].getPoints())
+	{
+		place++;
+		cout << "Wygaral gracz nr " << temporaryPlayers[0].getPlayerNumber() << ". (" << temporaryPlayers[0].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[0].getPoints() << ". Gratulacje :)" << endl;
+	}
+	else
+	{
+		cout << "Mamy remis!" << endl;
+		cout << "Wygarali:" << endl;
+		cout << "gracz nr " << temporaryPlayers[0].getPlayerNumber() << ". (" << temporaryPlayers[0].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[0].getPoints() << endl;
+		
+		bool inLoop = true;
+		int i = 1;
+		do 
+		{
+			place++;
+			inLoop = false;
+			if (temporaryPlayers[i].getPoints() == temporaryPlayers[i - 1].getPoints())
+			{
+				cout << "gracz nr " << temporaryPlayers[i].getPlayerNumber() << ". (" << temporaryPlayers[i].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[i].getPoints() << endl;
+				inLoop = true;
+			}
+			i++;
+		} while (inLoop);
+		cout << "Gratulacje :)" << endl;
+	}
+
+	for (int i = place; i < _numberOfPlayers - 1; i++)
+	{
+		if (temporaryPlayers[i].getPoints() == temporaryPlayers[i + 1].getPoints() || temporaryPlayers[i].getPoints() == temporaryPlayers[i - 1].getPoints())
+		{
+			cout << place + 1 << ". miejsce zajal ex aequo gracz nr " << temporaryPlayers[i].getPlayerNumber() << ". (" << temporaryPlayers[i].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[i].getPoints() << endl;
+		}
+		else
+		{
+			cout << i + 1 << ". miejsce zajal gracz nr " << temporaryPlayers[i].getPlayerNumber() << ". (" << temporaryPlayers[i].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[i].getPoints() << endl;
+			place = i + 1;
+		}
+	}	
+
+	if (temporaryPlayers[_numberOfPlayers - 1].getPoints() != temporaryPlayers[0].getPoints())
+	{
+		if (temporaryPlayers[_numberOfPlayers - 1].getPoints() == temporaryPlayers[_numberOfPlayers - 2].getPoints())
+		{
+			cout << place + 1 << ". miejsce zajal ex aequo gracz nr " << temporaryPlayers[_numberOfPlayers - 1].getPlayerNumber() << ". (" << temporaryPlayers[_numberOfPlayers - 1].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[_numberOfPlayers - 1].getPoints() << endl;
+		}
+		else
+		{
+			cout << _numberOfPlayers << ". miejsce zajal gracz nr " << temporaryPlayers[_numberOfPlayers - 1].getPlayerNumber() << ". (" << temporaryPlayers[_numberOfPlayers - 1].getPlayerName() << "). Ilosc punktow " << temporaryPlayers[_numberOfPlayers - 1].getPoints() << endl;
+		}
+	}
+
+	_getch();
+
 }
 
-void Game::addPoints(int numberOfPlayer, int amountOfPoints)
+void Game::addPoints(const int & numberOfPlayer, const int & amountOfPoints)
 {
 	_players[numberOfPlayer].addPoints(amountOfPoints);
 }
+
 
 void Game::endGame()
 {
 }
 
-void Game::setNumberOfRounds(int number)
+void Game::setNumberOfRounds(const int & number)
 {
 	_numberOfRounds = number;
 }
 
-int Game::getNumberOfRounds()
+int Game::getNumberOfRounds() const
 {
 	return _numberOfRounds;
 }
@@ -158,4 +247,6 @@ int Game::getNumberOfRounds()
 Game::~Game()
 {
 	delete[] _players;
+	delete _result;
+	delete _words;
 }

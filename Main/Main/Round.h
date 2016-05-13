@@ -12,7 +12,6 @@ class Round
 {
 private:
 	int _duration;
-	int *_points;
 	int _whichPlayer;
 	char _character;
 	vector <char> _characters;
@@ -23,11 +22,10 @@ private:
 public:
 	Round();
 	char selectTheRandomLetter();
-	void waitingForPlayer(int number, string name);
-	void endTheRound();
-	void checkWords();
-	int * calculatePoints(string ** words, int numberOfPLayers);
-	void addPoints(int points, int numberOfPlayer);
+	void waitingForPlayer(const int &number,const string &name) const;
+	void checkWords() const;
+	int * calculatePoints(string ** words, const int &numberOfPlayers);
+	void addPoints(const int &points,const int &numberOfPlayer) const;
 	~Round();
 };
 
