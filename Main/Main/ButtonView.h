@@ -6,8 +6,7 @@ class ButtonView: public sf::Sprite
 private:
 	sf::Texture normal;
 	sf::Texture hover;
-	sf::Vector2f position;
-	bool hiden;
+	bool hidden;
 	bool state;
 
 	sf::Texture loadTexture(sf::String path);
@@ -21,9 +20,9 @@ public:
 	void setState(bool state);
 	bool getState();
 
-	sf::Vector2f getPosition();
-	void setPositon(sf::Vector2f postion);
+	void setHidde(bool hidde);
+	bool isHidden();
 
-	bool isButtonClicked();
+	bool isButtonHoverd(sf::Vector2i mousePos);
 };
 

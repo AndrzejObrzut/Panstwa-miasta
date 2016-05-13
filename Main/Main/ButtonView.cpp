@@ -21,7 +21,7 @@ ButtonView::ButtonView(sf::String& normalImagePath, sf::String& hoverImagePath, 
 	}
 
 	state = state;
-	setPosition(position);
+	hidden = false;
 }
 
 ButtonView::ButtonView(sf::String& normalImagePath, sf::String& hoverImagePath, bool state, sf::Vector2f& position)
@@ -36,7 +36,7 @@ ButtonView::ButtonView(sf::String& normalImagePath, sf::String& hoverImagePath, 
 	}
 
 	state = state;
-	position = position;
+	hidden = false;
 	setPosition(position);
 }
 
@@ -69,28 +69,27 @@ bool ButtonView::getState()
 	return state;
 }
 
-sf::Vector2f ButtonView::getPosition() 
+
+void ButtonView::setHidde(bool hidde) 
 {
-	return position;
+	hidden = hidde;
 }
 
-void ButtonView::setPositon(sf::Vector2f postion)
+bool ButtonView::isHidden()
 {
-	position = position;
-	setPosition(position);
+	return hidden;
 }
 
-bool ButtonView::isButtonClicked() {
-	sf::Mouse mouse;
-	sf::Vector2i mousePos = mouse.getPosition();
-
-	
+bool ButtonView::isButtonHoverd(sf::Vector2i mousePos) 
+{
 	sf::IntRect buttonRect(this->getPosition().x, this->getPosition().y, this->getGlobalBounds().width, this->getGlobalBounds().height);
 
-	if (buttonRect.contains(mousePos)) {
-		state = true;
+	if (buttonRect.contains(mousePos)) 
+	{
 		this->setTexture(hover);
 		return true;
-	} 
+	}
+	this->setTexture(normal);
 	return false;
 }
+

@@ -34,18 +34,22 @@ int main()
 	sf::RenderWindow window(size, title);
 	window.clear(sf::Color(56, 134, 185, 255));
 
+
 	sf::String singlePlayerButtonPath("image/SinglePlayer.png");
-	sf::String singlePlayerButtonClickedPath("image/SinglePlayerButtonShadow.png");
-
-
+	sf::String singlePlayerButtonHoverPath("image/SinglePlayerButtonShadow.png");
 	const float SINGLE_BUTTON_SCREEN_POS_X = 0.50;
 	const float SINGLE_BUTTON_SCREEN_POS_Y = 0.60;
-	ButtonView singlePlayerButton(singlePlayerButtonPath, singlePlayerButtonClickedPath, true);
+	ButtonView singlePlayerButton(singlePlayerButtonPath, singlePlayerButtonHoverPath, false);
 	float singleButtonWidth = singlePlayerButton.getGlobalBounds().width;
 	float singleButtonHeight = singlePlayerButton.getGlobalBounds().height;
 	float singlePlayerButtonPosX = windowWidth * SINGLE_BUTTON_SCREEN_POS_X - singleButtonWidth * 0.5;
 	float singlePlayerButtonPosY = windowHeight * SINGLE_BUTTON_SCREEN_POS_Y - singleButtonHeight * 0.5;
 	singlePlayerButton.setPosition(sf::Vector2f(singlePlayerButtonPosX, singlePlayerButtonPosY));
+
+	sf::RectangleShape ttBox;
+	ttBox.setSize(sf::Vector2f(120, 120));
+	ttBox.setFillColor(sf::Color(0, 0, 0, 175));
+	sf::IntRect ttBoxRect(ttBox.getPosition().x, ttBox.getPosition().y, ttBox.getSize().x, ttBox.getSize().y);
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -53,8 +57,22 @@ int main()
 			if (event.type == sf::Event::Closed) {
 				window.close();
 			}
+			if (event.type == sf::Event::MouseMoved) {
+
+
+				sf::Mouse mouse;
+
+				sf::Vector2i mousePos = mouse.getPosition(window);
+				if (singlePlayerButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) {
+					// Remove Sprites form menu, add Single Player sprites
+					singlePlayerButton.setHidde(true);
+					cout << "SINGLE " << singlePlayerButton.isHidden() << endl;
+				}
+			}
 		}
-		window.draw(singlePlayerButton);
+
+		if (!singlePlayerButton.isHidden()) { window.draw(singlePlayerButton); }
+		
 		window.display();
 	}
 
