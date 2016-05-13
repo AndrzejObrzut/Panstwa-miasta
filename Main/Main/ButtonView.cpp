@@ -9,6 +9,21 @@ ButtonView::ButtonView()
 
 }
 
+ButtonView::ButtonView(sf::String& normalImagePath, sf::String& clickedImagePath, bool state)
+{
+	normal = loadTexture(normalImagePath);
+	clicked = loadTexture(clickedImagePath);
+	if (state) {
+		setTexture(normal);
+	}
+	else {
+		setTexture(clicked);
+	}
+
+	state = state;
+	setPosition(position);
+}
+
 ButtonView::ButtonView(sf::String& normalImagePath, sf::String& clickedImagePath, bool state, sf::Vector2f& position)
 {
 	normal = loadTexture(normalImagePath);
@@ -61,5 +76,6 @@ sf::Vector2f ButtonView::getPosition()
 
 void ButtonView::setPositon(sf::Vector2f postion)
 {
+	position = position;
 	setPosition(position);
 }

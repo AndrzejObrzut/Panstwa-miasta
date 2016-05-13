@@ -27,17 +27,25 @@ int main()
 	//	menu.runMenu();
 	//}
 
-	int width = 1024;
-	int height = 768;
+	int windowWidth = 1024;
+	int windowHeight = 768;
 	sf::String title("Panstwa Miasta");
-	sf::VideoMode size(width, height);
+	sf::VideoMode size(windowWidth, windowHeight);
 	sf::RenderWindow window(size, title);
 	window.clear(sf::Color(56, 134, 185, 255));
 
-	sf::String singlePlayerPath("image/SinglePlayer.png");
-	sf::String singlePlayerClickedPath("image/SinglePlayer.png");
-	sf::Vector2f singlePlayerButtonPosition(width * 0.5, height * 0.25);
-	ButtonView singlePlayerButton(singlePlayerPath, singlePlayerClickedPath, true, singlePlayerButtonPosition);
+	sf::String singlePlayerButtonPath("image/SinglePlayer.png");
+	sf::String singlePlayerButtonClickedPath("image/SinglePlayer.png");
+
+
+	const float SINGLE_BUTTON_SCREEN_POS_X = 0.50;
+	const float SINGLE_BUTTON_SCREEN_POS_Y = 0.60;
+	ButtonView singlePlayerButton(singlePlayerButtonPath, singlePlayerButtonClickedPath, true);
+	float singleButtonWidth = singlePlayerButton.getGlobalBounds().width;
+	float singleButtonHeight = singlePlayerButton.getGlobalBounds().height;
+	float singlePlayerButtonPosX = windowWidth * SINGLE_BUTTON_SCREEN_POS_X - singleButtonWidth * 0.5;
+	float singlePlayerButtonPosY = windowHeight * SINGLE_BUTTON_SCREEN_POS_Y - singleButtonHeight * 0.5;
+	singlePlayerButton.setPosition(sf::Vector2f(singlePlayerButtonPosX, singlePlayerButtonPosY));
 
 	while (window.isOpen()) {
 		sf::Event event;

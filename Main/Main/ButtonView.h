@@ -14,6 +14,7 @@ private:
 protected:
 public:
 	ButtonView();
+	ButtonView(sf::String& normalImagePath, sf::String& clickedImagePath, bool state);
 	ButtonView(sf::String& normalImagePath, sf::String& clickedImagePath, bool state, sf::Vector2f& position);
 	~ButtonView();
 

@@ -1,4 +1,6 @@
 ﻿  Main.cpp
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(18): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(42): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(46): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   Main.vcxproj -> C:\Users\PiotrWin\Documents\GitHub\Panstwa-miasta\Main\Debug\Main.exe
