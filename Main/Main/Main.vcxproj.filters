@@ -19,9 +19,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="MenuView.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
     <ClCompile Include="ButtonView.cpp">
       <Filter>Views</Filter>
     </ClCompile>
@@ -50,9 +47,6 @@
     </ClInclude>
     <ClInclude Include="targetver.h">
       <Filter>Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuView.h">
-      <Filter>Views</Filter>
     </ClInclude>
     <ClInclude Include="ButtonView.h">
       <Filter>Views</Filter>

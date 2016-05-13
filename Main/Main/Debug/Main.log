@@ -1,8 +1,9 @@
 ﻿  Main.cpp
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(18): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(41): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(45): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(46): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(52): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(63): warning C4101: 'mouse': unreferenced local variable
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(44): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(49): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(50): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(56): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(60): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(61): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(73): warning C4101: 'mouse': unreferenced local variable
   Main.vcxproj -> C:\Users\PiotrWin\Documents\GitHub\Panstwa-miasta\Main\Debug\Main.exe
