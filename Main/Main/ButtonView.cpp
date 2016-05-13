@@ -72,6 +72,13 @@ bool ButtonView::getState()
 
 void ButtonView::setHidde(bool hidde) 
 {
+	if (hidden) {
+		setColor(sf::Color(0, 255, 0, 0));
+	}
+	else {
+		setTexture(normal);
+	}
+	
 	hidden = hidde;
 }
 

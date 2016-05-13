@@ -64,13 +64,14 @@ int main()
 
 				sf::Vector2i mousePos = mouse.getPosition(window);
 				if (singlePlayerButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) {
-					// Remove Sprites form menu, add Single Player sprites
 					singlePlayerButton.setHidde(true);
 					cout << "SINGLE " << singlePlayerButton.isHidden() << endl;
+					window.clear(sf::Color(56, 134, 185, 255));
 				}
 			}
 		}
 
+		window.clear(sf::Color(56, 134, 185, 255));
 		if (!singlePlayerButton.isHidden()) { window.draw(singlePlayerButton); }
 		
 		window.display();
