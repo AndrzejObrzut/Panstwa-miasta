@@ -63,32 +63,74 @@ int main()
 
 	// SET SINGLE GAME
 
+	sf::String menuButtonPath("image/MenuButton.png");
+	sf::String menuButtonHoverPath("image/MenuButtonShadow.png");
+	const float MENU_BUTTON_SCREEN_POS_X = 0.10;
+	const float MENU_BUTTON_SCREEN_POS_Y = 0.10;
+	ButtonView menuButton(menuButtonPath, menuButtonHoverPath, false);
+	float menuButtonHeight = menuButton.getGlobalBounds().height;
+	float menuButtonWidth = menuButton.getGlobalBounds().width;
+	float menuButtonPosX = windowWidth * MENU_BUTTON_SCREEN_POS_X - menuButtonWidth * 0.5;
+	float menuButtonPosY = windowHeight * MENU_BUTTON_SCREEN_POS_Y - menuButtonHeight * 0.5;
+	menuButton.setPosition(sf::Vector2f(menuButtonPosX, menuButtonPosY));
+
+	std::string textInsert;
+	sf::Text text(textInsert, font, 35);
+	text.setColor(sf::Color(255, 255, 255, 255));
 
 	// HANDLING ACTIONS
-	while (window.isOpen()) {
+	while (window.isOpen()) 
+	{
 		sf::Event event;
-		while (window.pollEvent(event)) {
-			if (event.type == sf::Event::Closed) {
+		while (window.pollEvent(event)) 
+		{
+			if (event.type == sf::Event::Closed)
+			{
 				window.close();
 			}
-			if (event.type == sf::Event::MouseMoved) {
-
-
+			if (event.type == sf::Event::MouseMoved) 
+			{
 				sf::Mouse mouse;
 
 				sf::Vector2i mousePos = mouse.getPosition(window);
-				if (singlePlayerButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) {
+				if (singlePlayerButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) 
+				{
 					singlePlayerButton.setHidde(true);
+					menuButton.setHidde(false);
 					cout << "SINGLE " << singlePlayerButton.isHidden() << endl;
-					window.clear(sf::Color(56, 134, 185, 255));
 				}
+
+				if (menuButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left))
+				{
+					menuButton.setHidde(true);
+					singlePlayerButton.setHidde(false);
+					cout << "Menu button tapped" << endl;
+				}
+			}
+			if (event.type == sf::Event::TextEntered)
+			{
+				if (event.text.unicode >= 32 && event.text.unicode < 126) 
+				{
+					textInsert += (char)event.text.unicode;
+				}
+				else if (event.text.unicode == 8 && textInsert.size() > 0)
+				{
+					textInsert = textInsert.substr(0, textInsert.length() - 1);
+				}
+				text.setString(textInsert);
 			}
 		}
 
 		window.clear(sf::Color(56, 134, 185, 255));
-		if (!singlePlayerButton.isHidden()) { 
-			window.draw(singlePlayerButton); 
+		if (!singlePlayerButton.isHidden()) 
+		{ 
+			window.draw(singlePlayerButton);
 			window.draw(menuLabel);
+		} 
+		else 
+		{
+			window.draw(text);
+			window.draw(menuButton);
 		}
 
 		window.display();

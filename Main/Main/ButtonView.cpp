@@ -76,9 +76,9 @@ void ButtonView::setHidde(bool hidde)
 		setColor(sf::Color(0, 255, 0, 0));
 	}
 	else {
+		cout << "Set normal texture" << endl;
 		setTexture(normal);
 	}
-	
 	hidden = hidde;
 }
 
