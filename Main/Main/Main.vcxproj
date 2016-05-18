@@ -156,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ButtonView.h" />
+    <ClInclude Include="ChoosePlayerScreen.h" />
     <ClInclude Include="cScreen.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="MenuScreen.h" />
@@ -168,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ButtonView.cpp" />
+    <ClCompile Include="ChoosePlayerScreen.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
