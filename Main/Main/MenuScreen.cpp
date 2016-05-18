@@ -87,6 +87,7 @@ int MenuScreen::Run(sf::RenderWindow &App)
 				{
 					//singlePlayerButton.setHidde(true);
 					std::cout << "SINGLE " << singlePlayerButton.isHidden() << std::endl;
+					return (1);
 				}
 				if (exitButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) 
 				{

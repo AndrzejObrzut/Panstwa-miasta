@@ -5,6 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include "cScreen.h"
 #include "MenuScreen.h"
+#include "ChoosePlayerScreen.h"
 
 using namespace std;
 
@@ -22,6 +23,8 @@ int main()
 
 	MenuScreen menu;
 	Screens.push_back(&menu);
+	ChoosePlayerScreen choosePlayer;
+	Screens.push_back(&choosePlayer);
 
 	while (screen >= 0) 
 	{
