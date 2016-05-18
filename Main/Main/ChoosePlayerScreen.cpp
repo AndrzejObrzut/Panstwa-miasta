@@ -39,6 +39,8 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App)
 	std::string firstName;
 	sf::Text firstNameTextField(firstName, font, 35);
 	firstNameTextField.setColor(sf::Color(255, 255, 255, 255));
+	firstNameTextField.setPosition(sf::Vector2f(windowWidth * 0.20 - firstNameTextField.getGlobalBounds().width * 0.5 , windowHeight * 0.20 - firstNameTextField.getGlobalBounds().height
+		* 0.5));
 
 
 	while (running)
