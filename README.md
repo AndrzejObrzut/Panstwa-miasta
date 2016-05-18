@@ -20,3 +20,7 @@ Dla Linker Release:
 * sfml-graphics.lib
 * sfml-window.lib
 * sfml-main.lib
+
+
+Źródła:
+* https://github.com/SFML/SFML/wiki/Tutorial:-Manage-different-Screens
