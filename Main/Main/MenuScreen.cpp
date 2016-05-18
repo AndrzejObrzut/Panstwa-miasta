@@ -7,9 +7,6 @@
 
 MenuScreen::MenuScreen()
 {
-	alpha_div = 3;
-	alpha_max = 3 * 255;
-	playing = false;
 }
 
 
@@ -21,8 +18,6 @@ int MenuScreen::Run(sf::RenderWindow &App)
 {
 	sf::Event event;
 	bool running = true;
-	int alpha = 0;
-	int menu = 0;
 
 	sf::Font font;
 	if (!font.loadFromFile("fonts/arial.ttf")) 
@@ -65,40 +60,35 @@ int MenuScreen::Run(sf::RenderWindow &App)
 	exitButton.setPosition(sf::Vector2f(exitButtonPosX, exitButtonnPosY));
 
 
-	if (playing)
-	{
-		alpha = alpha_max;
-	}
 
 	while (running)
 	{
 		while (App.pollEvent(event))
 		{
-			if (event.type == sf::Event::Closed)
-			{
-				App.close();
-			}
-			if (event.type == sf::Event::MouseMoved)
-			{
-				sf::Mouse mouse;
+			sf::Mouse mouse;
+			sf::Vector2i mousePos = mouse.getPosition(App);
 
-				sf::Vector2i mousePos = mouse.getPosition(App);
+			switch (event.type)
+			{
+			case  sf::Event::Closed:
+				App.close();
+				break;
+			case  sf::Event::MouseMoved:
 				if (singlePlayerButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left))
 				{
 					//singlePlayerButton.setHidde(true);
 					std::cout << "SINGLE " << singlePlayerButton.isHidden() << std::endl;
 					return (1);
 				}
-				if (exitButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) 
+				if (exitButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left))
 				{
 					std::cout << "Exit" << std::endl;
 					return (-1);
 				}
+			default:
+				break;
 			}
-		}
-		if (alpha < alpha_max)
-		{
-			alpha++;
+
 		}
 
 		App.clear(sf::Color(56, 134, 185, 255));
