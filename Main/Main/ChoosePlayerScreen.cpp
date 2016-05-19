@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "ChoosePlayerScreen.h"
 #include "ButtonView.h"
-
+#include "Game.h"
 
 ChoosePlayerScreen::ChoosePlayerScreen()
 {
@@ -12,7 +12,8 @@ ChoosePlayerScreen::~ChoosePlayerScreen()
 {
 }
 
-int ChoosePlayerScreen::Run(sf::RenderWindow & App)
+
+int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 {
 	sf::Event event;
 	bool running = true;
@@ -36,11 +37,19 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App)
 	float backToMenuButtonPosY = windowHeight * BACK_MENU_BUTTON_POS_Y - backToMenuButtonHeight * 0.5;
 	backToMenuButton.setPosition(sf::Vector2f(backToMenuButtonPosX, backToMenuButtonPosY));
 
+	std::string choosePlayerText("Wpisz nazwy graczy");
+	sf::Text choosePlayerLabel(choosePlayerText, font, 50);
+	choosePlayerLabel.setColor(sf::Color(255, 255, 255, 255));
+	float choosePlayerPosX = windowWidth * 0.50 - choosePlayerLabel.getGlobalBounds().width * 0.5;
+	float choosePlayerPosY = windowHeight * 0.10 - choosePlayerLabel.getGlobalBounds().height * 0.5;
+	choosePlayerLabel.setPosition(choosePlayerPosX, choosePlayerPosY);
+
 	std::string firstName;
 	sf::Text firstNameTextField(firstName, font, 35);
 	firstNameTextField.setColor(sf::Color(255, 255, 255, 255));
-	firstNameTextField.setPosition(sf::Vector2f(windowWidth * 0.20 - firstNameTextField.getGlobalBounds().width * 0.5 , windowHeight * 0.20 - firstNameTextField.getGlobalBounds().height
-		* 0.5));
+	float firstNamePosX = windowWidth * 0.20 - firstNameTextField.getGlobalBounds().width * 0.5;
+	float firstNamePosY = windowHeight * 0.20 - firstNameTextField.getGlobalBounds().height * 0.5;
+	firstNameTextField.setPosition(sf::Vector2f(firstNamePosX, firstNamePosY));
 
 
 	while (running)
@@ -82,6 +91,7 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App)
 		}
 		App.clear(sf::Color(56, 134, 185, 255));
 
+		App.draw(choosePlayerLabel);
 		App.draw(backToMenuButton);
 		App.draw(firstNameTextField);
 		App.display();

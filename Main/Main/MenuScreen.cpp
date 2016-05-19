@@ -3,6 +3,7 @@
 #include <iostream>
 #include "MenuScreen.h"
 #include "ButtonView.h"
+#include "Game.h"
 
 
 MenuScreen::MenuScreen()
@@ -14,7 +15,8 @@ MenuScreen::~MenuScreen()
 {
 }
 
-int MenuScreen::Run(sf::RenderWindow &App) 
+
+int MenuScreen::Run(sf::RenderWindow &App, Game &game)
 {
 	sf::Event event;
 	bool running = true;

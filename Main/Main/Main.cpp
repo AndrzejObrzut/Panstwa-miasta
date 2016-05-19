@@ -26,9 +26,11 @@ int main()
 	ChoosePlayerScreen choosePlayer;
 	Screens.push_back(&choosePlayer);
 
+	Game game;
+
 	while (screen >= 0) 
 	{
-		screen = Screens[screen]->Run(App);
+		screen = Screens[screen]->Run(App, game);
 	}
 
 
