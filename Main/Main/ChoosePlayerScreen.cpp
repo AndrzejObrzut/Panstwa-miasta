@@ -38,7 +38,6 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 	backToMenuButton.setPosition(sf::Vector2f(backToMenuButtonPosX, backToMenuButtonPosY));
 
 	const int MAX_PLAYERS = 6;
-	int currentPlayersEnderned = 0;
 	vector<string> players;
 
 	std::string choosePlayerText = "Wpisz nazwe gracza";
@@ -51,8 +50,8 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 	std::string playerName;
 	sf::Text playerNameTextField(playerName, font, 35);
 	playerNameTextField.setColor(sf::Color(255, 255, 255, 255));
-	float playerNamePosX = windowWidth * 0.20 - playerNameTextField.getGlobalBounds().width * 0.5;
-	float playerNamePosY = windowHeight * 0.20 - playerNameTextField.getGlobalBounds().height * 0.5;
+	float playerNamePosX = windowWidth * 0.35 - playerNameTextField.getGlobalBounds().width * 0.5;
+	float playerNamePosY = windowHeight * 0.32 - playerNameTextField.getGlobalBounds().height * 0.5;
 	playerNameTextField.setPosition(sf::Vector2f(playerNamePosX, playerNamePosY));
 
 
@@ -60,14 +59,14 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 	sf::String addPlayerHoverButtonPath("image/AcceptShadow.png");
 	ButtonView addPlayerButton(addPlayerButtonPath, addPlayerHoverButtonPath, false);
 	float addPlayerButtonPosX = windowWidth * 0.70 - addPlayerButton.getGlobalBounds().width * 0.5;
-	float addPlayerButtonPosY = windowHeight * 0.25 - addPlayerButton.getGlobalBounds().height * 0.5;
+	float addPlayerButtonPosY = windowHeight * 0.35 - addPlayerButton.getGlobalBounds().height * 0.5;
 	addPlayerButton.setPosition(addPlayerButtonPosX, addPlayerButtonPosY);
 
-	std::string playerText = "Brak graczy";
-	sf::Text playerLabel(playerText, font, 40);
+	std::string playerText = "Wprowadz nazwy graczy";
+	sf::Text playerLabel(playerText, font, 30);
 	playerLabel.setColor(sf::Color(255, 255, 255, 255));
-	float playerLabelPosX = windowWidth * 0.80 - playerLabel.getGlobalBounds().width * 0.5;
-	float playerLabelPosY = windowHeight * 0.30 - playerLabel.getGlobalBounds().height * 0.5;
+	float playerLabelPosX = windowWidth * 0.50 - playerLabel.getGlobalBounds().width * 0.5;
+	float playerLabelPosY = windowHeight * 0.50 - playerLabel.getGlobalBounds().height * 0.5;
 	playerLabel.setPosition(playerLabelPosX, playerLabelPosY);
 
 
@@ -95,7 +94,21 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 					players.push_back(playerName);
 					playerName = "";
 					playerNameTextField.setString(playerName);
-					currentPlayersEnderned = players.size();
+					playerText = "";
+					for (string name : players)
+					{
+						if (players.size() < MAX_PLAYERS || name != players.back())
+						{
+							playerText += name + " vs ";
+						} 
+						else
+						{
+							playerText += name;					
+						}
+					}
+					playerLabel.setString(playerText);
+					playerLabelPosX = windowWidth * 0.50 - playerLabel.getGlobalBounds().width * 0.5;
+					playerLabel.setPosition(playerLabelPosX, playerLabelPosY);
 				}
 				break;
 			case sf::Event::TextEntered:
@@ -114,16 +127,17 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 			}
 
 		}
-		App.clear(sf::Color(56, 134, 185, 255));
-		if (currentPlayersEnderned > 0) {
-			for (auto name : players) {
 
-			}
-		}
+
+		App.clear(sf::Color(56, 134, 185, 255));	
+		App.draw(playerLabel);
 		App.draw(choosePlayerLabel);
 		App.draw(backToMenuButton);
 		App.draw(playerNameTextField);
-		App.draw(addPlayerButton);
+		if (!addPlayerButton.isHidden())
+		{
+			App.draw(addPlayerButton);
+		}
 		App.display();
 
 	}
