@@ -37,26 +37,44 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 	float backToMenuButtonPosY = windowHeight * BACK_MENU_BUTTON_POS_Y - backToMenuButtonHeight * 0.5;
 	backToMenuButton.setPosition(sf::Vector2f(backToMenuButtonPosX, backToMenuButtonPosY));
 
-	std::string choosePlayerText("Wpisz nazwy graczy");
+	const int MAX_PLAYERS = 6;
+	int currentPlayersEnderned = 0;
+	vector<string> players;
+
+	std::string choosePlayerText = "Wpisz nazwe gracza";
 	sf::Text choosePlayerLabel(choosePlayerText, font, 50);
 	choosePlayerLabel.setColor(sf::Color(255, 255, 255, 255));
 	float choosePlayerPosX = windowWidth * 0.50 - choosePlayerLabel.getGlobalBounds().width * 0.5;
 	float choosePlayerPosY = windowHeight * 0.10 - choosePlayerLabel.getGlobalBounds().height * 0.5;
 	choosePlayerLabel.setPosition(choosePlayerPosX, choosePlayerPosY);
 
-	std::string firstName;
-	sf::Text firstNameTextField(firstName, font, 35);
-	firstNameTextField.setColor(sf::Color(255, 255, 255, 255));
-	float firstNamePosX = windowWidth * 0.20 - firstNameTextField.getGlobalBounds().width * 0.5;
-	float firstNamePosY = windowHeight * 0.20 - firstNameTextField.getGlobalBounds().height * 0.5;
-	firstNameTextField.setPosition(sf::Vector2f(firstNamePosX, firstNamePosY));
+	std::string playerName;
+	sf::Text playerNameTextField(playerName, font, 35);
+	playerNameTextField.setColor(sf::Color(255, 255, 255, 255));
+	float playerNamePosX = windowWidth * 0.20 - playerNameTextField.getGlobalBounds().width * 0.5;
+	float playerNamePosY = windowHeight * 0.20 - playerNameTextField.getGlobalBounds().height * 0.5;
+	playerNameTextField.setPosition(sf::Vector2f(playerNamePosX, playerNamePosY));
+
+
+	sf::String addPlayerButtonPath("image/Accept.png");
+	sf::String addPlayerHoverButtonPath("image/AcceptShadow.png");
+	ButtonView addPlayerButton(addPlayerButtonPath, addPlayerHoverButtonPath, false);
+	float addPlayerButtonPosX = windowWidth * 0.70 - addPlayerButton.getGlobalBounds().width * 0.5;
+	float addPlayerButtonPosY = windowHeight * 0.25 - addPlayerButton.getGlobalBounds().height * 0.5;
+	addPlayerButton.setPosition(addPlayerButtonPosX, addPlayerButtonPosY);
+
+	std::string playerText = "Brak graczy";
+	sf::Text playerLabel(playerText, font, 40);
+	playerLabel.setColor(sf::Color(255, 255, 255, 255));
+	float playerLabelPosX = windowWidth * 0.80 - playerLabel.getGlobalBounds().width * 0.5;
+	float playerLabelPosY = windowHeight * 0.30 - playerLabel.getGlobalBounds().height * 0.5;
+	playerLabel.setPosition(playerLabelPosX, playerLabelPosY);
 
 
 	while (running)
 	{
 		while (App.pollEvent(event))
 		{
-
 			sf::Mouse mouse;
 			sf::Vector2i mousePos = mouse.getPosition(App);
 
@@ -72,17 +90,24 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 					std::cout << "Back to menu" << std::endl;
 					return (0);
 				}
+				if (addPlayerButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left) && playerName.size() > 0) {
+					std::cout << "add Player " << playerName << std::endl;
+					players.push_back(playerName);
+					playerName = "";
+					playerNameTextField.setString(playerName);
+					currentPlayersEnderned = players.size();
+				}
 				break;
 			case sf::Event::TextEntered:
 				if (event.text.unicode >= 32 && event.text.unicode < 126)
 				{
-					firstName += (char)event.text.unicode;
+					playerName += (char)event.text.unicode;
 				}
-				else if (event.text.unicode == 8 && firstName.size() > 0) 
+				else if (event.text.unicode == 8 && playerName.size() > 0)
 				{
-					firstName = firstName.substr(0, firstName.length() - 1);
+					playerName = playerName.substr(0, playerName.length() - 1);
 				}
-				firstNameTextField.setString(firstName);
+				playerNameTextField.setString(playerName);
 				break;
 			default:
 				break;
@@ -90,11 +115,17 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 
 		}
 		App.clear(sf::Color(56, 134, 185, 255));
+		if (currentPlayersEnderned > 0) {
+			for (auto name : players) {
 
+			}
+		}
 		App.draw(choosePlayerLabel);
 		App.draw(backToMenuButton);
-		App.draw(firstNameTextField);
+		App.draw(playerNameTextField);
+		App.draw(addPlayerButton);
 		App.display();
+
 	}
 	return (-1);
 }
