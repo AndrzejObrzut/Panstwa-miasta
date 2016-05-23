@@ -116,7 +116,7 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 				}
 				break;
 			case sf::Event::TextEntered:
-				if (event.text.unicode >= 32 && event.text.unicode < 126 && playerName.size() < 17)
+				if (event.text.unicode >= 32 && event.text.unicode < 126 && playerName.size() < 18)
 				{
 					playerName += (char)event.text.unicode;
 				}

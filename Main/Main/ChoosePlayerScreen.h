@@ -6,6 +6,12 @@
 
 class ChoosePlayerScreen: public cScreen
 {
+private:
+	sf::Font font;
+	sf::RectangleShape textFieldRect;
+	std::string playerName;
+	sf::Text textField;
+	void setTextField();
 public:
 	ChoosePlayerScreen();
 	~ChoosePlayerScreen();

@@ -5,6 +5,8 @@
 class cScreen
 {
 public:
+	int windowWidth;
+	int windowHeight;
 	virtual int Run(sf::RenderWindow &App, Game &Game) = 0;
 };
 
