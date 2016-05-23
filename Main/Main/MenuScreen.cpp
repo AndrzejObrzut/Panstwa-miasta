@@ -23,9 +23,7 @@ int MenuScreen::Run(sf::RenderWindow &App, Game &game)
 
 	sf::Font font;
 	if (!font.loadFromFile("fonts/arial.ttf")) 
-	{ 
 		std::cerr << "Problem with loading fonts" << std::endl; 
-	}
 
 	const float MENU_LABEL_SCREEN_POS_X = 0.50;
 	const float MENU_LABEL_SCREEN_POS_Y = 0.30;
@@ -77,16 +75,11 @@ int MenuScreen::Run(sf::RenderWindow &App, Game &game)
 				break;
 			case  sf::Event::MouseMoved:
 				if (singlePlayerButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left))
-				{
-					//singlePlayerButton.setHidde(true);
-					std::cout << "SINGLE " << singlePlayerButton.isHidden() << std::endl;
 					return (1);
-				}
+		
 				if (exitButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left))
-				{
-					std::cout << "Exit" << std::endl;
 					return (-1);
-				}
+				
 			default:
 				break;
 			}
