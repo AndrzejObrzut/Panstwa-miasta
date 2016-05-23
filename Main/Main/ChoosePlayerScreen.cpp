@@ -47,13 +47,17 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 	float choosePlayerPosY = windowHeight * 0.10 - choosePlayerLabel.getGlobalBounds().height * 0.5;
 	choosePlayerLabel.setPosition(choosePlayerPosX, choosePlayerPosY);
 
+
 	std::string playerName;
 	sf::Text playerNameTextField(playerName, font, 35);
+	playerNameTextField.setColor(sf::Color::Black);
 	playerNameTextField.setColor(sf::Color(255, 255, 255, 255));
 	float playerNamePosX = windowWidth * 0.35 - playerNameTextField.getGlobalBounds().width * 0.5;
 	float playerNamePosY = windowHeight * 0.32 - playerNameTextField.getGlobalBounds().height * 0.5;
 	playerNameTextField.setPosition(sf::Vector2f(playerNamePosX, playerNamePosY));
 
+	sf::RectangleShape rectangle(sf::Vector2f(300, 40));
+	rectangle.setPosition(sf::Vector2f(playerNamePosX, playerNamePosY));
 
 	sf::String addPlayerButtonPath("image/Accept.png");
 	sf::String addPlayerHoverButtonPath("image/AcceptShadow.png");
@@ -121,6 +125,7 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 					playerName = playerName.substr(0, playerName.length() - 1);
 				}
 				playerNameTextField.setString(playerName);
+				playerNameTextField.setColor(sf::Color::Black);
 				break;
 			default:
 				break;
@@ -130,6 +135,7 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 
 
 		App.clear(sf::Color(56, 134, 185, 255));	
+		App.draw(rectangle);
 		App.draw(playerLabel);
 		App.draw(choosePlayerLabel);
 		App.draw(backToMenuButton);

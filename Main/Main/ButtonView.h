@@ -9,7 +9,7 @@ private:
 	bool hidden;
 	bool state;
 
-	sf::Texture loadTexture(sf::String path);
+	sf::Texture loadTexture(sf::String &path);
 protected:
 public:
 	ButtonView();
@@ -23,6 +23,6 @@ public:
 	void setHidde(bool hidde);
 	bool isHidden();
 
-	bool isButtonHoverd(sf::Vector2i mousePos);
+	bool isButtonHoverd(sf::Vector2i &mousePos);
 };
 

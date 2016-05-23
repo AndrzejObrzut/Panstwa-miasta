@@ -47,7 +47,7 @@ ButtonView::~ButtonView()
 
 // private
 
-sf::Texture ButtonView::loadTexture(sf::String path)
+sf::Texture ButtonView::loadTexture(sf::String &path)
 {
 	sf::Texture texture;
 	if (!texture.loadFromFile(path)) {
@@ -87,7 +87,7 @@ bool ButtonView::isHidden()
 	return hidden;
 }
 
-bool ButtonView::isButtonHoverd(sf::Vector2i mousePos) 
+bool ButtonView::isButtonHoverd(sf::Vector2i &mousePos) 
 {
 	sf::IntRect buttonRect(this->getPosition().x, this->getPosition().y, this->getGlobalBounds().width, this->getGlobalBounds().height);
 
