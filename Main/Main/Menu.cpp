@@ -78,6 +78,7 @@ void Menu::runMenuAgain() {
 }
 
 void Menu::runLocalGame() {
+	system("cls");
 	int numberOfPlayers = 0;
 	int numberOfActualPlayers = 0;
 	int numberOfRounds = 0;

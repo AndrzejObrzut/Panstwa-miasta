@@ -46,7 +46,7 @@ char Round::selectTheRandomLetter()
 	return _character;
 }
 
-void Round::waitingForPlayer(int number, string name)
+void Round::waitingForPlayer(const int & number, const string & name) const
 {
 	system("cls");
 	cout << "Runda gracza nr " << number + 1 << " (" << name << ")" << endl;
@@ -55,11 +55,7 @@ void Round::waitingForPlayer(int number, string name)
 }
 
 
-void Round::endTheRound()
-{
-}
-
-void Round::checkWords()
+void Round::checkWords() const
 {
 	vector <string> _word;
 	for (int i = 0; i < 4; i++)
@@ -73,6 +69,10 @@ void Round::checkWords()
 			if (_words[j][i] == "")
 			{
 				addPoints(0,j);
+			}
+			else if (_words[j][i][0] != _character)
+			{
+				addPoints(0, j);
 			}
 			else
 			{
@@ -103,7 +103,7 @@ void Round::checkWords()
 	}
 }
 
-int * Round::calculatePoints(string ** words, int numberOfPlayers)
+int * Round::calculatePoints(string ** words, const int & numberOfPlayers)
 {
 	_numberOfPlayers = numberOfPlayers;
 	_words = new string*[numberOfPlayers];
@@ -113,18 +113,18 @@ int * Round::calculatePoints(string ** words, int numberOfPlayers)
 	{
 		_result[i] = 0;
 	}
-	
+
 	for (int i = 0; i < numberOfPlayers; i++)
 	{
 		_words[i] = words[i];
 	}
 
 	checkWords();
-	
+
 	return _result;
 }
 
-void Round::addPoints(int points, int numberOfPlayer)
+void Round::addPoints(const int & points, const int & numberOfPlayer) const
 {
 	_result[numberOfPlayer] += points;
 }
@@ -132,6 +132,8 @@ void Round::addPoints(int points, int numberOfPlayer)
 
 
 
+
 Round::~Round()
 {
+	delete _words;
 }
