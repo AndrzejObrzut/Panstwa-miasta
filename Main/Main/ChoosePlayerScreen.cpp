@@ -17,14 +17,12 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 {
 	sf::Event event;
 	bool running = true;
-	int windowWidth = App.getSize().x;
-	int windowHeight = App.getSize().y;
+	windowWidth = App.getSize().x;
+	windowHeight = App.getSize().y;
 
 	sf::Font font;
 	if (!font.loadFromFile("fonts/arial.ttf"))
-	{
 		std::cerr << "Problem with loading fonts" << std::endl;
-	}
 
 	const float BACK_MENU_BUTTON_POS_X = 0.08;
 	const float BACK_MENU_BUTTON_POS_Y = 0.10;
@@ -73,6 +71,11 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 	float playerLabelPosY = windowHeight * 0.50 - playerLabel.getGlobalBounds().height * 0.5;
 	playerLabel.setPosition(playerLabelPosX, playerLabelPosY);
 
+	sf::String nextButtonPath("image/ForwardButton.png");
+	ButtonView nextButton(nextButtonPath, nextButtonPath, false);
+	float nextButtonPosX = windowWidth * 0.80 - nextButton.getGlobalBounds().width * 0.5;
+	float nextButtonPosY = windowHeight * 0.80 - nextButton.getGlobalBounds().height * 0.5;
+	nextButton.setPosition(nextButtonPosX, nextButtonPosY);
 
 	while (running)
 	{
@@ -89,12 +92,9 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 			case sf::Event::MouseMoved:
 
 				if (backToMenuButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left))
-				{
-					std::cout << "Back to menu" << std::endl;
 					return (0);
-				}
+				
 				if (addPlayerButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left) && playerName.size() > 0) {
-					std::cout << "add Player " << playerName << std::endl;
 					players.push_back(playerName);
 					playerName = "";
 					playerNameTextField.setString(playerName);
@@ -102,13 +102,9 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 					for (string name : players)
 					{
 						if (players.size() < MAX_PLAYERS || name != players.back())
-						{
 							playerText += name + " vs ";
-						} 
 						else
-						{
 							playerText += name;					
-						}
 					}
 					playerLabel.setString(playerText);
 					playerLabelPosX = windowWidth * 0.50 - playerLabel.getGlobalBounds().width * 0.5;
@@ -117,13 +113,10 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 				break;
 			case sf::Event::TextEntered:
 				if (event.text.unicode >= 32 && event.text.unicode < 126 && playerName.size() < 17)
-				{
 					playerName += (char)event.text.unicode;
-				}
-				else if (event.text.unicode == 8 && playerName.size() > 0)
-				{
+				else if (event.text.unicode == 8 && playerName.size() > 0) 
 					playerName = playerName.substr(0, playerName.length() - 1);
-				}
+	
 				playerNameTextField.setString(playerName);
 				playerNameTextField.setColor(sf::Color::Black);
 				break;
@@ -138,10 +131,8 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 		App.draw(choosePlayerLabel);
 		App.draw(backToMenuButton);
 		App.draw(playerNameTextField);
-		if (!addPlayerButton.isHidden())
-		{
-			App.draw(addPlayerButton);
-		}
+		if (!addPlayerButton.isHidden()) App.draw(addPlayerButton);
+		if (players.size() >= 2) App.draw(nextButton);
 		App.display();
 
 	}
