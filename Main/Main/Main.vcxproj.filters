@@ -29,6 +29,9 @@
       <Filter>Controllers</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="RoundScreen.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -62,6 +65,9 @@
       <Filter>Controllers</Filter>
     </ClInclude>
     <ClInclude Include="ChoosePlayerScreen.h">
+      <Filter>Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="RoundScreen.h">
       <Filter>Controllers</Filter>
     </ClInclude>
   </ItemGroup>

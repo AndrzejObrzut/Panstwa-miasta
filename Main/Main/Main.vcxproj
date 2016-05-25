@@ -163,6 +163,7 @@
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Round.h" />
+    <ClInclude Include="RoundScreen.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="WordsOfPlayer.h" />
@@ -176,6 +177,7 @@
     <ClCompile Include="MenuScreen.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Round.cpp" />
+    <ClCompile Include="RoundScreen.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
