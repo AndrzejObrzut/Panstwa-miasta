@@ -128,6 +128,8 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 			}
 		}
 
+		game.setPlayersNames(players);
+
 		App.clear(sf::Color(56, 134, 185, 255));	
 		App.draw(rectangle);
 		App.draw(playerLabel);
