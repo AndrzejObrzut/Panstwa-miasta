@@ -32,6 +32,7 @@
     <ClCompile Include="RoundScreen.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
+    <ClCompile Include="TextField.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -70,6 +71,7 @@
     <ClInclude Include="RoundScreen.h">
       <Filter>Controllers</Filter>
     </ClInclude>
+    <ClInclude Include="TextField.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

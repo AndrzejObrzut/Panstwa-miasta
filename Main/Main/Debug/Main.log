@@ -1,39 +1,5 @@
-﻿  WordsOfPlayer.cpp
-  Round.cpp
-  Player.cpp
-  MenuScreen.cpp
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\menuscreen.cpp(29): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\menuscreen.cpp(36): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\menuscreen.cpp(37): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\menuscreen.cpp(43): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\menuscreen.cpp(47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\menuscreen.cpp(48): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\menuscreen.cpp(58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\menuscreen.cpp(59): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\menuscreen.cpp(68): warning C4101: 'mouse': unreferenced local variable
-  Menu.cpp
-  Main.cpp
-  Game.cpp
-  ChoosePlayerScreen.cpp
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(27): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(28): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(34): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(35): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(44): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(45): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(53): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(54): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(63): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(64): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(70): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(71): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(76): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(77): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(113): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\chooseplayerscreen.cpp(84): warning C4101: 'mouse': unreferenced local variable
-  ButtonView.cpp
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\buttonview.cpp(92): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\buttonview.cpp(92): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-  Generating Code...
-  LINK : C:\Users\PiotrWin\Documents\GitHub\Panstwa-miasta\Main\Debug\Main.exe not found or not built by the last incremental link; performing full link
+﻿  RoundScreen.cpp
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(39): warning C4101: 'mouse': unreferenced local variable
   Main.vcxproj -> C:\Users\PiotrWin\Documents\GitHub\Panstwa-miasta\Main\Debug\Main.exe

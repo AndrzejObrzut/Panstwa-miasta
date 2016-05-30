@@ -49,7 +49,6 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 	std::string playerName;
 	sf::Text playerNameTextField(playerName, font, 35);
 	playerNameTextField.setColor(sf::Color::Black);
-	playerNameTextField.setColor(sf::Color(255, 255, 255, 255));
 	float playerNamePosX = windowWidth * 0.35 - playerNameTextField.getGlobalBounds().width * 0.5;
 	float playerNamePosY = windowHeight * 0.32 - playerNameTextField.getGlobalBounds().height * 0.5;
 	playerNameTextField.setPosition(sf::Vector2f(playerNamePosX, playerNamePosY));
@@ -91,11 +90,10 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 				break;
 			case sf::Event::MouseMoved:
 
-				if (backToMenuButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left))
-					return (0);
+				if (backToMenuButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) { return (0); }
 
-				if (nextButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left))
-					return (1);
+				if (nextButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) { cout << "NEXT" << endl;  return (2); }
+
 				
 				if (addPlayerButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left) && playerName.size() > 0) {
 					players.push_back(playerName);

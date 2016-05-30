@@ -6,6 +6,7 @@
 #include "cScreen.h"
 #include "MenuScreen.h"
 #include "ChoosePlayerScreen.h"
+#include "RoundScreen.h"
 
 using namespace std;
 
@@ -25,6 +26,8 @@ int main()
 	Screens.push_back(&menu);
 	ChoosePlayerScreen choosePlayer;
 	Screens.push_back(&choosePlayer);
+	RoundScreen roundScreen;
+	Screens.push_back(&roundScreen);
 
 	Game game;
 
