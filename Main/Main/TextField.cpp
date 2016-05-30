@@ -41,13 +41,25 @@ void TextField::draw(sf::RenderWindow &App)
 	App.draw(text);
 }
 
-void TextField::setFrame(sf::Vector2f size, sf::Color color)
+void TextField::action(sf::Event &event)
+{
+	if (event.text.unicode >= 32 && event.text.unicode < 126 && string.size() < 30)
+		string += (char)event.text.unicode;
+	else if (event.text.unicode == 8 && string.size() > 0)
+		string = string.substr(0, string.length() - 1);
+
+	text.setString(string);
+	text.setColor(sf::Color::Black);
+}
+
+
+void TextField::setFrame(sf::Vector2f &size, sf::Color &color)
 {
 	rectangleFrame = sf::RectangleShape(size);
 	rectangleFrame.setFillColor(color);
 }
 
-void TextField::setPositon(sf::Vector2f position)
+void TextField::setPositon(sf::Vector2f &position)
 {
 	float posX = position.x - text.getGlobalBounds().width * 0.5;
 	float posY = position.y - text.getGlobalBounds().height * 0.5;

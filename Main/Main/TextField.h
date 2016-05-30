@@ -18,7 +18,8 @@ public:
 	~TextField();
 
 	void draw(sf::RenderWindow &App);
-	void setFrame(sf::Vector2f size, sf::Color color);
-	void TextField::setPositon(sf::Vector2f position);
+	void action(sf::Event &event);
+	void setFrame(sf::Vector2f &size, sf::Color &color);
+	void TextField::setPositon(sf::Vector2f &position);
 };
 

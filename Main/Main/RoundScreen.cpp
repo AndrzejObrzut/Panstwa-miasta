@@ -47,13 +47,7 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 			case sf::Event::MouseMoved:
 				break;
 			case sf::Event::TextEntered:
-				if (event.text.unicode >= 32 && event.text.unicode < 126 && cityTextField.string.size() < 30)
-					cityTextField.string += (char)event.text.unicode;
-				else if (event.text.unicode == 8 && cityTextField.string.size() > 0)
-					cityTextField.string = cityTextField.string.substr(0, cityTextField.string.length() - 1);
-
-				cityTextField.text.setString(cityTextField.string);
-				cityTextField.text.setColor(sf::Color::Black);
+				cityTextField.action(event);
 				break;
 			}
 		}
