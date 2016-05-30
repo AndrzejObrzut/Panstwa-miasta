@@ -20,6 +20,8 @@ public:
 	void draw(sf::RenderWindow &App);
 	void action(sf::Event &event);
 	void setFrame(sf::Vector2f &size, sf::Color &color);
-	void TextField::setPositon(sf::Vector2f &position);
+	void setPositon(sf::Vector2f &position);
+	bool isHoverd(sf::Vector2i &mousePos);
+
 };
 

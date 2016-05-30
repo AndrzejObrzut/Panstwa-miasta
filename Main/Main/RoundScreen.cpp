@@ -47,7 +47,9 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 			case sf::Event::MouseMoved:
 				break;
 			case sf::Event::TextEntered:
-				cityTextField.action(event);
+				if (cityTextField.isHoverd(mousePos)) {
+					cityTextField.action(event);
+				}
 				break;
 			}
 		}

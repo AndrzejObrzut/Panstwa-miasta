@@ -67,3 +67,12 @@ void TextField::setPositon(sf::Vector2f &position)
 	text.setPosition(sf::Vector2f(posX, posY));
 	rectangleFrame.setPosition(sf::Vector2f(position.x - 5, position.y));
 }
+
+bool TextField::isHoverd(sf::Vector2i &mousePos)
+{
+
+	sf::IntRect textFiledRect(rectangleFrame.getPosition().x, rectangleFrame.getPosition().y, rectangleFrame.getGlobalBounds().width, rectangleFrame.getGlobalBounds().height);
+
+	if (textFiledRect.contains(mousePos)) return true;
+	return false;
+}
