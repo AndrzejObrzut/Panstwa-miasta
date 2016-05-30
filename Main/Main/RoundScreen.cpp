@@ -35,6 +35,12 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 	float backToMenuButtonPosY = windowHeight * BACK_MENU_BUTTON_POS_Y - backToMenuButtonHeight * 0.5;
 	backToMenuButton.setPosition(sf::Vector2f(backToMenuButtonPosX, backToMenuButtonPosY));
 
+	sf::String nextButtonPath("image/ForwardButton.png");
+	ButtonView nextButton(nextButtonPath, nextButtonPath, false);
+	float nextButtonPosX = windowWidth * 0.80 - nextButton.getGlobalBounds().width * 0.5;
+	float nextButtonPosY = windowHeight * 0.80 - nextButton.getGlobalBounds().height * 0.5;
+	nextButton.setPosition(nextButtonPosX, nextButtonPosY);
+
 	sf::Color textColor = sf::Color::Black;
 	sf::Color textInputsColor = sf::Color::White;
 	sf::Vector2f textInputsSize(310, 35);
@@ -129,6 +135,14 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 				case sf::Event::MouseMoved:
 					if (backToMenuButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) { return (0); }
 
+					if (nextButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left))
+					{ 
+						// zapisz dane gracza
+						// if countOfplayers == players.size() { zapytanie o nowa runde - tak reneruj 2, nie renderuj 3 (wyniki) }
+						// else renderuj dla gracza++
+						cout << "Nastepny gracz" << endl; 
+					}
+
 					break;
 				case sf::Event::TextEntered:
 					if (countryTextField.isHoverd(mousePos))
@@ -149,6 +163,8 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 			App.clear(sf::Color(56, 134, 185, 255));
 			App.draw(mainLabel);
 			App.draw(letterLabel);
+			App.draw(backToMenuButton);
+			App.draw(nextButton);
 			countryTextField.draw(App);
 			cityTextField.draw(App);
 			thingTextField.draw(App);

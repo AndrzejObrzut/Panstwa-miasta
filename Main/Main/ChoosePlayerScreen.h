@@ -3,6 +3,7 @@
 #include "cScreen.h"
 #include <SFML/Graphics.hpp>
 #include "Game.h"
+#include "TextField.h"
 
 class ChoosePlayerScreen: public cScreen
 {
@@ -11,7 +12,8 @@ private:
 	sf::RectangleShape textFieldRect;
 	std::string playerName;
 	sf::Text textField;
-	void setTextField();
+
+	TextField playerNameTextField;
 public:
 	ChoosePlayerScreen();
 	~ChoosePlayerScreen();

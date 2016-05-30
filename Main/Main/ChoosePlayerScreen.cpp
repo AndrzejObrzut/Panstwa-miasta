@@ -2,6 +2,7 @@
 #include "ChoosePlayerScreen.h"
 #include "ButtonView.h"
 #include "Game.h"
+#include "TextField.h"
 
 ChoosePlayerScreen::ChoosePlayerScreen()
 {
@@ -47,14 +48,22 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 
 
 	std::string playerName;
-	sf::Text playerNameTextField(playerName, font, 35);
-	playerNameTextField.setColor(sf::Color::Black);
-	float playerNamePosX = windowWidth * 0.35 - playerNameTextField.getGlobalBounds().width * 0.5;
-	float playerNamePosY = windowHeight * 0.32 - playerNameTextField.getGlobalBounds().height * 0.5;
-	playerNameTextField.setPosition(sf::Vector2f(playerNamePosX, playerNamePosY));
+	sf::Color textColor = sf::Color::Black;
+	sf::Vector2f frameSize(310, 45);
+	sf::Color frameColor = sf::Color::White;
+	float playerNamePosX = windowWidth * 0.35;
+	float playerNamePosY = windowHeight * 0.32;
+	playerNameTextField = TextField(playerName, font, 35, textColor);
+	playerNameTextField.setFrame(frameSize, frameColor);
+	playerNameTextField.setPositon(sf::Vector2f(playerNamePosX, playerNamePosY));
 
-	sf::RectangleShape rectangle(sf::Vector2f(310, 45));
-	rectangle.setPosition(sf::Vector2f(playerNamePosX-5, playerNamePosY));
+	//sf::Text playerNameTextField(playerName, font, 35);
+	//playerNameTextField.setColor(sf::Color::Black);
+
+	//playerNameTextField.setPosition(sf::Vector2f(playerNamePosX, playerNamePosY));
+
+	//sf::RectangleShape rectangle(sf::Vector2f(310, 45));
+	//rectangle.setPosition(sf::Vector2f(playerNamePosX-5, playerNamePosY));
 
 	sf::String addPlayerButtonPath("image/Accept.png");
 	sf::String addPlayerHoverButtonPath("image/AcceptShadow.png");
@@ -113,13 +122,7 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 				}
 				break;
 			case sf::Event::TextEntered:
-				if (event.text.unicode >= 32 && event.text.unicode < 126 && playerName.size() < 17)
-					playerName += (char)event.text.unicode;
-				else if (event.text.unicode == 8 && playerName.size() > 0) 
-					playerName = playerName.substr(0, playerName.length() - 1);
-	
-				playerNameTextField.setString(playerName);
-				playerNameTextField.setColor(sf::Color::Black);
+				playerName = playerNameTextField.action(event);
 				break;
 			default:
 				break;
@@ -127,11 +130,10 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 		}
 
 		App.clear(sf::Color(56, 134, 185, 255));	
-		App.draw(rectangle);
 		App.draw(playerLabel);
 		App.draw(choosePlayerLabel);
 		App.draw(backToMenuButton);
-		App.draw(playerNameTextField);
+		playerNameTextField.draw(App);
 		if (!addPlayerButton.isHidden()) App.draw(addPlayerButton);
 		if (players.size() >= 2) App.draw(nextButton);
 		App.display();

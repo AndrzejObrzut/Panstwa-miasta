@@ -22,6 +22,7 @@ public:
 	void setFrame(sf::Vector2f &size, sf::Color &color);
 	void setPositon(sf::Vector2f &position);
 	bool isHoverd(sf::Vector2i &mousePos);
+	void setString(std::string newString);
 
 };
 

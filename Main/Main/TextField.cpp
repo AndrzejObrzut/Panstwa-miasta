@@ -78,3 +78,10 @@ bool TextField::isHoverd(sf::Vector2i &mousePos)
 	if (textFiledRect.contains(mousePos)) return true;
 	return false;
 }
+
+void TextField::setString(std::string newString)
+{
+	string = newString;
+	text.setString(newString);
+	text.setColor(sf::Color::Black);
+}
