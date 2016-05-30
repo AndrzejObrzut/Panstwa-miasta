@@ -32,15 +32,6 @@ void Game::setPlayersNames()
 	}
 }
 
-void Game::setPlayersNames(std::vector<string> playerNames)
-{
-	for (int i = 0; i < _numberOfPlayers; i++)
-	{
-		_players[i].setPlayerName(playerNames[i]);
-		_players[i].setPlayerNumber(i + 1);
-	}
-}
-
 void Game::getPlayersNames() const
 {
 	for (int i = 0; i < _numberOfPlayers; i++)
