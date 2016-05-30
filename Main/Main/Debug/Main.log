@@ -1,8 +1,21 @@
 ﻿  RoundScreen.cpp
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(24): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(27): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(57): warning C4101: 'mouse': unreferenced local variable
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(54): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(55): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(61): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(62): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(70): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(71): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(72): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(73): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(74): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(78): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(82): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(86): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(96): warning C4101: 'mouse': unreferenced local variable
   Main.vcxproj -> C:\Users\PiotrWin\Documents\GitHub\Panstwa-miasta\Main\Debug\Main.exe

@@ -8,7 +8,6 @@ RoundScreen::RoundScreen()
 
 int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 {
-	cout << "TEST" << endl;
 	sf::Event event;
 	bool running = true;
 	windowWidth = App.getSize().x;
@@ -49,7 +48,47 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 	plantTextField.setFrame(textInputsSize, textInputsColor);
 	plantTextField.setPositon(sf::Vector2f(allTextFieldPosX, plantTextFieldPosY));
 
+	std::string main = "Wprowadz odpowiedzi";
+	sf::Text mainLabel(main, font, 35);
+	mainLabel.setColor(sf::Color::White);
+	float mainLabelPosX = windowWidth * 0.5 - mainLabel.getGlobalBounds().width * 0.5;
+	float mainLabelPosY = windowWidth * 0.05 - mainLabel.getGlobalBounds().height * 0.5;
+	mainLabel.setPosition(mainLabelPosX, mainLabelPosY);
 
+	std::string letter = "A";			// WYLOSOWANA LITERA
+	sf::Text letterLabel(letter, font, 35);
+	letterLabel.setColor(sf::Color::Red);
+	float letterLabelPosX = windowWidth * 0.5 - letterLabel.getGlobalBounds().width * 0.5;
+	float letterLabelPosY = windowWidth * 0.1 - letterLabel.getGlobalBounds().height * 0.5;
+	letterLabel.setPosition(letterLabelPosX, letterLabelPosY);
+
+	std::string country = "Panstwo";
+	std::string city = "Miasto";
+	std::string thing = "Rzecz";
+	std::string plant = "Roslina";
+
+	float allLabelPosX = windowWidth * 0.3;
+	float countryLabelPosY = windowHeight * 0.25;
+	float cityLabelPosY = windowHeight * 0.33;
+	float thingLabelPosY = windowHeight * 0.4;
+	float plantLabelPosY = windowHeight * 0.48;
+
+	sf::Text countryLabel(country, font, 25);
+	countryLabel.setColor(sf::Color::White);
+	countryLabel.setPosition(allLabelPosX - countryLabel.getGlobalBounds().width * 0.5, countryLabelPosY);
+
+	sf::Text cityLabel(city, font, 25);
+	cityLabel.setColor(sf::Color::White);
+	cityLabel.setPosition(allLabelPosX - cityLabel.getGlobalBounds().width * 0.5, cityLabelPosY);
+
+	sf::Text thingLabel(thing, font, 25);
+	thingLabel.setColor(sf::Color::White);
+	thingLabel.setPosition(allLabelPosX - thingLabel.getGlobalBounds().width * 0.5, thingLabelPosY);
+
+	sf::Text plantLabel(plant, font, 25);
+	plantLabel.setColor(sf::Color::White);
+	plantLabel.setPosition(allLabelPosX - plantLabel.getGlobalBounds().width * 0.5, plantLabelPosY);
+	
 	while (running)
 	{
 		while (App.pollEvent(event))
@@ -81,14 +120,19 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 			}
 		}
 		App.clear(sf::Color(56, 134, 185, 255));
+		App.draw(mainLabel);
+		App.draw(letterLabel);
 		countryTextField.draw(App);
 		cityTextField.draw(App);
 		thingTextField.draw(App);
 		plantTextField.draw(App);
 
-		App.display();
+		App.draw(countryLabel);
+		App.draw(cityLabel);
+		App.draw(thingLabel);
+		App.draw(plantLabel);
 
-		cout << cityName << " vs " << cityTextField.string << endl;
+		App.display();
 	}
 
 	return 0;
