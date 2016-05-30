@@ -61,16 +61,24 @@ ButtonView::ButtonView(const ButtonView&& source)
 
 ButtonView& ButtonView::operator=(const ButtonView&& source)
 {
-
-	normal = std::move(source.normal);
-	hover = std::move(source.hover);
-	hidden = std::move(source.hidden);
-	state = std::move(source.state);
+	if (this != &source)
+	{
+		normal = source.normal;
+		hover = source.hover;
+		hidden = source.hidden;
+		state = source.state;
+	}
 	return *this;
 }
 
 
-ButtonView::~ButtonView() { }
+ButtonView::~ButtonView()
+{
+
+}
+
+
+// private
 
 sf::Texture ButtonView::loadTexture(sf::String &path)
 {
@@ -82,6 +90,8 @@ sf::Texture ButtonView::loadTexture(sf::String &path)
 	return texture;
 }
 
+
+// public
 void ButtonView::setState(bool state) 
 {
 	state = state;

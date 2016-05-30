@@ -15,8 +15,12 @@ public:
 	ButtonView();
 	ButtonView(sf::String& normalImagePath, sf::String& hoverImagePath, bool state);
 	ButtonView(sf::String& normalImagePath, sf::String& hoverImagePath, bool state, sf::Vector2f& position);
+	ButtonView(const ButtonView& source);
+	ButtonView& operator=(const ButtonView& source);
+	ButtonView(const ButtonView&& source);
+	ButtonView& operator=(const ButtonView&& source);
+	
 	~ButtonView();
-
 	void setState(bool state);
 	bool getState();
 
