@@ -41,7 +41,7 @@ void TextField::draw(sf::RenderWindow &App)
 	App.draw(text);
 }
 
-void TextField::action(sf::Event &event)
+std::string TextField::action(sf::Event &event)
 {
 	if (event.text.unicode >= 32 && event.text.unicode < 126 && string.size() < 30)
 		string += (char)event.text.unicode;
@@ -50,6 +50,8 @@ void TextField::action(sf::Event &event)
 
 	text.setString(string);
 	text.setColor(sf::Color::Black);
+
+	return string;
 }
 
 

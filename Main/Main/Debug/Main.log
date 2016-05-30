@@ -1,13 +1,8 @@
-﻿  TextField.cpp
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\textfield.cpp(64): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\textfield.cpp(65): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\textfield.cpp(74): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\textfield.cpp(74): warning C4244: 'argument': conversion from 'const float' to 'int', possible loss of data
-  RoundScreen.cpp
+﻿  RoundScreen.cpp
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(26): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(39): warning C4101: 'mouse': unreferenced local variable
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  Main.cpp
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(27): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(29): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(57): warning C4101: 'mouse': unreferenced local variable
   Main.vcxproj -> C:\Users\PiotrWin\Documents\GitHub\Panstwa-miasta\Main\Debug\Main.exe
