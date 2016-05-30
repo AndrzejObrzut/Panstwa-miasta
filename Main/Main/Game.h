@@ -25,11 +25,14 @@ public:
 	void createPlayers(const int &numberOfPlayers);
 	void setPlayersNames();
 	void getPlayersNames() const;
+	void play();
 	void playGame();
 	void addPoints(const int &numberOfPlayer,const int &amountOfPoints);
 	void endGame();
 	void setNumberOfRounds(const int &number);
 	int getNumberOfRounds() const;
+	const char getCharacter();
+	const int getPlayersCount();
 	~Game();
 
 };

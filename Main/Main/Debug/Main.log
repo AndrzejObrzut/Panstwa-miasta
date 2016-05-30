@@ -17,5 +17,12 @@ c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(78):
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(82): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(86): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(96): warning C4101: 'mouse': unreferenced local variable
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(100): warning C4101: 'mouse': unreferenced local variable
+  Game.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  MenuScreen.cpp
+  Menu.cpp
+  Main.cpp
+  ChoosePlayerScreen.cpp
   Main.vcxproj -> C:\Users\PiotrWin\Documents\GitHub\Panstwa-miasta\Main\Debug\Main.exe

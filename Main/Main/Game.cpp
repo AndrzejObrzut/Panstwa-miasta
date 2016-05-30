@@ -41,6 +41,16 @@ void Game::getPlayersNames() const
 	}
 }
 
+
+
+void Game::play()
+{
+	cout << "Nowa runda" << endl;
+	bool continueGame = true;
+	_character = _round.selectTheRandomLetter();
+	cout << _character << endl;
+}
+
 void Game::playGame()
 {
 	cout << "Nowa runda" << endl;
@@ -242,6 +252,17 @@ int Game::getNumberOfRounds() const
 {
 	return _numberOfRounds;
 }
+
+const char Game::getCharacter()
+{
+	return _character;
+}
+
+const int Game::getPlayersCount()
+{
+	return _numberOfPlayers;
+}
+
 
 
 Game::~Game()

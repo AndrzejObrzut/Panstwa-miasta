@@ -88,52 +88,70 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 	sf::Text plantLabel(plant, font, 25);
 	plantLabel.setColor(sf::Color::White);
 	plantLabel.setPosition(allLabelPosX - plantLabel.getGlobalBounds().width * 0.5, plantLabelPosY);
-	
+
+	Game.play();
+	letter = Game.getCharacter();
+	int countOfPlayers = Game.getPlayersCount();
+
+	/*
+	while round 
+		while player
+	*/
 	while (running)
 	{
-		while (App.pollEvent(event))
+		for (int i = 0; i < countOfPlayers; i++) 
 		{
-			sf::Mouse mouse;
-			sf::Vector2i mousePos = mouse.getPosition(App);
-
-			switch (event.type)
+			bool playerFinishRound = false;
+			while (!playerFinishRound) 
 			{
-			case  sf::Event::Closed:
-				App.close();
-				break;
-			case sf::Event::MouseMoved:
-				break;
-			case sf::Event::TextEntered:
-				if (countryTextField.isHoverd(mousePos)) 
-					countryName = countryTextField.action(event);
-		
-				if (cityTextField.isHoverd(mousePos)) 
-					cityName = cityTextField.action(event);
-				
-				if (thingTextField.isHoverd(mousePos)) 
-					thingName = thingTextField.action(event);
-				
-				if (plantTextField.isHoverd(mousePos)) 
-					plantName = plantTextField.action(event);
+				while (App.pollEvent(event))
+				{
+					sf::Mouse mouse;
+					sf::Vector2i mousePos = mouse.getPosition(App);
 
-				break;
+					switch (event.type)
+					{
+					case  sf::Event::Closed:
+						App.close();
+						break;
+					case sf::Event::MouseMoved:
+						break;
+					case sf::Event::TextEntered:
+						if (countryTextField.isHoverd(mousePos))
+							countryName = countryTextField.action(event);
+
+						if (cityTextField.isHoverd(mousePos))
+							cityName = cityTextField.action(event);
+
+						if (thingTextField.isHoverd(mousePos))
+							thingName = thingTextField.action(event);
+
+						if (plantTextField.isHoverd(mousePos))
+							plantName = plantTextField.action(event);
+
+						break;
+					}
+				}
+				App.clear(sf::Color(56, 134, 185, 255));
+				App.draw(mainLabel);
+				App.draw(letterLabel);
+				countryTextField.draw(App);
+				cityTextField.draw(App);
+				thingTextField.draw(App);
+				plantTextField.draw(App);
+
+				App.draw(countryLabel);
+				App.draw(cityLabel);
+				App.draw(thingLabel);
+				App.draw(plantLabel);
+
+				App.display();
 			}
 		}
-		App.clear(sf::Color(56, 134, 185, 255));
-		App.draw(mainLabel);
-		App.draw(letterLabel);
-		countryTextField.draw(App);
-		cityTextField.draw(App);
-		thingTextField.draw(App);
-		plantTextField.draw(App);
+	
 
-		App.draw(countryLabel);
-		App.draw(cityLabel);
-		App.draw(thingLabel);
-		App.draw(plantLabel);
-
-		App.display();
 	}
+
 
 	return 0;
 }
