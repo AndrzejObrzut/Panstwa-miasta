@@ -27,4 +27,9 @@ c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(113)
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(117): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(137): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(142): warning C4101: 'mouse': unreferenced local variable
+  ResultScreen.cpp
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(29): warning C4101: 'mouse': unreferenced local variable
+  Main.cpp
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(17): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
   Main.vcxproj -> C:\Users\PiotrWin\Documents\GitHub\Panstwa-miasta\Main\Debug\Main.exe

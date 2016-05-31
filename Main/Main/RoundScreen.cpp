@@ -157,22 +157,13 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 						if ((index + 1) == Game.getPlayersCount()) 
 						{ 
 							vector<int> currentScore = Game.getPointsOfAllPlayers();
-							for (auto i : currentScore)
-							{
-								cout << "Points: " << i << endl;
-							}
-							return (0); 
+							return (3); 
 						}
 						else
 						{
 							resetFileds();
 							index++;
 						}
-						// zapisz dane gracza
-						// if countOfplayers == players.size() { zapytanie o nowa runde - tak reneruj 2, nie renderuj 3 (wyniki) }
-						// else renderuj dla gracza++
-
-
 					}
 
 					break;

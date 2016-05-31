@@ -7,6 +7,7 @@
 #include "MenuScreen.h"
 #include "ChoosePlayerScreen.h"
 #include "RoundScreen.h"
+#include "ResultScreen.h"
 
 using namespace std;
 
@@ -31,6 +32,8 @@ int main()
 	Screens.push_back(&choosePlayer);
 	RoundScreen roundScreen;
 	Screens.push_back(&roundScreen);
+	ResultScreen resultScreen;
+	Screens.push_back(&resultScreen);
 
 	Game game;
 

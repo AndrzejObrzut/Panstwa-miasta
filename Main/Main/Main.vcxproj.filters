@@ -13,6 +13,7 @@
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="TextField.cpp" />
     <ClCompile Include="WordsOfPlayer.cpp" />
+    <ClCompile Include="ResultScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ButtonView.h" />
@@ -28,6 +29,7 @@
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TextField.h" />
     <ClInclude Include="WordsOfPlayer.h" />
+    <ClInclude Include="ResultScreen.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
