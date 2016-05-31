@@ -51,11 +51,6 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 	float thingTextFieldPosY = windowHeight * 0.4;
 	float plantTextFieldPosY = windowHeight * 0.48;
 
-	std::string countryName;
-	std::string cityName;
-	std::string thingName;
-	std::string plantName;
-
 	countryTextField = TextField(countryName, font, 30, textColor);
 	countryTextField.setFrame(textInputsSize, textInputsColor);
 	countryTextField.setPositon(sf::Vector2f(allTextFieldPosX, coutryTextFieldPosY));
@@ -121,14 +116,13 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 	vector<Player> allPlayers = Game.getPlayers();
 	while (running)
 	{
-		
-		for (auto player: allPlayers)
-		{
-			cout << "oooo " << player.getPlayerName() << endl;
-		}
+
 		bool playerFinishRound = false;
+		int index = 0;
 		while (!playerFinishRound) 
 		{
+			Player currentPlayer = allPlayers[index];
+			cout << "Current player is " << currentPlayer.getPlayerName() << endl;
 			while (App.pollEvent(event))
 			{
 				sf::Mouse mouse;
@@ -144,10 +138,19 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 
 					if (nextButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left))
 					{ 
+						if ((index + 1) == Game.getPlayersCount())
+						{
+							cout << "Koniec gry" << endl;
+						}
+						else
+						{
+							cout << "Nastepny gracz" << endl;
+							resetFileds();
+							index++;
+						}
 						// zapisz dane gracza
 						// if countOfplayers == players.size() { zapytanie o nowa runde - tak reneruj 2, nie renderuj 3 (wyniki) }
 						// else renderuj dla gracza++
-						cout << "Nastepny gracz" << endl; 
 					}
 
 					break;
@@ -187,6 +190,18 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 
 	}
 
-
 	return 0;
+}
+
+void RoundScreen::resetFileds()
+{
+	countryName = "";
+	cityName = "";
+	thingName = "";
+	plantName = "";
+
+	countryTextField.setString(countryName);
+	cityTextField.setString(cityName);
+	thingTextField.setString(thingName);
+	plantTextField.setString(plantName);
 }
