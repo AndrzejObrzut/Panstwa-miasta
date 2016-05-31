@@ -261,6 +261,44 @@ void Game::addPoints(const int & numberOfPlayer, const int & amountOfPoints)
 	_players[numberOfPlayer].addPoints(amountOfPoints);
 }
 
+vector<int> Game::getPointsOfAllPlayers()
+{
+	vector<int> score;
+
+	_words = new string*[_numberOfPlayers];
+	_result = new int[_numberOfPlayers];
+
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		_words[i] = _players[i].getWords();
+	}
+
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		cout << "_words[" << i << "]" << _words[i][0] << endl;
+	}
+
+	_result = _round.calculatePoints(_words, _numberOfPlayers);
+
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		addPoints(i, _result[i]);
+	}
+
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		score.push_back(_result[i]);
+	}
+
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		cout << "_result[" << i << "]" << _result[i] << endl;
+	}
+	
+
+	return score;
+}
+
 
 void Game::endGame()
 {

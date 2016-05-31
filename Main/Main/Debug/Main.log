@@ -1,32 +1,13 @@
-﻿  RoundScreen.cpp
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(27): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(28): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(34): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(35): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(40): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(41): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(48): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(49): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(50): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(51): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(52): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(73): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(74): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(79): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(80): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(88): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(89): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(90): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(91): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(92): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(96): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(100): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(104): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(108): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\roundscreen.cpp(128): warning C4101: 'mouse': unreferenced local variable
+﻿  WordsOfPlayer.cpp
   Generating Code...
   Compiling...
-  Main.cpp
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\main.cpp(16): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Player.cpp
   Generating Code...
+  Skipping... (no relevant changes detected)
+  RoundScreen.cpp
+  MenuScreen.cpp
+  Menu.cpp
+  Main.cpp
+  Game.cpp
+  ChoosePlayerScreen.cpp
   Main.vcxproj -> C:\Users\PiotrWin\Documents\GitHub\Panstwa-miasta\Main\Debug\Main.exe

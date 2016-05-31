@@ -122,7 +122,6 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 		while (!playerFinishRound) 
 		{
 			Player currentPlayer = allPlayers[index];
-			cout << "Current player is " << currentPlayer.getPlayerName() << endl;
 			while (App.pollEvent(event))
 			{
 				sf::Mouse mouse;
@@ -138,19 +137,27 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 
 					if (nextButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left))
 					{ 
-						if ((index + 1) == Game.getPlayersCount())
-						{
-							cout << "Koniec gry" << endl;
+						currentPlayer.setAnswers(countryName, cityName, thingName, plantName);
+						cout << currentPlayer.getPlayerName() << endl;
+						if ((index + 1) == Game.getPlayersCount()) 
+						{ 
+							vector<int> currentScore = Game.getPointsOfAllPlayers();
+							for (auto i : currentScore)
+							{
+								cout << "Points: " << i << endl;
+							}
+							return (0); 
 						}
 						else
 						{
-							cout << "Nastepny gracz" << endl;
 							resetFileds();
 							index++;
 						}
 						// zapisz dane gracza
 						// if countOfplayers == players.size() { zapytanie o nowa runde - tak reneruj 2, nie renderuj 3 (wyniki) }
 						// else renderuj dla gracza++
+
+
 					}
 
 					break;

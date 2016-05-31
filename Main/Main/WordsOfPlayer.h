@@ -16,6 +16,10 @@ private:
 
 public:
 	WordsOfPlayer();
+	WordsOfPlayer(const WordsOfPlayer& source);
+	WordsOfPlayer& operator=(const WordsOfPlayer& source);
+	WordsOfPlayer(const WordsOfPlayer&& source);
+	WordsOfPlayer& operator=(const WordsOfPlayer&& source);
 	void initializeWords();
 	void setCountry(string country);
 	string getCountry();

@@ -27,6 +27,7 @@ public:
 	string getPlayerName() const;
 	void playRound(const char &character);
 	void continuePlayingRound();
+	void setAnswers( std::string country,  std::string city,  std::string thing,  std::string plant);
 	string * getWords();
 	void addPoints(const int &amountOfPoints);
 	void setPoints(const int &points);

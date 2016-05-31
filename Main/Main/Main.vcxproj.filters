@@ -28,11 +28,13 @@
     <ClCompile Include="ChoosePlayerScreen.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp" />
     <ClCompile Include="RoundScreen.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
     <ClCompile Include="TextField.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
       <Filter>Views</Filter>
     </ClCompile>
   </ItemGroup>

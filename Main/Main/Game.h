@@ -30,6 +30,7 @@ public:
 	void play();
 	void playGame();
 	void addPoints(const int &numberOfPlayer,const int &amountOfPoints);
+	vector<int> getPointsOfAllPlayers();
 	void endGame();
 	void setNumberOfRounds(const int &number);
 	int getNumberOfRounds() const;
