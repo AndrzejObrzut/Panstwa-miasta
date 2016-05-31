@@ -110,16 +110,19 @@ int ResultScreen::Run(sf::RenderWindow &App, Game &game)
 	float menuLabelPosY = windowHeight * MENU_LABEL_SCREEN_POS_Y - menuLabel.getGlobalBounds().height * 0.5;
 	menuLabel.setPosition(sf::Vector2f(menuLabelPosX, menuLabelPosY));
 
-	const float CONTINUE_LABEL_SCREEN_POS_X = 0.5;
-	const float CONTINUE_LABEL_SCREEN_POS_Y = 0.8;
+
+
+	const float CONTINUE_LABEL_SCREEN_POS_X = 0.50;
+	const float CONTINUE_LABEL_SCREEN_POS_Y = 0.10;
 	sf::Text continueLabel("Czy chcesz kontynulowac?", font);
-	continueLabel.setCharacterSize(35);
+	continueLabel.setCharacterSize(60);
 	continueLabel.setColor(sf::Color::White);
 	float continueLabelPosX = windowWidth * CONTINUE_LABEL_SCREEN_POS_X - continueLabel.getGlobalBounds().width * 0.5;
 	float continueLabelPosY = windowHeight * CONTINUE_LABEL_SCREEN_POS_Y - continueLabel.getGlobalBounds().height * 0.5;
-	continueLabel.setPosition(sf::Vector2f(continueLabelPosX, continueLabelPosY));
+	menuLabel.setPosition(sf::Vector2f(continueLabelPosX, continueLabelPosY));
 
-	const float NEXT_ROUND_BUTTON_SCREEN_POS_X = 0.6;
+
+	const float NEXT_ROUND_BUTTON_SCREEN_POS_X = 0.65;
 	const float NEXT_ROUND_BUTTON_SCREEN_POS_Y = 0.90;
 	sf::String nextRoundButtonPath("image/Accept.png");
 	sf::String nextRoundButtonHoverPath("image/AcceptShadow.png");
@@ -141,7 +144,8 @@ int ResultScreen::Run(sf::RenderWindow &App, Game &game)
 	float backToMenuButtonPosY = windowHeight * BACK_MENU_BUTTON_POS_Y - backToMenuButtonHeight * 0.5;
 	backToMenuButton.setPosition(sf::Vector2f(backToMenuButtonPosX, backToMenuButtonPosY));
 
-	const float NO_BUTTON_POS_X = 0.4;
+	
+	const float NO_BUTTON_POS_X = 0.35;
 	const float NO_BUTTON_POS_Y = 0.9;
 	sf::String noButtonPath("image/ExitButton.png");
 	ButtonView noButton(noButtonPath, noButtonPath, false);
@@ -180,7 +184,6 @@ int ResultScreen::Run(sf::RenderWindow &App, Game &game)
 		App.clear(sf::Color(56, 134, 185, 255));
 
 		App.draw(nextRoundButton);
-		App.draw(continueLabel);
 		App.draw(backToMenuButton);
 		App.draw(noButton);
 		App.draw(menuLabel);
