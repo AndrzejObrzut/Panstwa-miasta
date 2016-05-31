@@ -48,10 +48,10 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 	sf::Vector2f textInputsSize(310, 35);
 
 	float allTextFieldPosX = windowWidth * 0.45;
-	float coutryTextFieldPosY = windowHeight * 0.25;
-	float cityTextFieldPosY = windowHeight * 0.33;
-	float thingTextFieldPosY = windowHeight * 0.4;
-	float plantTextFieldPosY = windowHeight * 0.48;
+	float coutryTextFieldPosY = windowHeight * 0.35;
+	float cityTextFieldPosY = windowHeight * 0.43;
+	float thingTextFieldPosY = windowHeight * 0.51;
+	float plantTextFieldPosY = windowHeight * 0.59;
 
 	countryTextField = TextField(countryName, font, 30, textColor);
 	countryTextField.setFrame(textInputsSize, textInputsColor);
@@ -76,10 +76,17 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 	float mainLabelPosY = windowWidth * 0.05 - mainLabel.getGlobalBounds().height * 0.5;
 	mainLabel.setPosition(mainLabelPosX, mainLabelPosY);
 
+	std::string playerNameText = "";
+	sf::Text playerNameLabel(playerNameText, font, 30);
+	playerNameLabel.setColor(sf::Color::White);
+	float playerNameLabelPosX = windowWidth * 0.5 - playerNameLabel.getGlobalBounds().width * 0.5;
+	float playerNameLabelPosY = windowWidth * 0.13 - playerNameLabel.getGlobalBounds().height * 0.5;
+	playerNameLabel.setPosition(playerNameLabelPosX, playerNameLabelPosY);
+
 	sf::Text letterLabel(letter, font, 35);
 	letterLabel.setColor(sf::Color::Red);
 	float letterLabelPosX = windowWidth * 0.5 - letterLabel.getGlobalBounds().width * 0.5;
-	float letterLabelPosY = windowWidth * 0.1 - letterLabel.getGlobalBounds().height * 0.5;
+	float letterLabelPosY = windowWidth * 0.2 - letterLabel.getGlobalBounds().height * 0.5;
 	letterLabel.setPosition(letterLabelPosX, letterLabelPosY);
 
 	std::string country = "Panstwo";
@@ -88,10 +95,10 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 	std::string plant = "Roslina";
 
 	float allLabelPosX = windowWidth * 0.3;
-	float countryLabelPosY = windowHeight * 0.25;
-	float cityLabelPosY = windowHeight * 0.33;
-	float thingLabelPosY = windowHeight * 0.4;
-	float plantLabelPosY = windowHeight * 0.48;
+	float countryLabelPosY = windowHeight * 0.35;
+	float cityLabelPosY = windowHeight * 0.43;
+	float thingLabelPosY = windowHeight * 0.51;
+	float plantLabelPosY = windowHeight * 0.59;
 
 	sf::Text countryLabel(country, font, 25);
 	countryLabel.setColor(sf::Color::White);
@@ -124,6 +131,12 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 		while (!playerFinishRound) 
 		{
 			Player currentPlayer = allPlayers[index];
+
+			playerNameText = "Runda gracza: " + currentPlayer.getPlayerName();
+			playerNameLabel.setString(playerNameText);
+			playerNameLabelPosX = windowWidth * 0.5 - playerNameLabel.getGlobalBounds().width * 0.5;
+			playerNameLabel.setPosition(playerNameLabelPosX, playerNameLabelPosY);
+
 			while (App.pollEvent(event))
 			{
 				sf::Mouse mouse;
@@ -181,6 +194,7 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 			}
 			App.clear(sf::Color(56, 134, 185, 255));
 			App.draw(mainLabel);
+			App.draw(playerNameLabel);
 			App.draw(letterLabel);
 			App.draw(backToMenuButton);
 			App.draw(nextButton);
