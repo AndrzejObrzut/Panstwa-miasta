@@ -24,6 +24,7 @@ public:
 	Game(const int &numberOfRounds,const int &numberOfPlayers);
 	void createPlayers(const int &numberOfPlayers);
 	void setPlayersNames();
+	void setPlayersNames(vector<string> players);
 	void getPlayersNames() const;
 	void play();
 	void playGame();

@@ -57,14 +57,6 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 	playerNameTextField.setFrame(frameSize, frameColor);
 	playerNameTextField.setPositon(sf::Vector2f(playerNamePosX, playerNamePosY));
 
-	//sf::Text playerNameTextField(playerName, font, 35);
-	//playerNameTextField.setColor(sf::Color::Black);
-
-	//playerNameTextField.setPosition(sf::Vector2f(playerNamePosX, playerNamePosY));
-
-	//sf::RectangleShape rectangle(sf::Vector2f(310, 45));
-	//rectangle.setPosition(sf::Vector2f(playerNamePosX-5, playerNamePosY));
-
 	sf::String addPlayerButtonPath("image/Accept.png");
 	sf::String addPlayerHoverButtonPath("image/AcceptShadow.png");
 	ButtonView addPlayerButton(addPlayerButtonPath, addPlayerHoverButtonPath, false);
@@ -101,7 +93,9 @@ int ChoosePlayerScreen::Run(sf::RenderWindow & App, Game &game)
 
 				if (backToMenuButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) { return (0); }
 
-				if (nextButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) { return (2); }
+				if (nextButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) { 
+					
+					return (2); }
 
 				
 				if (addPlayerButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left) && playerName.size() > 0) {

@@ -32,6 +32,17 @@ void Game::setPlayersNames()
 	}
 }
 
+void Game::setPlayersNames(vector<string> players)
+{
+	_numberOfPlayers = players.size();
+	createPlayers(_numberOfPlayers);
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		_players[i].setPlayerName(players[i]);
+		_players[i].setPlayerNumber(i + 1);
+	}
+} 
+
 void Game::getPlayersNames() const
 {
 	for (int i = 0; i < _numberOfPlayers; i++)
