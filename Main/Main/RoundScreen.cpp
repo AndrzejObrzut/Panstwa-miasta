@@ -116,18 +116,15 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 	plantLabel.setColor(sf::Color::White);
 	plantLabel.setPosition(allLabelPosX - plantLabel.getGlobalBounds().width * 0.5, plantLabelPosY);
 
-
-	/*
-	while round 
-		while player
-	*/
-
 	vector<Player> allPlayers = Game.getPlayers();
 	while (running)
 	{
 
 		bool playerFinishRound = false;
 		int index = 0;
+
+		resetFileds();
+
 		while (!playerFinishRound) 
 		{
 			Player currentPlayer = allPlayers[index];

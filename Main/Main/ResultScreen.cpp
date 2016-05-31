@@ -3,94 +3,12 @@
 #include "ButtonView.h"
 
 
-ResultScreen::ResultScreen()
-{
-}
+ResultScreen::ResultScreen() { }
 
-
-ResultScreen::~ResultScreen()
-{
-}
-
+ResultScreen::~ResultScreen() { }
 
 int ResultScreen::Run(sf::RenderWindow &App, Game &game)
 {
-	//sf::Event event;
-	//bool running = true;
-
-	//sf::Font font;
-	//if (!font.loadFromFile("fonts/arial.ttf"))
-	//	std::cerr << "Problem with loading fonts" << std::endl;
-
-
-	//const float BACK_MENU_BUTTON_POS_X = 0.3;
-	//const float BACK_MENU_BUTTON_POS_Y = 0.8;
-	//const float NEXT_BUTTON_POS_X = 0.7;
-	//const float NEXT_BUTTON_POS_Y = 0.8;
-
-	//sf::String backToMenuButtonPath("image/MenuButton.png");
-	//sf::String backToMenuHoverButtonPath("image/MenuButtonShadow.png");
-	//ButtonView backToMenuButton(backToMenuButtonPath, backToMenuHoverButtonPath, false);
-	//float backToMenuButtonWidth = backToMenuButton.getGlobalBounds().width;
-	//float backToMenuButtonHeight = backToMenuButton.getGlobalBounds().height;
-	//float backToMenuButtonPosX = windowWidth * BACK_MENU_BUTTON_POS_X - backToMenuButtonWidth * 0.5;
-	//float backToMenuButtonPosY = windowHeight * BACK_MENU_BUTTON_POS_Y - backToMenuButtonHeight * 0.5;
-	//backToMenuButton.setPosition(sf::Vector2f(backToMenuButtonPosX, backToMenuButtonPosY));
-
-	//sf::String nextButtonPath("image/Accept.png");
-	//sf::String nextHoverButtonPath("image/AcceptShadow.png");
-	//ButtonView nextButton(nextButtonPath, nextHoverButtonPath, false);
-	//float nextButtonWidth = nextButton.getGlobalBounds().width;
-	//float nextButtonHeight = nextButton.getGlobalBounds().height;
-	//float nextButtonPosX = windowWidth * NEXT_BUTTON_POS_X - nextButtonWidth * 0.5;
-	//float nextButtonPosY = windowHeight * NEXT_BUTTON_POS_Y - nextButtonHeight * 0.5;
-	//nextButton.setPosition(sf::Vector2f(nextButtonPosX, nextButtonPosY));
-
-	//const float RESULT_TEXT_POS_X = 0.5;
-	//const float RESULT_TEXT_POS_Y = 0.05;
-
-	//std::string resultText = "Wyniki graczy";
-	//sf::Text resultLabel(resultText, font, 35);
-	//resultLabel.setColor(sf::Color::White);
-	//float resultLabelPosX = windowWidth * RESULT_TEXT_POS_X - resultLabel.getGlobalBounds().width * 0.5;
-	//float resultLabelPosY = windowWidth * RESULT_TEXT_POS_Y - resultLabel.getGlobalBounds().height * 0.5;
-	//resultLabel.setPosition(resultLabelPosX, resultLabelPosY);
-	//
-	//
-	//cout << "Result Screen" << endl;
-	//while (running)
-	//{
-	//	cout << "Result Screen  1" << endl;
-
-	//	while (App.pollEvent(event))
-	//	{
-	//		sf::Mouse mouse;
-	//		sf::Vector2i mousePos = mouse.getPosition(App);
-
-
-	//		switch (event.type)
-	//		{
-	//		case  sf::Event::Closed:
-	//			App.close();
-	//			break;
-	//		case  sf::Event::MouseMoved:
-	//			if (backToMenuButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) { return (0); }
-
-	//			break;
-	//		default:
-	//			break;
-	//		}
-
-	//	}
-
-	//	App.clear(sf::Color(56, 134, 185, 255));
-	//	App.draw(resultLabel);
-	//	App.draw(backToMenuButton);
-	//	App.draw(nextButton);
-	//	App.display();
-	//	cout << "TEST" << endl;
-	//}
-	//return (-1);
 	windowWidth = App.getSize().x;
 	windowHeight = App.getSize().y;
 
@@ -151,6 +69,27 @@ int ResultScreen::Run(sf::RenderWindow &App, Game &game)
 	float noButtonPosY = windowHeight * NO_BUTTON_POS_Y - noButtonHeight * 0.5;
 	noButton.setPosition(sf::Vector2f(noButtonPosX, noButtonPosY));
 
+	vector<Player> allPlayers = game.getPlayers();
+	vector<int> currentRoundPoints = game.getPointsOfAllPlayers();
+
+	float NAMES_POS_X = 0.2;
+	float CURRENT_POINTS_POS_X = 0.5;
+	float ALL_POINTS_POS_X = 0.7;
+	float LABELS_POS_Y = 0.2;
+	
+	sf::Text nameLabel("", font);
+	nameLabel.setCharacterSize(35);
+	nameLabel.setColor(sf::Color::White);
+
+	sf::Text currentPointsLabel("", font);
+	currentPointsLabel.setCharacterSize(35);
+	currentPointsLabel.setColor(sf::Color::White);
+
+	sf::Text allPointsLabel("", font);
+	allPointsLabel.setCharacterSize(35);
+	allPointsLabel.setColor(sf::Color::White);
+
+	bool isDisplayed = false;
 
 	while (running)
 	{
@@ -170,7 +109,6 @@ int ResultScreen::Run(sf::RenderWindow &App, Game &game)
 				if (backToMenuButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) { return (0); }
 				if (noButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left)) { return (0); }
 
-
 			default:
 				break;
 			}
@@ -178,6 +116,38 @@ int ResultScreen::Run(sf::RenderWindow &App, Game &game)
 		}
 
 		App.clear(sf::Color(56, 134, 185, 255));
+		if (!isDisplayed) {
+			isDisplayed = true;
+			for (int i = 0; i < allPlayers.size(); i++)
+			{
+				nameLabel.setString(allPlayers[i].getPlayerName());
+				float nameLabelPosX = windowWidth * NAMES_POS_X - nameLabel.getGlobalBounds().width * 0.5;
+				float nameLabelPosY = windowHeight * LABELS_POS_Y - nameLabel.getGlobalBounds().height * 0.5;
+				nameLabel.setPosition(sf::Vector2f(nameLabelPosX, nameLabelPosY));
+				App.draw(nameLabel);
+
+				allPointsLabel.setString(std::to_string(allPlayers[i].getPoints()));
+				float allPointsLabelPosX = windowWidth * ALL_POINTS_POS_X - allPointsLabel.getGlobalBounds().width * 0.5;
+				float allPointsLabelPosY = windowHeight * LABELS_POS_Y - allPointsLabel.getGlobalBounds().height * 0.5;
+				allPointsLabel.setPosition(sf::Vector2f(allPointsLabelPosX, allPointsLabelPosY));
+				App.draw(allPointsLabel);
+
+				currentPointsLabel.setString(std::to_string(currentRoundPoints[i]));
+				float currentPointsLabelPosX = windowWidth * CURRENT_POINTS_POS_X - currentPointsLabel.getGlobalBounds().width * 0.5;
+				float currentPointsLabelPosY = windowHeight * LABELS_POS_Y - currentPointsLabel.getGlobalBounds().height * 0.5;
+				currentPointsLabel.setPosition(sf::Vector2f(currentPointsLabelPosX, currentPointsLabelPosY));
+				App.draw(currentPointsLabel);
+
+				LABELS_POS_Y += 0.1;
+			}
+
+		} 
+		else
+		{
+			LABELS_POS_Y = 0.2;
+			isDisplayed = false;
+		}
+
 
 		App.draw(nextRoundButton);
 		App.draw(continueLabel);

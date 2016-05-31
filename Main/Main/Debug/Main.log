@@ -1,20 +1,33 @@
 ﻿  ResultScreen.cpp
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(105): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(109): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(110): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(118): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(119): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(123): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(124): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(23): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(27): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(32): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(36): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(37): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(40): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(41): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(47): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(48): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(51): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(52): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(58): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(59): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(62): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(63): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(68): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(69): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(75): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(77): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(78): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(121): warning C4018: '<': signed/unsigned mismatch
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(124): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(125): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(130): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(131): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(134): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(135): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(141): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(142): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(146): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(147): warning C4305: 'initializing': truncation from 'double' to 'float'
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(152): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(153): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(161): warning C4101: 'mouse': unreferenced local variable
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(136): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(137): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(141): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(147): warning C4305: '=': truncation from 'double' to 'float'
+c:\users\piotrwin\documents\github\panstwa-miasta\main\main\resultscreen.cpp(98): warning C4101: 'mouse': unreferenced local variable
   Main.vcxproj -> C:\Users\PiotrWin\Documents\GitHub\Panstwa-miasta\Main\Debug\Main.exe
