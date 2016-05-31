@@ -3,9 +3,11 @@
 #include "TextField.h"
 #include "ButtonView.h"
 
-RoundScreen::RoundScreen() 
+
+RoundScreen::RoundScreen()
 {
 }
+
 
 int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 {

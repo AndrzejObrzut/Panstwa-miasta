@@ -3,7 +3,7 @@
 #include "cScreen.h"
 #include "TextField.h"
 
-class RoundScreen: public cScreen
+class RoundScreen : public cScreen
 {
 	std::string countryName;
 	std::string cityName;
@@ -19,5 +19,5 @@ class RoundScreen: public cScreen
 public:
 	RoundScreen();
 	int Run(sf::RenderWindow &App, Game &Game);
-};
 
+};
