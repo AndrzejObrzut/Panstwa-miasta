@@ -31,6 +31,7 @@ public:
 	void playGame();
 	void addPoints(const int &numberOfPlayer,const int &amountOfPoints);
 	vector<int> getPointsOfAllPlayers();
+	void setAnswers(int numberOfPlyer, std::string country, std::string city, std::string thing, std::string plant);
 	void endGame();
 	void setNumberOfRounds(const int &number);
 	int getNumberOfRounds() const;

@@ -139,7 +139,7 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 
 					if (nextButton.isButtonHoverd(mousePos) && mouse.isButtonPressed(sf::Mouse::Left))
 					{ 
-						currentPlayer.setAnswers(countryName, cityName, thingName, plantName);
+						Game.setAnswers(index, countryName, cityName, thingName, plantName);
 						cout << currentPlayer.getPlayerName() << endl;
 						if ((index + 1) == Game.getPlayersCount()) 
 						{ 
