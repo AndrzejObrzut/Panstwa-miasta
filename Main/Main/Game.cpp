@@ -299,6 +299,11 @@ vector<int> Game::getPointsOfAllPlayers()
 	return score;
 }
 
+void Game::setAnswers(int numberOfPlayer, std::string country, std::string city, std::string thing, std::string plant)
+{
+	_players[numberOfPlayer].setAnswers(country, city, thing, plant);
+}
+
 
 void Game::endGame()
 {

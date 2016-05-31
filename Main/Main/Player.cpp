@@ -146,6 +146,8 @@ void Player::setAnswers( std::string country, std::string city, std::string thin
 	_wordsOfPlayer.setCity(city);
 	_wordsOfPlayer.setThing(thing);
 	_wordsOfPlayer.setPlant(plant);
+
+	cout << "getCity" << _wordsOfPlayer.getCity() << endl;
 }
 
 

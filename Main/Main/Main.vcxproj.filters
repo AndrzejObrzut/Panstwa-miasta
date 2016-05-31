@@ -1,117 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Menu.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Round.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WordsOfPlayer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ButtonView.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
-    <ClCompile Include="MenuScreen.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
-    <ClCompile Include="ChoosePlayerScreen.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
-<<<<<<< HEAD
-    <ClCompile Include="RoundScreen.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
-    <ClCompile Include="TextField.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
-    <ClCompile Include="Main.cpp">
-      <Filter>Views</Filter>
-    </ClCompile>
-=======
+    <ClCompile Include="ButtonView.cpp" />
+    <ClCompile Include="ChoosePlayerScreen.cpp" />
+    <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="RoundScreen.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
->>>>>>> SFML
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="MenuScreen.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Round.cpp" />
+    <ClCompile Include="RoundScreen.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="TextField.cpp" />
+    <ClCompile Include="WordsOfPlayer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Menu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Round.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WordsOfPlayer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ButtonView.h">
-      <Filter>Views</Filter>
-    </ClInclude>
-    <ClInclude Include="cScreen.h">
-      <Filter>Controllers</Filter>
-    </ClInclude>
-    <ClInclude Include="MenuScreen.h">
-      <Filter>Controllers</Filter>
-    </ClInclude>
-    <ClInclude Include="ChoosePlayerScreen.h">
-      <Filter>Controllers</Filter>
-    </ClInclude>
-    <ClInclude Include="RoundScreen.h">
-      <Filter>Controllers</Filter>
-    </ClInclude>
-<<<<<<< HEAD
-    <ClInclude Include="TextField.h">
-      <Filter>Views</Filter>
-    </ClInclude>
-=======
->>>>>>> SFML
+    <ClInclude Include="ButtonView.h" />
+    <ClInclude Include="ChoosePlayerScreen.h" />
+    <ClInclude Include="cScreen.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="MenuScreen.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Round.h" />
+    <ClInclude Include="RoundScreen.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TextField.h" />
+    <ClInclude Include="WordsOfPlayer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{dc1864eb-2622-43bc-b97e-f9ba5331c90a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{f9bc9430-a908-451b-bb6b-6c88317a3aa8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{d86fceeb-288e-4101-9182-0deb8078475b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Views">
-      <UniqueIdentifier>{17fbb947-97d5-4397-a178-d479755f0eb3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Controllers">
-      <UniqueIdentifier>{88b28427-0936-43ad-aeed-3f836b570182}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
 </Project>
