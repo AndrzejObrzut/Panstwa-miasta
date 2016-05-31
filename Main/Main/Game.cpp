@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Game.h"
-
+#include <iostream>
 
 Game::Game()
 {
@@ -40,18 +40,30 @@ void Game::setPlayersNames(vector<string> players)
 	{
 		_players[i].setPlayerName(players[i]);
 		_players[i].setPlayerNumber(i + 1);
+
+		cout << "Players " << i << " " << _players[i].getPlayerName()  << endl;
 	}
-} 
+}
 
 void Game::getPlayersNames() const
 {
 	for (int i = 0; i < _numberOfPlayers; i++)
 	{
 		string name = _players[i].getPlayerName();
-		cout << "Imie " << i + 1 << ". gracza: " << name << endl;
 	}
 }
 
+const vector<Player> Game::getPlayers()
+{
+	vector<Player> allPlayers;
+	
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		allPlayers.push_back(_players[i]);
+	}
+
+	return allPlayers;
+}
 
 
 void Game::play()

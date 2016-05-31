@@ -12,6 +12,9 @@ using namespace std;
 
 int main()
 {
+
+	srand(time(NULL));
+
 	std::vector<cScreen*> Screens;
 	int screen = 0;
 

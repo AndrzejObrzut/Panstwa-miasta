@@ -117,8 +117,15 @@ int RoundScreen::Run(sf::RenderWindow &App, Game &Game)
 	while round 
 		while player
 	*/
+
+	vector<Player> allPlayers = Game.getPlayers();
 	while (running)
 	{
+		
+		for (auto player: allPlayers)
+		{
+			cout << "oooo " << player.getPlayerName() << endl;
+		}
 		bool playerFinishRound = false;
 		while (!playerFinishRound) 
 		{

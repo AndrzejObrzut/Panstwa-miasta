@@ -26,6 +26,7 @@ public:
 	void setPlayersNames();
 	void setPlayersNames(vector<string> players);
 	void getPlayersNames() const;
+	const vector<Player> getPlayers();
 	void play();
 	void playGame();
 	void addPoints(const int &numberOfPlayer,const int &amountOfPoints);
