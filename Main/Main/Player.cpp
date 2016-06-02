@@ -139,8 +139,22 @@ void Player::continuePlayingRound()
 	menuOfWords(option);
 }
 
+void Player::setAnswers( std::string country, std::string city, std::string thing, std::string plant)
+{
+	_wordsOfPlayer.initializeWords();
+	_wordsOfPlayer.setCountry(country);
+	_wordsOfPlayer.setCity(city);
+	_wordsOfPlayer.setThing(thing);
+	_wordsOfPlayer.setPlant(plant);
+
+	cout << "getCity" << _wordsOfPlayer.getCity() << endl;
+}
+
+
 string * Player::getWords()
 {
+	cout << "country: " << _wordsOfPlayer.getCountry() << ", city: " << _wordsOfPlayer.getCity() << " , thing: " << _wordsOfPlayer.getThing() << " , plant: " << _wordsOfPlayer.getPlant() << endl;
+
 	_words[0] = _wordsOfPlayer.getCountry();
 	_words[1] = _wordsOfPlayer.getCity();
 	_words[2] = _wordsOfPlayer.getThing();

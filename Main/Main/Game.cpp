@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Game.h"
-
+#include <iostream>
 
 Game::Game()
 {
@@ -32,13 +32,46 @@ void Game::setPlayersNames()
 	}
 }
 
+void Game::setPlayersNames(vector<string> players)
+{
+	_numberOfPlayers = players.size();
+	createPlayers(_numberOfPlayers);
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		_players[i].setPlayerName(players[i]);
+		_players[i].setPlayerNumber(i + 1);
+
+		cout << "Players " << i << " " << _players[i].getPlayerName()  << endl;
+	}
+}
+
 void Game::getPlayersNames() const
 {
 	for (int i = 0; i < _numberOfPlayers; i++)
 	{
 		string name = _players[i].getPlayerName();
-		cout << "Imie " << i + 1 << ". gracza: " << name << endl;
 	}
+}
+
+const vector<Player> Game::getPlayers()
+{
+	vector<Player> allPlayers;
+	
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		allPlayers.push_back(_players[i]);
+	}
+
+	return allPlayers;
+}
+
+
+void Game::play()
+{
+	cout << "Nowa runda" << endl;
+	bool continueGame = true;
+	_character = _round.selectTheRandomLetter();
+	cout << _character << endl;
 }
 
 void Game::playGame()
@@ -228,6 +261,49 @@ void Game::addPoints(const int & numberOfPlayer, const int & amountOfPoints)
 	_players[numberOfPlayer].addPoints(amountOfPoints);
 }
 
+vector<int> Game::getPointsOfAllPlayers()
+{
+	vector<int> score;
+
+	_words = new string*[_numberOfPlayers];
+	_result = new int[_numberOfPlayers];
+
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		_words[i] = _players[i].getWords();
+	}
+
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		cout << "_words[" << i << "]" << _words[i][0] << endl;
+	}
+
+	_result = _round.calculatePoints(_words, _numberOfPlayers);
+
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		addPoints(i, _result[i]);
+	}
+
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		score.push_back(_result[i]);
+	}
+
+	for (int i = 0; i < _numberOfPlayers; i++)
+	{
+		cout << "_result[" << i << "]" << _result[i] << endl;
+	}
+	
+
+	return score;
+}
+
+void Game::setAnswers(int numberOfPlayer, std::string country, std::string city, std::string thing, std::string plant)
+{
+	_players[numberOfPlayer].setAnswers(country, city, thing, plant);
+}
+
 
 void Game::endGame()
 {
@@ -242,6 +318,17 @@ int Game::getNumberOfRounds() const
 {
 	return _numberOfRounds;
 }
+
+const char Game::getCharacter()
+{
+	return _character;
+}
+
+const int Game::getPlayersCount()
+{
+	return _numberOfPlayers;
+}
+
 
 
 Game::~Game()

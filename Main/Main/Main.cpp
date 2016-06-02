@@ -1,30 +1,48 @@
 // Main.cpp : Defines the entry point for the console application.
 //
 #include "stdafx.h"
-#include "Menu.h"
 #include <iostream>
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include <SFML/Graphics.hpp>
+#include "cScreen.h"
+#include "MenuScreen.h"
+#include "ChoosePlayerScreen.h"
+#include "RoundScreen.h"
+#include "ResultScreen.h"
 
 using namespace std;
 
 int main()
 {
+
 	srand(time(NULL));
 
+	std::vector<cScreen*> Screens;
+	int screen = 0;
 
-	Menu menu;
-	bool option = menu.runMenu();
-	if (option == false) {
-		return 0;
-	}
-	else {
-		menu.runMenu();
+
+	int windowWidth = 1024;
+	int windowHeight = 768;
+	sf::String title("Panstwa Miasta");
+	sf::VideoMode size(windowWidth, windowHeight);
+	sf::RenderWindow App(size, title);
+
+	MenuScreen menu;
+	Screens.push_back(&menu);
+	ChoosePlayerScreen choosePlayer;
+	Screens.push_back(&choosePlayer);
+	RoundScreen roundScreen;
+	Screens.push_back(&roundScreen);
+	ResultScreen resultScreen;
+	Screens.push_back(&resultScreen);
+
+	Game game;
+
+	while (screen >= 0) 
+	{
+		screen = Screens[screen]->Run(App, game);
 	}
 
-	system("pause");
-    return 0;
+
+	return EXIT_SUCCESS;
 }
 

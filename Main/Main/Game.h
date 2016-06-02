@@ -24,12 +24,19 @@ public:
 	Game(const int &numberOfRounds,const int &numberOfPlayers);
 	void createPlayers(const int &numberOfPlayers);
 	void setPlayersNames();
+	void setPlayersNames(vector<string> players);
 	void getPlayersNames() const;
+	const vector<Player> getPlayers();
+	void play();
 	void playGame();
 	void addPoints(const int &numberOfPlayer,const int &amountOfPoints);
+	vector<int> getPointsOfAllPlayers();
+	void setAnswers(int numberOfPlyer, std::string country, std::string city, std::string thing, std::string plant);
 	void endGame();
 	void setNumberOfRounds(const int &number);
 	int getNumberOfRounds() const;
+	const char getCharacter();
+	const int getPlayersCount();
 	~Game();
 
 };
