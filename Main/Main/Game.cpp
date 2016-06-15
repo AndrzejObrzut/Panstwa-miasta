@@ -81,38 +81,12 @@ void Game::playGame()
 
 	do
 	{
-		/*
-		Klasa "Game" zawiera zmienna "_round".
-		Myœlê, ¿e wystarczy nam jeden obiekt i dzi³anie na nim, 
-		a nie wywo³ywanie za ka¿dym razem przy nowej rundzie "new Round".
-		Poza tym klasa "Game" posiada tablicê graczy, na których dzia³amy 
-		przez ca³¹ grê.
-		*/
-		/*
-		Zmienna _character przechowuje niepowtarzaln¹ wylosowan¹ literê.
-		*/
 		_character = _round.selectTheRandomLetter();
-		/*
-		Myœlê, ¿e to bêdzie g³ówna pêtla programu.
-		Ta poni¿ej.
-		Najpierw wywo³ujemy gracza i czekamy a¿ naciœnie przysik.
-		Nastêpnie wyœwietlamy mu litere i wyrazy jakie ma wpisywaæ (pañstwa, miasta...)
-		Nastêpnie jak skoñczy to wczytuje siê nastêpny gracz.
-		*/
 		for (int i = 0; i < _numberOfPlayers; i++)
 		{
 			cout << "i= " << i << endl;
 			_round.waitingForPlayer(i, _players[i].getPlayerName());
 			_players[i].playRound(_character);
-			//string * pointer = _players[i].getWords();
-			//cout << "pointer1 " << pointer[0];
-			//cout << "pointer2 " << pointer[1];
-			//cout << "pointer3 " << pointer[2];
-			//cout << "pointer4 " << pointer[3];
-			//_getch();
-			/*
-			Tu bêd¹ nastêpne funkcjonalnoœci
-			*/
 		}
 
 		for (int i = 0; i < _numberOfPlayers; i++)
@@ -145,12 +119,6 @@ void Game::playGame()
 			cout << "Gracz nr " << i + 1 << " posiada " << _players[i].getPoints() << " punktow" << endl;
 		}
 		
-
-		/*
-		Po zakoñczeniu rund wszystkich graczy pytamy czy kontynuowac gre.
-		Je¿eli naciœniemy 'y' zostaje wylosowana nowa litera i gracze zaczynaja nowa runde.
-		Po wyjœciu z gry trzeba bedzie wyswietlic zwyciezce i punkty wszystkich graczy.
-		*/
 		
 		cout << "Kontynuowac gre? <y/n>" << endl;
 		char choose;

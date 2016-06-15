@@ -1,40 +1,130 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="ButtonView.cpp" />
-    <ClCompile Include="ChoosePlayerScreen.cpp" />
-    <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="MenuScreen.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Round.cpp" />
-    <ClCompile Include="RoundScreen.cpp" />
-    <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="TextField.cpp" />
-    <ClCompile Include="WordsOfPlayer.cpp" />
-    <ClCompile Include="ResultScreen.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="ChoosePlayerScreen.cpp">
+      <Filter>Controllers\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuScreen.cpp">
+      <Filter>Controllers\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ResultScreen.cpp">
+      <Filter>Controllers\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="RoundScreen.cpp">
+      <Filter>Controllers\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Model\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Model\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Model\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Round.cpp">
+      <Filter>Model\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Model\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="WordsOfPlayer.cpp">
+      <Filter>Model\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonView.cpp">
+      <Filter>Views\Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="TextField.cpp">
+      <Filter>Views\Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ButtonView.h" />
-    <ClInclude Include="ChoosePlayerScreen.h" />
-    <ClInclude Include="cScreen.h" />
-    <ClInclude Include="Game.h" />
-    <ClInclude Include="MenuScreen.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Round.h" />
-    <ClInclude Include="RoundScreen.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
-    <ClInclude Include="TextField.h" />
-    <ClInclude Include="WordsOfPlayer.h" />
-    <ClInclude Include="ResultScreen.h" />
+    <ClInclude Include="targetver.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="ChoosePlayerScreen.h">
+      <Filter>Controllers\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="cScreen.h">
+      <Filter>Controllers\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuScreen.h">
+      <Filter>Controllers\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ResultScreen.h">
+      <Filter>Controllers\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="RoundScreen.h">
+      <Filter>Controllers\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Model\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu.h">
+      <Filter>Model\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Model\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Round.h">
+      <Filter>Model\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="WordsOfPlayer.h">
+      <Filter>Model\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonView.h">
+      <Filter>Views\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="TextField.h">
+      <Filter>Views\Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
+    <Filter Include="Views">
+      <UniqueIdentifier>{902a45df-4e7f-43e5-99cc-f1d6c3196d7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers">
+      <UniqueIdentifier>{05b396ec-ea70-4d4f-bd2a-a460fd76eab7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{995097c3-dcef-4fbc-b677-45b23232082c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{7f9fa53a-560f-42ef-943e-5baff2d2437f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers\Headers">
+      <UniqueIdentifier>{2bc2619e-2b60-49ef-8ec4-0198bae96d6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers\Sources">
+      <UniqueIdentifier>{a3713dca-1b4f-4260-ae36-4da54e2e42a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model\Headers">
+      <UniqueIdentifier>{aeb9aee9-81bf-4a7c-a1a5-43e5b9342775}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model\Sources">
+      <UniqueIdentifier>{80a01d40-b46f-442b-9146-cc69bfe35ca3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Headers">
+      <UniqueIdentifier>{0e606049-9ce7-46bd-82d6-767d972018fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Views\Sources">
+      <UniqueIdentifier>{c4a279b6-1b02-42f2-bd14-5d3e5fdb0f28}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
+    <Text Include="ReadMe.txt">
+      <Filter>Resources</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd">
+      <Filter>Resources</Filter>
+    </None>
   </ItemGroup>
 </Project>
